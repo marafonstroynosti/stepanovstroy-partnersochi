@@ -1,0 +1,354 @@
+Сайт emikh.ru — это яркий представитель минималистичного архитектурного дизайна
+(Quiet Luxury / Тихая роскошь). Для него характерны:
+
+1.  Строгая геометрия и обилие воздуха (большие отступы, пустое пространство,
+    дающее ощущение масштаба).
+2.  Изысканная типографика (тонкие начертания, увеличенный межбуквенный
+    интервал, контраст огромных заголовков и мелкого аккуратного текста).
+3.  Монохромная палитра (глубокий черный, чистый белый, графитовые и
+    светло-серые оттенки) без дешевых градиентов и ярких «кричащих» кнопок.
+4.  Тонкие разделительные линии (0.5px или 1px серого цвета), заменяющие
+    громоздкие рамки и тени.
+5.  Прямоугольные формы кнопок и карточек вместо круглых «капсул».
+
+Ниже представлен полностью переработанный код лендинга в этой строгой,
+премиальной эстетике.
+
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Партнерская программа для риелторов в Сочи | Степанов Строй</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Syne for Architectural Premium Feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #080808;
+        }
+        h1, h2, h3, .font-title {
+            font-family: 'Syne', sans-serif;
+        }
+        .thin-border {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .thin-border-b {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .thin-border-t {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="text-neutral-200 antialiased selection:bg-neutral-800 selection:text-white">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full bg-[#080808]/90 backdrop-blur-md z-50 thin-border-b">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-lg font-bold tracking-[0.25em] text-white uppercase font-title">S T E P A N O V</span>
+                <span class="text-[9px] text-neutral-500 tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
+            </div>
+            <div>
+                <a href="#callback" class="text-xs uppercase tracking-[0.2em] text-white border border-neutral-700 hover:border-white px-6 py-3 transition-all duration-500 rounded-none">
+                    Стать партнером
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="min-h-screen flex flex-col justify-center pt-24 relative px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-24">
+            
+            <!-- Left: Huge Typography Offer -->
+            <div class="lg:col-span-8 flex flex-col justify-center">
+                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8 block">PARTNERSHIP / SOCHI</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-[1.1] tracking-tight mb-8">
+                    Зарабатывайте <br class="hidden sm:block">
+                    дополнительно <br>
+                    <span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>
+                    с одной сделки.
+                </h1>
+            </div>
+
+            <!-- Right: Explanatory Subhead & Action -->
+            <div class="lg:col-span-4 flex flex-col justify-end lg:pb-6 border-t lg:border-t-0 lg:border-l border-neutral-800 pt-8 lg:pt-0 lg:pl-12">
+                <p class="text-neutral-400 text-sm font-light leading-relaxed tracking-wide mb-10">
+                    Как риелтору с одной сделки по продаже объекта увеличить чек
+                </p>
+                <a href="#callback" class="inline-block bg-white text-black hover:bg-neutral-200 text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-8 transition-all duration-500 rounded-none">
+                    узнать подробнее
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Minimalist bottom page indicator -->
+        <div class="absolute bottom-10 left-6 lg:left-12 hidden lg:flex items-center gap-4">
+            <span class="text-[10px] tracking-widest text-neutral-600">01 / INTRODUCTION</span>
+            <div class="w-16 h-[1px] bg-neutral-800"></div>
+        </div>
+    </section>
+
+    <!-- FOUNDER & PHILOSOPHY (Кирилл Степанов) -->
+    <section class="py-24 lg:py-32 thin-border-t bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                
+                <!-- Founder Photo (Flush, Minimalist, No Shadows) -->
+                <div class="lg:col-span-5">
+                    <div class="bg-neutral-900 overflow-hidden rounded-none border border-neutral-800/60 aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Кирилл Степанов" class="w-full h-full object-cover filter grayscale">
+                    </div>
+                </div>
+
+                <!-- Bio & Strengths -->
+                <div class="lg:col-span-7 flex flex-col justify-between h-full pt-4">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">FOUNDER SPEECH</span>
+                        <h2 class="text-2xl md:text-4xl font-light text-white mb-8 tracking-tight leading-tight">
+                            «Мы выстроили прозрачную систему, где риелторы зарабатывают вместе с нами»
+                        </h2>
+                        
+                        <div class="space-y-6 text-neutral-400 text-sm font-light leading-relaxed">
+                            <p>
+                                Привет! Меня зовут <strong class="text-white font-medium">Кирилл Степанов</strong>, я сооснователь строительной компании <span class="text-white">«Степанов Строй»</span>. 
+                            </p>
+                            <p>
+                                Мы на рынке <strong class="text-white font-medium">более 10 лет</strong> и знаем о ремонте всё. Но «Степанов Строй» — это не просто строительные работы. Мы создаем интерьеры под ключ: от идеи до финального декора.
+                            </p>
+                            
+                            <!-- Minimalist Grid (Instead of round cards) -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 py-8 thin-border-t thin-border-b my-8">
+                                <div>
+                                    <h4 class="text-white font-medium text-xs uppercase tracking-[0.15em] mb-3">01 / ТОП-100 Дизайнеров России</h4>
+                                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Наш ведущий дизайнер входит в Топ-100 дизайнеров России. Для каждого вашего клиента мы находим индивидуальное планировочное и стилевое решение.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium text-xs uppercase tracking-[0.15em] mb-3">02 / Материалы нового поколения</h4>
+                                    <p class="text-xs text-neutral-500 font-light leading-relaxed">В отделке мы используем собственные инновационные материалы, которые стали настоящей технологической революцией на рынке.</p>
+                                </div>
+                            </div>
+
+                            <p>
+                                Для вас, как для партнера, мы полностью закрыли все вопросы сотрудничества. В «Степанов Строй» выстроена <strong class="text-white font-medium">прозрачная и гибкая система выплат</strong>. Вы всегда точно знаете размер своего бонуса и получаете его гарантированно и вовремя. Давайте зарабатывать вместе!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKFLOW & REWARDS -->
+    <section class="py-24 lg:py-32 thin-border-t">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="mb-16 lg:mb-24">
+                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">THE PROCESS</span>
+                <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Как происходит партнерство</h2>
+            </div>
+
+            <!-- Steps Minimalist Table-style layout -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-24">
+                <!-- Step 1 -->
+                <div class="pt-6 thin-border-t">
+                    <span class="text-xs text-neutral-600 font-medium block mb-4">01 //</span>
+                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Передача контакта</h3>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Вы передаете нам контакт клиента, планирующего ремонт недвижимости в Сочи.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="pt-6 thin-border-t">
+                    <span class="text-xs text-neutral-600 font-medium block mb-4">02 //</span>
+                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Встреча в офисе</h3>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Встречаемся в нашем сочинском офисе, готовим концепт дизайна и рассчитываем смету.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="pt-6 thin-border-t">
+                    <span class="text-xs text-neutral-600 font-medium block mb-4">03 //</span>
+                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Договор</h3>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Подписываем официальный двухсторонний договор. Фиксируем цену и заходим на объект.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="pt-6 thin-border-t">
+                    <span class="text-xs text-neutral-600 font-medium block mb-4">04 //</span>
+                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Выплата бонуса</h3>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Выплачиваем гарантированное вознаграждение по удобной и гибкой схеме.</p>
+                </div>
+            </div>
+
+            <!-- Rates (Strict Minimal Grid) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto pt-12 thin-border-t">
+                <div class="flex flex-col justify-between py-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-neutral-500">ОБЪЕКТЫ ДО 60 КВ. М</span>
+                        <h3 class="text-xl font-light text-white mt-2 mb-4">Компактные квартиры и студии</h3>
+                    </div>
+                    <div class="mt-8">
+                        <span class="text-[9px] text-neutral-500 uppercase tracking-widest block">выплата</span>
+                        <span class="text-3xl lg:text-5xl font-light text-white">от 250 000 ₽</span>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between py-4 md:border-l md:border-neutral-800 md:pl-12">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-neutral-500">ОБЪЕКТЫ СВЫШЕ 60 КВ. М</span>
+                        <h3 class="text-xl font-light text-white mt-2 mb-4">Семейные апартаменты и виллы</h3>
+                    </div>
+                    <div class="mt-8">
+                        <span class="text-[9px] text-neutral-500 uppercase tracking-widest block">выплата</span>
+                        <span class="text-3xl lg:text-5xl font-light text-white">от 500 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PORTFOLIO / GALLERY (Strict Clean Grid) -->
+    <section class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">PORTFOLIO</span>
+                    <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Наши объекты в Сочи</h2>
+                </div>
+            </div>
+
+            <!-- Portfolio Image Grid (Without excessive margins/shadows) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group block">
+                    <div class="aspect-video bg-neutral-900 overflow-hidden rounded-none border border-neutral-850">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="mt-4 flex justify-between items-baseline">
+                        <h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">ЖК «Морская Симфония»</h4>
+                        <span class="text-[10px] text-neutral-500 font-light">75 кв.м</span>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="group block">
+                    <div class="aspect-video bg-neutral-900 overflow-hidden rounded-none border border-neutral-850">
+                        <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="mt-4 flex justify-between items-baseline">
+                        <h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">ЖК «Актер Гэлакси»</h4>
+                        <span class="text-[10px] text-neutral-500 font-light">110 кв.м</span>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group block">
+                    <div class="aspect-video bg-neutral-900 overflow-hidden rounded-none border border-neutral-850">
+                        <img src="https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="mt-4 flex justify-between items-baseline">
+                        <h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">Пентхаус у моря</h4>
+                        <span class="text-[10px] text-neutral-500 font-light">45 кв.м</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OFFICE EVENTS & NETWORKING -->
+    <section class="py-24 lg:py-32 thin-border-t">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                
+                <div class="lg:col-span-7">
+                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">EVENTS</span>
+                    <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-8">Приглашаем в сочинский офис на партнерские встречи</h2>
+                    <div class="space-y-6 text-neutral-400 text-sm font-light leading-relaxed max-w-2xl">
+                        <p>
+                            Мы не просто работаем по звонку — мы развиваем сильное сообщество профессионалов рынка недвижимости Сочи. 
+                        </p>
+                        <p>
+                            В нашем офисе регулярно проходят полезные встречи и закрытые эвенты для риелторов. В неформальной обстановке мы детально обсуждаем гибкие условия сотрудничества, обмениваемся опытом и разбираем новые кейсы.
+                        </p>
+                    </div>
+                    <div class="mt-10">
+                        <a href="#callback" class="inline-block bg-white text-black hover:bg-neutral-200 uppercase tracking-[0.2em] text-xs font-semibold py-5 px-8 transition-all duration-500 rounded-none">
+                            принять участие в эвенте
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="bg-neutral-900 border border-neutral-800/80 aspect-[4/3] rounded-none overflow-hidden grayscale">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1000&q=80" alt="Встреча партнеров" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
+    <section id="callback" class="py-24 lg:py-32 bg-[#050505] thin-border-t">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            
+            <!-- Bio Card inside the form block (Agency style) -->
+            <div class="flex flex-col items-center mb-12">
+                <div class="w-24 h-24 overflow-hidden rounded-none border border-neutral-800 mb-6 grayscale">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Кирилл Степанов" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-500 block">ПЕРСОНАЛЬНЫЙ КУРАТОР</span>
+                <h4 class="text-lg font-light text-white mt-2">Кирилл Степанов</h4>
+                <p class="text-neutral-500 text-xs italic mt-3 max-w-md leading-relaxed font-light">
+                    «Я лично гарантирую, что ваши люди получат дизайн и ремонт высочайшего уровня, а вы — свой бонус точно в срок».
+                </p>
+                
+                <!-- Simple Messengers links (Text-based, no big icons) -->
+                <div class="flex gap-6 mt-6 text-[10px] tracking-widest uppercase font-light">
+                    <a href="https://wa.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">WhatsApp</a>
+                    <span class="text-neutral-800">|</span>
+                    <a href="https://t.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">Telegram</a>
+                </div>
+            </div>
+
+            <h3 class="text-2xl md:text-3xl font-light text-white mb-4">Давайте заработаем на вашем следующем объекте</h3>
+            <p class="text-neutral-500 text-xs font-light tracking-wide mb-10 max-w-sm mx-auto">Оставьте свой телефон. Мы перезвоним, ответим на вопросы и закрепим за вами условия.</p>
+
+            <!-- FORM (Minimal, strictly flat, no margins, simple bottom line or thin border) -->
+            <form onsubmit="handleFormSubmit(event)" class="max-w-md mx-auto space-y-6">
+                <div>
+                    <input type="tel" required placeholder="Введите ваш телефон" class="w-full px-6 py-4 rounded-none bg-[#0a0a0a] border border-neutral-800 focus:border-white focus:outline-none text-white text-center text-xs tracking-[0.2em] uppercase transition duration-300">
+                </div>
+                <button type="submit" class="w-full bg-white text-black hover:bg-neutral-200 font-semibold py-5 uppercase tracking-[0.2em] text-xs transition-all duration-500 rounded-none">
+                    стать партнером
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#050505] py-12 thin-border-t">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <span class="text-[10px] text-neutral-600 tracking-wider">&copy; 2026 STEPANOV STROY. Все права защищены.</span>
+            <span class="text-[10px] text-neutral-600 tracking-wider uppercase">Сочи, Приморская улица, офис 12.</span>
+        </div>
+    </footer>
+
+    <!-- Handler logic -->
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const phone = event.target.querySelector('input').value;
+            if(phone) {
+                alert('Спасибо. Заявка отправлена. Кирилл Степанов свяжется с вами в течение 15 минут.');
+                event.target.reset();
+            }
+        }
+    </script>
+</body>
+</html>
