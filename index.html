@@ -46,36 +46,43 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="min-h-screen flex flex-col justify-center pt-24 relative px-6 lg:px-12">
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 py-16 md:py-24">
+    <!-- HERO SECTION WITH EDITORIAL SPLIT-SCREEN BACKGROUND -->
+    <section class="min-h-screen flex flex-col justify-center pt-24 relative px-6 lg:px-12 overflow-hidden">
+        
+        <!-- Split Background (White on left, Dark on right) -->
+        <div class="absolute inset-0 flex flex-col lg:flex-row z-0">
+            <div class="h-[48%] lg:h-full lg:w-1/2 bg-[#fcfcfc]"></div> <!-- Left Side: Gallery White -->
+            <div class="h-[52%] lg:h-full lg:w-1/2 bg-[#080808]"></div> <!-- Right Side: Architectural Black -->
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 py-16 md:py-24 relative z-10">
             
-            <!-- Left: Huge Typography Offer & CTA Button (50% Width) -->
-            <div class="lg:col-span-6 flex flex-col justify-center items-start">
+            <!-- Left: Huge Typography Offer on White Background (50% Width) -->
+            <div class="lg:col-span-6 flex flex-col justify-center items-start lg:pr-12">
                 <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8 block">PARTNERSHIP / SOCHI</span>
-                <h1 class="text-3xl sm:text-5xl lg:text-5xl font-light text-white leading-[1.2] tracking-tight mb-10">
+                <h1 class="text-3xl sm:text-5xl lg:text-5xl font-light text-neutral-950 leading-[1.2] tracking-tight mb-10">
                     Как риелтору <br>
                     дополнительно <br>
                     зарабатывать <br>
-                    <span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>
+                    <span class="font-normal italic text-neutral-600">от 250 000 ₽</span> <br>
                     с одной сделки.
                 </h1>
                 
-                <!-- Moved CTA Button here for perfect visual balance -->
-                <a href="#callback" class="inline-block bg-white text-black hover:bg-neutral-200 text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none">
+                <!-- High-contrast Black Button on White Side -->
+                <a href="#callback" class="inline-block bg-neutral-950 text-white hover:bg-neutral-800 text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none">
                     узнать подробнее
                 </a>
             </div>
 
-            <!-- Right: Prominent Image & Clean Caption (50% Width) -->
-            <div class="lg:col-span-6 flex flex-col justify-center lg:pl-12 border-t lg:border-t-0 lg:border-l border-neutral-800 pt-8 lg:pt-0">
+            <!-- Right: Prominent Image on Dark Background (50% Width) -->
+            <div class="lg:col-span-6 flex flex-col justify-center lg:pl-12 pt-8 lg:pt-0 lg:border-l lg:border-neutral-900">
                 
                 <!-- Tall Immersive Image -->
                 <div class="w-full h-[45vh] lg:h-[60vh] bg-neutral-900 overflow-hidden mb-6 border border-neutral-800">
                     <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 transition-all duration-500">
                 </div>
 
-                <!-- Minimalist architectural caption instead of tautology text -->
+                <!-- Minimalist architectural caption -->
                 <div class="flex justify-between items-baseline text-neutral-500">
                     <span class="text-[10px] uppercase tracking-[0.2em]">01 // ПЕРЕГОВОРНАЯ «СТЕПАНОВ СТРОЙ»</span>
                     <span class="text-[9px] tracking-widest uppercase">СОЧИ</span>
@@ -84,10 +91,10 @@
 
         </div>
 
-        <!-- Minimalist bottom page indicator -->
-        <div class="absolute bottom-10 left-6 lg:left-12 hidden lg:flex items-center gap-4">
-            <span class="text-[10px] tracking-widest text-neutral-600">01 / INTRODUCTION</span>
-            <div class="w-16 h-[1px] bg-neutral-800"></div>
+        <!-- Minimalist bottom page indicator with auto-contrast blend effect -->
+        <div class="absolute bottom-10 left-6 lg:left-12 hidden lg:flex items-center gap-4 z-10 mix-blend-difference">
+            <span class="text-[10px] tracking-widest text-neutral-400">01 / INTRODUCTION</span>
+            <div class="w-16 h-[1px] bg-neutral-500"></div>
         </div>
     </section>
 
@@ -217,7 +224,7 @@
                 </div>
             </div>
 
-            <!-- Portfolio Image Grid (Without excessive margins/shadows) -->
+            <!-- Portfolio Image Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="group block">
