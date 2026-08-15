@@ -1,3 +1,19 @@
+Вот полностью обновленный и готовый код вашего сайта.
+
+Что было изменено:
+
+1.  В правую колонку главного экрана (над текстом «Как риелтору...») добавлен
+    стильный блок для вашей будущей фотографии сделки.
+2.  Путь к картинке прописан как deal.jpg — как только вы загрузите
+    сгенерированное фото с этим именем на GitHub, оно мгновенно появится на
+    сайте.
+3.  Временные фотографии Кирилла Степанова (в блоке «Слово основателя» и в блоке
+    формы) заменены на качественный мужской бизнес-портрет в черно-белом стиле
+    вместо женского силуэта, который был в шаблоне по умолчанию.
+
+Скопируйте этот код и замените им всё содержимое файла index.html на вашем
+GitHub:
+
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
@@ -61,8 +77,14 @@
                 </h1>
             </div>
 
-            <!-- Right: Explanatory Subhead & Action -->
+            <!-- Right: Explanatory Image, Subhead & Action -->
             <div class="lg:col-span-4 flex flex-col justify-end lg:pb-6 border-t lg:border-t-0 lg:border-l border-neutral-800 pt-8 lg:pt-0 lg:pl-12">
+                
+                <!-- NEW: Block for your custom generated photo -->
+                <div class="w-full aspect-[16/10] bg-neutral-900 overflow-hidden mb-8 border border-neutral-800">
+                    <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 transition-all duration-500">
+                </div>
+
                 <p class="text-neutral-400 text-sm font-light leading-relaxed tracking-wide mb-10">
                     Как риелтору с одной сделки по продаже объекта увеличить чек
                 </p>
@@ -88,7 +110,7 @@
                 <!-- Founder Photo (Flush, Minimalist, No Shadows) -->
                 <div class="lg:col-span-5">
                     <div class="bg-neutral-900 overflow-hidden rounded-none border border-neutral-800/60 aspect-[3/4]">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Кирилл Степанов" class="w-full h-full object-cover filter grayscale">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80" alt="Кирилл Степанов" class="w-full h-full object-cover filter grayscale">
                     </div>
                 </div>
 
@@ -283,7 +305,7 @@
             <!-- Bio Card inside the form block (Agency style) -->
             <div class="flex flex-col items-center mb-12">
                 <div class="w-24 h-24 overflow-hidden rounded-none border border-neutral-800 mb-6 grayscale">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Кирилл Степанов" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" alt="Кирилл Степанов" class="w-full h-full object-cover">
                 </div>
                 <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-500 block">ПЕРСОНАЛЬНЫЙ КУРАТОР</span>
                 <h4 class="text-lg font-light text-white mt-2">Кирилл Степанов</h4>
