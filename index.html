@@ -1,19 +1,3 @@
-Вот полностью обновленный и готовый код вашего сайта.
-
-Что было изменено:
-
-1.  В правую колонку главного экрана (над текстом «Как риелтору...») добавлен
-    стильный блок для вашей будущей фотографии сделки.
-2.  Путь к картинке прописан как deal.jpg — как только вы загрузите
-    сгенерированное фото с этим именем на GitHub, оно мгновенно появится на
-    сайте.
-3.  Временные фотографии Кирилла Степанова (в блоке «Слово основателя» и в блоке
-    формы) заменены на качественный мужской бизнес-портрет в черно-белом стиле
-    вместо женского силуэта, который был в шаблоне по умолчанию.
-
-Скопируйте этот код и замените им всё содержимое файла index.html на вашем
-GitHub:
-
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
@@ -64,12 +48,12 @@ GitHub:
 
     <!-- HERO SECTION -->
     <section class="min-h-screen flex flex-col justify-center pt-24 relative px-6 lg:px-12">
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-24">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 py-16 md:py-24">
             
-            <!-- Left: Huge Typography Offer -->
-            <div class="lg:col-span-8 flex flex-col justify-center">
+            <!-- Left: Huge Typography Offer (50% Width) -->
+            <div class="lg:col-span-6 flex flex-col justify-center">
                 <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8 block">PARTNERSHIP / SOCHI</span>
-                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-[1.1] tracking-tight mb-8">
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight mb-8">
                     Зарабатывайте <br class="hidden sm:block">
                     дополнительно <br>
                     <span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>
@@ -77,20 +61,23 @@ GitHub:
                 </h1>
             </div>
 
-            <!-- Right: Explanatory Image, Subhead & Action -->
-            <div class="lg:col-span-4 flex flex-col justify-end lg:pb-6 border-t lg:border-t-0 lg:border-l border-neutral-800 pt-8 lg:pt-0 lg:pl-12">
+            <!-- Right: Prominent Image, Subhead & Action (50% Width) -->
+            <div class="lg:col-span-6 flex flex-col justify-center lg:pl-12 border-t lg:border-t-0 lg:border-l border-neutral-800 pt-8 lg:pt-0">
                 
-                <!-- NEW: Block for your custom generated photo -->
-                <div class="w-full aspect-[16/10] bg-neutral-900 overflow-hidden mb-8 border border-neutral-800">
-                    <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 transition-all duration-500">
+                <!-- Expanded Aspect Ratio (4/3 instead of 16/10) for maximum prominence -->
+                <div class="w-full aspect-[4/3] bg-neutral-900 overflow-hidden mb-8 border border-neutral-800">
+                    <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 transition-all duration-500">
                 </div>
 
-                <p class="text-neutral-400 text-sm font-light leading-relaxed tracking-wide mb-10">
+                <p class="text-neutral-400 text-sm font-light leading-relaxed tracking-wide mb-8 max-w-lg">
                     Как риелтору с одной сделки по продаже объекта увеличить чек
                 </p>
-                <a href="#callback" class="inline-block bg-white text-black hover:bg-neutral-200 text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-8 transition-all duration-500 rounded-none">
-                    узнать подробнее
-                </a>
+                
+                <div>
+                    <a href="#callback" class="inline-block bg-white text-black hover:bg-neutral-200 text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none">
+                        узнать подробнее
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -119,7 +106,7 @@ GitHub:
                     <div>
                         <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">FOUNDER SPEECH</span>
                         <h2 class="text-2xl md:text-4xl font-light text-white mb-8 tracking-tight leading-tight">
-                            «Мы выстроили прозрачную систему, где риелторы зарабатывают вместе с нами»
+                            «Мы выстроить прозрачную систему, где риелторы зарабатывают вместе с нами»
                         </h2>
                         
                         <div class="space-y-6 text-neutral-400 text-sm font-light leading-relaxed">
@@ -130,7 +117,7 @@ GitHub:
                                 Мы на рынке <strong class="text-white font-medium">более 10 лет</strong> и знаем о ремонте всё. Но «Степанов Строй» — это не просто строительные работы. Мы создаем интерьеры под ключ: от идеи до финального декора.
                             </p>
                             
-                            <!-- Minimalist Grid (Instead of round cards) -->
+                            <!-- Minimalist Grid -->
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 py-8 thin-border-t thin-border-b my-8">
                                 <div>
                                     <h4 class="text-white font-medium text-xs uppercase tracking-[0.15em] mb-3">01 / ТОП-100 Дизайнеров России</h4>
