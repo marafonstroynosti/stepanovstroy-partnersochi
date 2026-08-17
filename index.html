@@ -1,16 +1,3 @@
-Понял вас. Сделаем экран значительно светлее, чтобы фотографию было видно
-отчетливо и ясно на любом мониторе.
-
-Что мы меняем:
-
-1.  Увеличиваем видимость фото до 65% (opacity-65). Теперь картинка станет очень
-    светлой, будут отчетливо видны лица, стол, текстура дерева и все детали.
-2.  Делаем темную маску слева ультра-легкой (from-black/60 via-black/30). Мы
-    убрали плотную черноту. Тень теперь едва заметна, она нужна лишь для того,
-    чтобы белый текст не сливался с фоном.
-
-Замените весь код в файле index.html на этот светлый вариант:
-
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
@@ -59,40 +46,40 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH FULL-SCREEN AMBIENT BACKGROUND (MUCH LIGHTER VIEW) -->
+    <!-- HERO SECTION WITH FULL-SCREEN AMBIENT BACKGROUND -->
     <section class="min-h-screen flex flex-col justify-center pt-24 relative px-6 lg:px-12 overflow-hidden bg-[#080808]">
         
         <!-- Ambient Background Image (Increased Opacity to 65% for high visibility) -->
         <div class="absolute inset-0 z-0">
             <img src="deal.jpg" alt="Интерьер" class="w-full h-full object-cover grayscale opacity-65">
-            <!-- Ultra-light Left-to-Right gradient mask (only 60% opacity on the left, fading quickly) -->
-            <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
-            <!-- Very subtle bottom vignette -->
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808]/40 via-transparent to-transparent"></div>
+            <!-- Left-to-Right dark gradient mask: Dark on the left (under text), fading to transparent on the right (over faces) -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/75 to-transparent"></div>
+            <!-- Bottom-to-Top subtle vignette for overall depth -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent opacity-50"></div>
         </div>
 
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 py-16 md:py-24 relative z-10">
             
             <!-- Left: Huge Typography Offer & CTA Button -->
             <div class="lg:col-span-8 flex flex-col justify-center items-start">
-                <span class="text-xs uppercase tracking-[0.3em] text-neutral-400 mb-8 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
-                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-[1.1] tracking-tight mb-10 drop-shadow-md">
+                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8 block">PARTNERSHIP / SOCHI</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-[1.1] tracking-tight mb-10">
                     Как риелтору <br>
                     дополнительно <br>
                     зарабатывать <br>
-                    <span class="font-normal italic text-neutral-300">от 250 000 ₽</span> <br>
-                    с одной сделки
+                    <span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>
+                    с одной сделки.
                 </h1>
                 
-                <!-- Clean Premium White Button -->
-                <a href="#callback" class="inline-block bg-white text-black hover:bg-neutral-200 text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none shadow-xl">
+                <!-- Clean Premium White Button (Smooth scrolls to #founder now) -->
+                <a href="#founder" class="inline-block bg-white text-black hover:bg-neutral-200 text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none">
                     узнать подробнее
                 </a>
             </div>
 
             <!-- Right: Kept empty to let the handshake background breathe on the right side -->
             <div class="lg:col-span-4 hidden lg:flex flex-col justify-end items-end pb-4">
-                <div class="flex flex-col items-end text-neutral-300 space-y-2 drop-shadow-sm">
+                <div class="flex flex-col items-end text-neutral-400 space-y-2">
                     <span class="text-[9px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «СТЕПАНОВ СТРОЙ»</span>
                     <span class="text-[8px] tracking-widest uppercase">СОЧИ</span>
                 </div>
@@ -102,20 +89,22 @@
 
         <!-- Minimalist bottom page indicator -->
         <div class="absolute bottom-10 left-6 lg:left-12 hidden lg:flex items-center gap-4 z-10">
-            <span class="text-[10px] tracking-widest text-neutral-400">01 / INTRODUCTION</span>
+            <span class="text-[10px] tracking-widest text-neutral-600">01 / INTRODUCTION</span>
             <div class="w-16 h-[1px] bg-neutral-800"></div>
         </div>
     </section>
 
     <!-- FOUNDER & PHILOSOPHY (Кирилл Степанов) -->
-    <section class="py-24 lg:py-32 thin-border-t bg-[#0a0a0a]">
+    <!-- Added ID "founder" here so the hero button scrolls precisely to this section -->
+    <section id="founder" class="py-24 lg:py-32 thin-border-t bg-[#0a0a0a]">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
                 
                 <!-- Founder Photo (Flush, Minimalist, No Shadows) -->
                 <div class="lg:col-span-5">
                     <div class="bg-neutral-900 overflow-hidden rounded-none border border-neutral-800/60 aspect-[3/4]">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80" alt="Кирилл Степанов" class="w-full h-full object-cover filter grayscale">
+                        <!-- Changed from stock unsplash to your custom photo name "kirill.jpg" -->
+                        <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover filter grayscale">
                     </div>
                 </div>
 
@@ -310,7 +299,8 @@
             <!-- Bio Card inside the form block (Agency style) -->
             <div class="flex flex-col items-center mb-12">
                 <div class="w-24 h-24 overflow-hidden rounded-none border border-neutral-800 mb-6 grayscale">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" alt="Кирилл Степанов" class="w-full h-full object-cover">
+                    <!-- Changed from stock unsplash to your custom photo name "kirill.jpg" -->
+                    <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover">
                 </div>
                 <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-500 block">ПЕРСОНАЛЬНЫЙ КУРАТОР</span>
                 <h4 class="text-lg font-light text-white mt-2">Кирилл Степанов</h4>
