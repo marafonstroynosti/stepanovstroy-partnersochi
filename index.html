@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Партнерская программа для риелторов в Сочи | Степанов Строй</title>
+    <title>Партнерская программа для партнеров в Сочи | Степанов Строй</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Plus Jakarta Sans & Syne for Architectural Premium Feel -->
@@ -131,7 +131,7 @@
                     </div>
                 </div>
 
-                <!-- Bio, Manifesto & Interactive Calculator -->
+                <!-- Bio, Manifesto, Calculator & Partner Cabinet -->
                 <div class="lg:col-span-7 flex flex-col justify-between h-full pt-4">
                     <div>
                         <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">PARTNERSHIP PHILOSOPHY</span>
@@ -154,25 +154,62 @@
                                 </p>
                             </div>
 
-                            <!-- INTERACTIVE RANGE SLIDER CALCULATOR -->
-                            <div class="bg-[#0f0f0f] p-8 thin-border my-8 rounded-none">
-                                <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-6">Калькулятор вашего дохода:</h3>
+                            <!-- INTERACTIVE LIVE PARTNER CABINET (Calculator + Live Mockup) -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#0f0f0f] p-8 thin-border my-8 rounded-none">
                                 
-                                <div class="mb-6">
-                                    <div class="flex items-center justify-between text-stone-400 mb-4">
-                                        <span class="text-xs font-light uppercase tracking-wider">Площадь объекта</span>
-                                        <span class="text-xs">Ставка: <span id="rateValue" class="text-white font-medium">7 000</span> ₽ / м²</span>
+                                <!-- Left Column: Range Slider Calculator -->
+                                <div class="flex flex-col justify-between">
+                                    <div>
+                                        <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-6">Калькулятор дохода:</h3>
+                                        <div class="flex items-center justify-between text-stone-400 mb-4">
+                                            <span class="text-[10px] uppercase tracking-wider">Площадь объекта</span>
+                                            <span class="text-[10px]">Ставка: <span id="rateValue" class="text-white font-medium">7 000</span> ₽/м²</span>
+                                        </div>
+                                        <div class="flex items-baseline gap-2 mb-4">
+                                            <span id="areaValue" class="text-3xl font-light text-white">80</span>
+                                            <span class="text-sm font-light text-neutral-500">м²</span>
+                                        </div>
+                                        <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
                                     </div>
-                                    <div class="flex items-baseline gap-2 mb-4">
-                                        <span id="areaValue" class="text-4xl font-light text-white">80</span>
-                                        <span class="text-lg font-light text-neutral-500">м²</span>
+                                    <div class="pt-6 border-t border-neutral-800/60 mt-6">
+                                        <span class="text-[10px] text-neutral-500 uppercase tracking-widest block mb-2">Ваш бонус:</span>
+                                        <span id="bonusValue" class="text-3xl font-light text-amber-500 tracking-tight block transition-all duration-300">560 000 ₽</span>
                                     </div>
-                                    <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
                                 </div>
 
-                                <div class="pt-6 border-t border-neutral-800/60">
-                                    <span class="text-[10px] text-neutral-500 uppercase tracking-widest block mb-2">Ваш партнерский бонус:</span>
-                                    <span id="bonusValue" class="text-4xl sm:text-5xl lg:text-5xl font-light text-amber-500 tracking-tight block transition-all duration-300">560 000 ₽</span>
+                                <!-- Right Column: Partner Personal Cabinet Image Mockup (Proves Transparency) -->
+                                <div class="flex flex-col justify-between md:border-l md:border-neutral-800/60 md:pl-8 pt-6 md:pt-0">
+                                    <div>
+                                        <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">Личный кабинет партнера:</h3>
+                                        <p class="text-xs text-neutral-500 font-light leading-relaxed mb-4">
+                                            Вы онлайн отслеживаете статус ваших сделок, движение денежных средств и баланс накопленного бонуса.
+                                        </p>
+                                    </div>
+                                    <!-- Flat 2D mockup preview with thin border -->
+                                    <div class="w-full aspect-[4/3] bg-[#0d0d0d] overflow-hidden border border-neutral-800/80 grayscale hover:grayscale-0 transition-all duration-500">
+                                        <img src="cabinet.jpg" alt="Личный кабинет партнера" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Our Difference & Value Proposition strictly aligned with TOR -->
+                            <div class="border-t border-b border-neutral-800/60 py-8 my-8 space-y-8">
+                                <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold">В чем наше отличие и почему это выгодно вам:</h3>
+                                
+                                <div class="grid grid-cols-1 gap-6">
+                                    <div>
+                                        <h4 class="text-white font-medium text-xs uppercase tracking-[0.15em] mb-2">01 // Выплаты сразу, независимо от обстоятельств</h4>
+                                        <p class="text-xs text-neutral-500 font-light leading-relaxed">Это мое личное правило. Мы выплачиваем вам весь партнерский бонус сразу, как только ваш клиент подписал договор и внес аванс. Любые дальнейшие этапы стройки, закупки материалов или задержки на объекте никак не влияют на ваши деньги. Ваша прибыль полностью защищена с первого дня.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-medium text-xs uppercase tracking-[0.15em] mb-2">02 // Полная безопасность для вашей репутации</h4>
+                                        <p class="text-xs text-neutral-500 font-light leading-relaxed">Мы не работаем со случайными бригадами с улицы. У нас своя Академия мастеров, а ведущий дизайнер входит в Топ-100 России. Вашему клиенту гарантирован премиальный результат, и он будет искренне благодарен вам за рекомендацию.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-medium text-xs uppercase tracking-[0.15em] mb-2">03 // Абсолютная гибкость и ноль рутины</h4>
+                                        <p class="text-xs text-neutral-500 font-light leading-relaxed">Вам не нужно вникать в стройку. Мы сами проводим все переговоры, замеры и расчеты. Выплачиваем бонусы в любом удобном формате (наличные, карта, ИП, ООО) и берем на себя все вопросы с налогами и закрывающими документами.</p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -233,16 +270,16 @@
                     </button>
 
                     <!-- Tab 2 Button -->
-                    <button onclick="switchTab(2)" id="tab-btn-2" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-300 group flex justify-between items-center">
+                    <button onclick="switchTab(2)" id="tab-btn-2" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
                         <div class="flex flex-col">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">02 // ЭЛИТНЫЙ СТАТУС</span>
-                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Дизайн уровня Топ-100 России</span>
+                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">02 // СЕРГЕЙ ЭМИХ</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Топ-100 дизайнеров России</span>
                         </div>
                         <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
                     </button>
 
                     <!-- Tab 3 Button -->
-                    <button onclick="switchTab(3)" id="tab-btn-3" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-300 group flex justify-between items-center">
+                    <button onclick="switchTab(3)" id="tab-btn-3" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
                         <div class="flex flex-col">
                             <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">03 // ЭКСКЛЮЗИВ</span>
                             <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Революционные материалы OTTINGER</span>
@@ -251,7 +288,7 @@
                     </button>
 
                     <!-- Tab 4 Button -->
-                    <button onclick="switchTab(4)" id="tab-btn-4" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-300 group flex justify-between items-center">
+                    <button onclick="switchTab(4)" id="tab-btn-4" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
                         <div class="flex flex-col">
                             <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">04 // ТЕХНОЛОГИЧНОСТЬ</span>
                             <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Цифровой контроль 24/7</span>
@@ -265,8 +302,8 @@
                 <div class="lg:col-span-7">
                     <div class="flex flex-col h-full justify-between">
                         
-                        <!-- Big Display Image -->
-                        <div class="w-full aspect-[16/10] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
+                        <!-- Big Display Image - Aspect ratio 4:3 -->
+                        <div class="w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
                             <img id="tab-image" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80" alt="Академия мастеров" class="w-full h-full object-cover transition-all duration-500">
                         </div>
 
@@ -488,11 +525,13 @@
             }
         }
 
-        // RANGE SLIDER CALCULATOR LOGIC
+        // RANGE SLIDER CALCULATOR LOGIC + LIVE MOCKUP CABINET SYNERGY
         const slider = document.getElementById('areaSlider');
         const areaVal = document.getElementById('areaValue');
         const rateVal = document.getElementById('rateValue');
         const bonusVal = document.getElementById('bonusValue');
+        const cabinetArea = document.getElementById('cabinetArea');
+        const cabinetBonus = document.getElementById('cabinetBonus');
 
         function updateCalculator() {
             const area = parseInt(slider.value);
@@ -501,11 +540,16 @@
                 rate = 7000;
             }
             const bonus = area * rate;
+            const formattedBonus = bonus.toLocaleString('ru-RU') + ' ₽';
 
-            // Update DOM
+            // Update Slider DOM
             areaVal.textContent = area;
             rateVal.textContent = rate.toLocaleString('ru-RU');
-            bonusVal.textContent = bonus.toLocaleString('ru-RU') + ' ₽';
+            bonusVal.textContent = formattedBonus;
+
+            // Update Live Personal Cabinet DOM
+            cabinetArea.textContent = area;
+            cabinetBonus.textContent = formattedBonus;
         }
 
         // Add event listener to slider
@@ -521,15 +565,15 @@
                 text: "Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте."
             },
             2: {
-                img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80",
-                text: "Наш ведущий дизайнер входит в список Топ-100 дизайнеров страны. Мы находим и реализуем индивидуальные планировочные и инженерные решения для каждого объекта, добиваясь бескомпромиссного совпадения дизайн-проекта и готового ремонта. Вашим клиентам не придется искать компромиссы."
+                img: "emikh.jpg", // Point to Sergey's screenshot
+                text: "Ведущий дизайнер наших проектов — Сергей Эмих, входящий в Топ-100 дизайнеров России. Мы находим и реализуем индивидуальные планировочные и инженерные решения для каждого объекта, добиваясь бескомпромиссного совпадения дизайн-проекта и готового ремонта. Вашим клиентам не придется искать компромиссы."
             },
             3: {
-                img: "https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=1000&q=80",
+                img: "ottinger.jpg", // Point to your premium Ottinger bucket
                 text: "В финишной отделке мы используем собственные инновационные материалы OTTINGER, которые стали технологической революцией на рынке Сочи. Это гарантирует вечный ресурс ремонта и на 100% исключает появление микротрещин или деформаций со временем."
             },
             4: {
-                img: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1000&q=80",
+                img: "control.jpg", // Point to your consolidated 4-screens app mockup
                 text: "Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом OUR объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик."
             }
         };
