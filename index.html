@@ -74,10 +74,10 @@
     <!-- HERO SECTION WITH FULL-SCREEN AMBIENT BACKGROUND -->
     <section class="min-h-screen flex flex-col justify-center pt-24 relative px-6 lg:px-12 overflow-hidden bg-[#080808]">
         
-        <!-- Ambient Background Image (Increased Opacity to 65% for high visibility) -->
+        <!-- Ambient Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="deal.jpg" alt="Интерьер" class="w-full h-full object-cover grayscale opacity-65">
-            <!-- Left-to-Right dark gradient mask: Dark on the left (under text), fading to transparent on the right (over faces) -->
+            <!-- Left-to-Right dark gradient mask -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
             <!-- Very subtle bottom vignette -->
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808]/40 via-transparent to-transparent"></div>
@@ -102,7 +102,7 @@
                 </a>
             </div>
 
-            <!-- Right: Kept empty to let the handshake background breathe on the right side -->
+            <!-- Right: Kept empty -->
             <div class="lg:col-span-4 hidden lg:flex flex-col justify-end items-end pb-4">
                 <div class="flex flex-col items-end text-neutral-300 space-y-2 drop-shadow-sm">
                     <span class="text-[9px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «СТЕПАНОВ СТРОЙ»</span>
@@ -120,7 +120,7 @@
     </section>
 
     <!-- BLOCK 2: FOUNDER & PARTNERSHIP (Кирилл Степанов) -->
-    <section id="founder" class="py-24 lg:py-32 thin-border-t bg-[#0a0a0a]">
+    <section id="founder" class="py-24 lg:py-32 thin-border-t bg-[#0a0a0a] relative">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
                 
@@ -154,7 +154,7 @@
                                 </p>
                             </div>
 
-                            <!-- INTERACTIVE RANGE SLIDER CALCULATOR (Instead of static grid) -->
+                            <!-- INTERACTIVE RANGE SLIDER CALCULATOR -->
                             <div class="bg-[#0f0f0f] p-8 thin-border my-8 rounded-none">
                                 <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-6">Калькулятор вашего дохода:</h3>
                                 
@@ -176,9 +176,18 @@
                                 </div>
                             </div>
 
-                            <p>
+                            <p class="mb-8">
                                 Мы выплачиваем вознаграждение в любом удобном для вас формате (наличные, на карту, на расчетный счет ИП, самозанятого или ООО). Все вопросы с налогами и закрывающими документами мы берем на себя.
                             </p>
+
+                            <!-- NEW: Creative Transition Element to Block 3 -->
+                            <div class="pt-6 border-t border-neutral-800/40">
+                                <a href="#standards" class="group inline-flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-neutral-400 hover:text-white transition duration-300">
+                                    <span class="w-8 h-8 rounded-none border border-neutral-800 flex items-center justify-center text-[10px] group-hover:border-white transition duration-300">↓</span>
+                                    Как мы гарантируем это качество?
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -187,8 +196,8 @@
         </div>
     </section>
 
-    <!-- BLOCK 3: ABOUT US, QUALITY & ACADEMY -->
-    <section class="py-24 lg:py-32 thin-border-t bg-[#080808]">
+    <!-- BLOCK 3: STANDARDS OF QUALITY (INTERACTIVE TABS) -->
+    <section id="standards" class="py-24 lg:py-32 thin-border-t bg-[#080808]">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
             <!-- Section Header -->
@@ -210,50 +219,66 @@
                 </div>
             </div>
 
-            <!-- Four Pillars Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pt-12 thin-border-t">
+            <!-- INTERACTIVE ROW (Tabs on Left, Image & Short Text on Right) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 pt-12 thin-border-t">
                 
-                <!-- Pillar 1 -->
-                <div class="flex flex-col justify-between h-full">
-                    <div>
-                        <span class="text-xs text-neutral-600 font-medium block mb-4">01 // АКАДЕМИЯ МАСТЕРОВ</span>
-                        <h3 class="text-lg font-light text-white mb-4">Собственная Академия Мастеров</h3>
-                        <p class="text-xs text-neutral-500 font-light leading-relaxed">
-                            Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.
-                        </p>
-                    </div>
+                <!-- Left: 4 Clickable Interactive Tabs (Vertical Menu) -->
+                <div class="lg:col-span-5 space-y-4">
+                    
+                    <!-- Tab 1 Button -->
+                    <button onclick="switchTab(1)" id="tab-btn-1" class="w-full text-left p-6 thin-border bg-stone-900/30 hover:bg-stone-900/60 transition-all duration-300 group flex justify-between items-center active-tab-style">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] text-amber-500 tracking-wider font-semibold block mb-1">01 // ОБУЧЕНИЕ КАДРОВ</span>
+                            <span class="text-sm font-medium text-white tracking-wide uppercase">Собственная Академия Мастеров</span>
+                        </div>
+                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
+                    </button>
+
+                    <!-- Tab 2 Button -->
+                    <button onclick="switchTab(2)" id="tab-btn-2" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-300 group flex justify-between items-center">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">02 // ЭЛИТНЫЙ СТАТУС</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Дизайн уровня Топ-100 России</span>
+                        </div>
+                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
+                    </button>
+
+                    <!-- Tab 3 Button -->
+                    <button onclick="switchTab(3)" id="tab-btn-3" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-300 group flex justify-between items-center">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">03 // ЭКСКЛЮЗИВ</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Революционные материалы OTTINGER</span>
+                        </div>
+                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
+                    </button>
+
+                    <!-- Tab 4 Button -->
+                    <button onclick="switchTab(4)" id="tab-btn-4" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-300 group flex justify-between items-center">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">04 // ТЕХНОЛОГИЧНОСТЬ</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Цифровой контроль 24/7</span>
+                        </div>
+                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
+                    </button>
+
                 </div>
 
-                <!-- Pillar 2 -->
-                <div class="flex flex-col justify-between h-full md:border-l md:border-neutral-800/60 md:pl-8">
-                    <div>
-                        <span class="text-xs text-neutral-600 font-medium block mb-4">02 // ДИЗАЙН ТОП-100</span>
-                        <h3 class="text-lg font-light text-white mb-4">Дизайн уровня Топ-100 России</h3>
-                        <p class="text-xs text-neutral-500 font-light leading-relaxed">
-                            Наш ведущий дизайнер входит в список Топ-100 дизайнеров страны. Мы находим и реализуем индивидуальные планировочные и инженерные решения для каждого объекта, добиваясь бескомпромиссного совпадения дизайн-проекта и готового ремонта. Вашим клиентам не придется искать компромиссы.
-                        </p>
-                    </div>
-                </div>
+                <!-- Right: Dynamic Content (Visual + Shortened Text) -->
+                <div class="lg:col-span-7">
+                    <div class="flex flex-col h-full justify-between">
+                        
+                        <!-- Big Display Image -->
+                        <div class="w-full aspect-[16/10] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
+                            <img id="tab-image" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80" alt="Академия мастеров" class="w-full h-full object-cover transition-all duration-500">
+                        </div>
 
-                <!-- Pillar 3 -->
-                <div class="flex flex-col justify-between h-full md:border-l md:border-neutral-800/60 md:pl-8">
-                    <div>
-                        <span class="text-xs text-neutral-600 font-medium block mb-4">03 // МАТЕРИАЛЫ OTTINGER</span>
-                        <h3 class="text-lg font-light text-white mb-4">Революционные материалы</h3>
-                        <p class="text-xs text-neutral-500 font-light leading-relaxed">
-                            В финишной отделке мы используем собственные инновационные материалы OTTINGER, которые стали технологической революцией на рынке Сочи. Это гарантирует вечный ресурс ремонта и на 100% исключает появление микротрещин или деформаций со временем.
-                        </p>
-                    </div>
-                </div>
+                        <!-- Dynamic Description Text -->
+                        <div class="mt-8 pt-8 border-t border-neutral-850">
+                            <p id="tab-text" class="text-sm text-neutral-400 font-light leading-relaxed">
+                                Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.
+                            </p>
+                        </div>
 
-                <!-- Pillar 4 -->
-                <div class="flex flex-col justify-between h-full md:border-l md:border-neutral-800/60 md:pl-8">
-                    <div>
-                        <span class="text-xs text-neutral-600 font-medium block mb-4">04 // КОНТРОЛЬ 24/7</span>
-                        <h3 class="text-lg font-light text-white mb-4">Цифровой контроль 24/7</h3>
-                        <p class="text-xs text-neutral-500 font-light leading-relaxed">
-                            Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом OUR объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик.
-                        </p>
                     </div>
                 </div>
 
@@ -489,6 +514,67 @@
         slider.addEventListener('input', updateCalculator);
         // Initialize on page load
         updateCalculator();
+
+
+        // INTERACTIVE TABS LOGIC FOR BLOCK 3
+        const tabData = {
+            1: {
+                img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80",
+                text: "Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте."
+            },
+            2: {
+                img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80",
+                text: "Наш ведущий дизайнер входит в список Топ-100 дизайнеров страны. Мы находим и реализуем индивидуальные планировочные и инженерные решения для каждого объекта, добиваясь бескомпромиссного совпадения дизайн-проекта и готового ремонта. Вашим клиентам не придется искать компромиссы."
+            },
+            3: {
+                img: "https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=1000&q=80",
+                text: "В финишной отделке мы используем собственные инновационные материалы OTTINGER, которые стали технологической революцией на рынке Сочи. Это гарантирует вечный ресурс ремонта и на 100% исключает появление микротрещин или деформаций со временем."
+            },
+            4: {
+                img: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1000&q=80",
+                text: "Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом нашем объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик."
+            }
+        };
+
+        function switchTab(tabNum) {
+            // Get DOM elements
+            const tabImg = document.getElementById('tab-image');
+            const tabText = document.getElementById('tab-text');
+
+            // Update Image & Text with smooth transition
+            tabImg.style.opacity = '0';
+            tabText.style.opacity = '0';
+
+            setTimeout(() => {
+                tabImg.src = tabData[tabNum].img;
+                tabText.textContent = tabData[tabNum].text;
+                tabImg.style.opacity = '1';
+                tabText.style.opacity = '1';
+            }, 200);
+
+            // Update Active Button styling
+            for (let i = 1; i <= 4; i++) {
+                const btn = document.getElementById(`tab-btn-${i}`);
+                const spanNum = btn.querySelector('span:first-child');
+                const spanText = btn.querySelector('span:last-child');
+
+                if (i === tabNum) {
+                    btn.classList.add('bg-stone-900/30', 'thin-border');
+                    btn.classList.remove('bg-transparent');
+                    spanNum.classList.add('text-amber-500');
+                    spanNum.classList.remove('text-neutral-500');
+                    spanText.classList.add('text-white');
+                    spanText.classList.remove('text-neutral-400');
+                } else {
+                    btn.classList.remove('bg-stone-900/30', 'thin-border');
+                    btn.classList.add('bg-transparent');
+                    spanNum.classList.remove('text-amber-500');
+                    spanNum.classList.add('text-neutral-500');
+                    spanText.classList.remove('text-white');
+                    spanText.classList.add('text-neutral-400');
+                }
+            }
+        }
     </script>
 </body>
 </html>
