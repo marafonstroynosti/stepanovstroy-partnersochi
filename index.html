@@ -27,6 +27,31 @@
         .thin-border-t {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
+        /* Custom range slider styling for minimal look */
+        input[type=range]::-webkit-slider-runnable-track {
+            background: #262626;
+            height: 2px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            background: #f59e0b;
+            border: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 0;
+            margin-top: -5px;
+            -webkit-appearance: none;
+        }
+        input[type=range]::-moz-range-track {
+            background: #262626;
+            height: 2px;
+        }
+        input[type=range]::-moz-range-thumb {
+            background: #f59e0b;
+            border: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 0;
+        }
     </style>
 </head>
 <body class="text-neutral-200 antialiased selection:bg-neutral-800 selection:text-white">
@@ -106,7 +131,7 @@
                     </div>
                 </div>
 
-                <!-- Bio, Manifesto & Rates (100% STAGE 2 APPROVED COPY) -->
+                <!-- Bio, Manifesto & Interactive Calculator -->
                 <div class="lg:col-span-7 flex flex-col justify-between h-full pt-4">
                     <div>
                         <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">PARTNERSHIP PHILOSOPHY</span>
@@ -122,44 +147,38 @@
                                 Уже более 10 лет мы помогаем нашим партнерам — брокерам, дизайнерам, архитекторам и агентствам — монетизировать свои рекомендации без рисков для репутации. Мы полностью берем на себя всю рутину, замеры, проектирование и реализацию, гарантируя вашим клиентам безупречный результат.
                             </p>
                             
-                            <!-- Minimalist Grid (What makes us different & profitable) -->
-                            <div class="border-t border-b border-neutral-800/60 py-8 my-8 space-y-8">
-                                <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold">В чем наше отличие и почему это выгодно вам:</h3>
+                            <!-- Highlighted Personal Rule (Manifesto Quote) -->
+                            <div class="pl-6 border-l-2 border-amber-500/70 my-8">
+                                <p class="text-white italic text-sm font-light leading-relaxed">
+                                    «Мое главное правило работы с партнерами — вы получаете свои деньги сразу, независимо от обстоятельств на стройке. Как только клиент заключает договор и вносит аванс, мы выплачиваем вам ваш бонус. Дальнейшие этапы работ, поставки материалов или любые изменения на объекте никак не влияют на вашу выплату. Ваша прибыль полностью защищена с первого дня».
+                                </p>
+                            </div>
+
+                            <!-- INTERACTIVE RANGE SLIDER CALCULATOR (Instead of static grid) -->
+                            <div class="bg-[#0f0f0f] p-8 thin-border my-8 rounded-none">
+                                <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-6">Калькулятор вашего дохода:</h3>
                                 
-                                <div class="grid grid-cols-1 gap-6">
-                                    <div>
-                                        <h4 class="text-white font-medium text-xs uppercase tracking-[0.15em] mb-2">01 // Выплаты сразу, независимо от обстоятельств</h4>
-                                        <p class="text-xs text-neutral-500 font-light leading-relaxed">Это мое личное правило. Мы выплачиваем вам весь партнерский бонус сразу, как только ваш клиент подписал договор и внес аванс. Любые дальнейшие этапы стройки, закупки материалов или задержки на объекте никак не влияют на ваши деньги. Ваша прибыль полностью защищена с первого дня.</p>
+                                <div class="mb-6">
+                                    <div class="flex items-center justify-between text-stone-400 mb-4">
+                                        <span class="text-xs font-light uppercase tracking-wider">Площадь объекта</span>
+                                        <span class="text-xs">Ставка: <span id="rateValue" class="text-white font-medium">7 000</span> ₽ / м²</span>
                                     </div>
-                                    <div>
-                                        <h4 class="text-white font-medium text-xs uppercase tracking-[0.15em] mb-2">02 // Полная безопасность для вашей репутации</h4>
-                                        <p class="text-xs text-neutral-500 font-light leading-relaxed">Мы не работаем со случайными бригадами с улицы. У нас своя Академия мастеров, а ведущий дизайнер входит в Топ-100 России. Вашему клиенту гарантирован премиальный результат, и он будет искренне благодарен вам за рекомендацию.</p>
+                                    <div class="flex items-baseline gap-2 mb-4">
+                                        <span id="areaValue" class="text-4xl font-light text-white">80</span>
+                                        <span class="text-lg font-light text-neutral-500">м²</span>
                                     </div>
-                                    <div>
-                                        <h4 class="text-white font-medium text-xs uppercase tracking-[0.15em] mb-2">03 // Абсолютная гибкость и ноль рутины</h4>
-                                        <p class="text-xs text-neutral-500 font-light leading-relaxed">Вам не нужно вникать в стройку. Мы сами проводим все переговоры, замеры и расчеты. Выплачиваем бонусы в любом удобном формате (наличные, карта, ИП, ООО) и берем на себя все вопросы с налогами и закрывающими документами.</p>
-                                    </div>
+                                    <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
+                                </div>
+
+                                <div class="pt-6 border-t border-neutral-800/60">
+                                    <span class="text-[10px] text-neutral-500 uppercase tracking-widest block mb-2">Ваш партнерский бонус:</span>
+                                    <span id="bonusValue" class="text-4xl sm:text-5xl lg:text-5xl font-light text-amber-500 tracking-tight block transition-all duration-300">560 000 ₽</span>
                                 </div>
                             </div>
 
-                            <!-- Rates Section -->
-                            <div class="space-y-4">
-                                <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold">Наши условия и ваш доход:</h3>
-                                <p class="text-xs text-neutral-400 font-light">Мы платим фиксированные бонусы за каждый закрытый договор:</p>
-                                
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
-                                    <div>
-                                        <h4 class="text-neutral-500 font-medium text-[10px] uppercase tracking-[0.15em] mb-1">ОБЪЕКТЫ ДО 60 КВ. М</h4>
-                                        <span class="text-xl font-light text-white">ваш бонус от 250 000 ₽</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-neutral-500 font-medium text-[10px] uppercase tracking-[0.15em] mb-1">ОБЪЕКТЫ СВЫШЕ 60 КВ. М</h4>
-                                        <span class="text-xl font-light text-white">ваш бонус от 500 000 ₽ и выше</span>
-                                        <p class="text-[10px] text-neutral-500 mt-1 font-light leading-relaxed">(размер бонуса не ограничен сверху и растет пропорционально масштабу объекта)</p>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <p>
+                                Мы выплачиваем вознаграждение в любом удобном для вас формате (наличные, на карту, на расчетный счет ИП, самозанятого или ООО). Все вопросы с налогами и закрывающими документами мы берем на себя.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -233,7 +252,7 @@
                         <span class="text-xs text-neutral-600 font-medium block mb-4">04 // КОНТРОЛЬ 24/7</span>
                         <h3 class="text-lg font-light text-white mb-4">Цифровой контроль 24/7</h3>
                         <p class="text-xs text-neutral-500 font-light leading-relaxed">
-                            Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом нашем объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик.
+                            Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом OUR объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик.
                         </p>
                     </div>
                 </div>
@@ -435,7 +454,7 @@
         </div>
     </footer>
 
-    <!-- Handler logic -->
+    <!-- Handler logic & Calculator logic -->
     <script>
         function handleFormSubmit(event) {
             event.preventDefault();
@@ -445,6 +464,31 @@
                 event.target.reset();
             }
         }
+
+        // RANGE SLIDER CALCULATOR LOGIC
+        const slider = document.getElementById('areaSlider');
+        const areaVal = document.getElementById('areaValue');
+        const rateVal = document.getElementById('rateValue');
+        const bonusVal = document.getElementById('bonusValue');
+
+        function updateCalculator() {
+            const area = parseInt(slider.value);
+            let rate = 5000;
+            if (area > 60) {
+                rate = 7000;
+            }
+            const bonus = area * rate;
+
+            // Update DOM
+            areaVal.textContent = area;
+            rateVal.textContent = rate.toLocaleString('ru-RU');
+            bonusVal.textContent = bonus.toLocaleString('ru-RU') + ' ₽';
+        }
+
+        // Add event listener to slider
+        slider.addEventListener('input', updateCalculator);
+        // Initialize on page load
+        updateCalculator();
     </script>
 </body>
 </html>
