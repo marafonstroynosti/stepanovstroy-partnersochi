@@ -74,10 +74,10 @@
     <!-- HERO SECTION WITH FULL-SCREEN AMBIENT BACKGROUND -->
     <section class="min-h-screen flex flex-col justify-center pt-24 relative px-6 lg:px-12 overflow-hidden bg-[#080808]">
         
-        <!-- Ambient Background Image -->
+        <!-- Ambient Background Image (Increased Opacity to 65% for high visibility) -->
         <div class="absolute inset-0 z-0">
             <img src="deal.jpg" alt="Интерьер" class="w-full h-full object-cover grayscale opacity-65">
-            <!-- Left-to-Right dark gradient mask -->
+            <!-- Left-to-Right dark gradient mask: Dark on the left (under text), fading to transparent on the right (over faces) -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
             <!-- Very subtle bottom vignette -->
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808]/40 via-transparent to-transparent"></div>
@@ -102,7 +102,7 @@
                 </a>
             </div>
 
-            <!-- Right: Kept empty -->
+            <!-- Right: Kept empty to let the handshake background breathe on the right side -->
             <div class="lg:col-span-4 hidden lg:flex flex-col justify-end items-end pb-4">
                 <div class="flex flex-col items-end text-neutral-300 space-y-2 drop-shadow-sm">
                     <span class="text-[9px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «СТЕПАНОВ СТРОЙ»</span>
@@ -120,7 +120,7 @@
     </section>
 
     <!-- BLOCK 2: FOUNDER & PARTNERSHIP (Кирилл Степанов) -->
-    <section id="founder" class="py-24 lg:py-32 thin-border-t bg-[#0a0a0a] relative">
+    <section id="founder" class="py-24 lg:py-32 thin-border-t bg-[#0a0a0a]">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
                 
@@ -176,15 +176,15 @@
                                 </div>
                             </div>
 
-                            <p class="mb-8">
+                            <p class="mb-10">
                                 Мы выплачиваем вознаграждение в любом удобном для вас формате (наличные, на карту, на расчетный счет ИП, самозанятого или ООО). Все вопросы с налогами и закрывающими документами мы берем на себя.
                             </p>
 
-                            <!-- NEW: Creative Transition Element to Block 3 -->
-                            <div class="pt-6 border-t border-neutral-800/40">
-                                <a href="#standards" class="group inline-flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-neutral-400 hover:text-white transition duration-300">
-                                    <span class="w-8 h-8 rounded-none border border-neutral-800 flex items-center justify-center text-[10px] group-hover:border-white transition duration-300">↓</span>
-                                    Как мы гарантируем это качество?
+                            <!-- NEW: Serious, Architectural Transition Button (Fits exact column width) -->
+                            <div class="pt-10 border-t border-neutral-800/40 w-full">
+                                <a href="#standards" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-800 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-neutral-400 hover:text-white">
+                                    <span>Смотреть технологии и стандарты реализации</span>
+                                    <span class="text-amber-500 group-hover:translate-y-1 transition-transform duration-300">↓</span>
                                 </a>
                             </div>
 
@@ -196,11 +196,11 @@
         </div>
     </section>
 
-    <!-- BLOCK 3: STANDARDS OF QUALITY (INTERACTIVE TABS) -->
+    <!-- BLOCK 3: STANDARDS OF QUALITY (INTERACTIVE TABS with Approved Minimal Intro) -->
     <section id="standards" class="py-24 lg:py-32 thin-border-t bg-[#080808]">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
-            <!-- Section Header -->
+            <!-- Section Header (Cleaned, Minimalist and on-point) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-20">
                 <div class="lg:col-span-5">
                     <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">OUR STANDARDS</span>
@@ -210,11 +210,9 @@
                     </h2>
                 </div>
                 <div class="lg:col-span-7 flex flex-col justify-end text-neutral-400 text-sm font-light leading-relaxed">
-                    <p class="mb-4">
-                        За 10 лет поняли главную вещь: качественный премиальный ремонт невозможно сделать силами случайных бригад с улицы. Наша репутация строится на технологиях и системном обучении.
-                    </p>
-                    <p>
-                        Именно поэтому мы создали строительную компанию принципиально другого уровня, которая гарантирует четыре важнейших столпа безупречной реализации:
+                    <!-- Approved Minimal Manifesto -->
+                    <p class="border-l border-neutral-800 lg:border-l-0 lg:pl-0 pl-6 italic text-neutral-400 leading-relaxed">
+                        «Качественный ремонт — это не случайность, а система. Мы полностью исключили человеческий фактор и создали четыре золотых стандарта реализации объектов любой сложности:»
                     </p>
                 </div>
             </div>
@@ -532,7 +530,7 @@
             },
             4: {
                 img: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1000&q=80",
-                text: "Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом нашем объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик."
+                text: "Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом OUR объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик."
             }
         };
 
