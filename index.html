@@ -52,9 +52,22 @@
             height: 12px;
             border-radius: 0;
         }
+        /* Disable scrolling while page is loading */
+        .loading-lock {
+            overflow: hidden !important;
+            height: 100vh !important;
+        }
     </style>
 </head>
-<body class="text-neutral-200 antialiased selection:bg-neutral-800 selection:text-white">
+<body class="text-neutral-200 antialiased selection:bg-neutral-800 selection:text-white loading-lock">
+
+    <!-- NEW: PREMIUM ARCHITECTURAL PRELOADER OVERLAY -->
+    <div id="preloader" class="fixed inset-0 bg-[#080808] z-[9999] flex items-center justify-end pr-12 lg:pr-24 transition-transform duration-1000 ease-in-out">
+        <div class="font-title text-white font-light select-none text-7xl md:text-[9rem] flex items-baseline gap-1">
+            <span id="loadPercent">0</span>
+            <span class="text-2xl md:text-4xl text-neutral-500 font-light">%</span>
+        </div>
+    </div>
 
     <!-- HEADER -->
     <header class="fixed top-0 left-0 w-full bg-[#080808]/90 backdrop-blur-md z-50 thin-border-b">
@@ -87,13 +100,9 @@
             
             <!-- Left: Huge Typography Offer & CTA Button -->
             <div class="lg:col-span-8 flex flex-col justify-center items-start">
-                <span class="text-xs uppercase tracking-[0.3em] text-neutral-400 mb-8 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
+                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
                 <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-[1.1] tracking-tight mb-10 drop-shadow-md">
-                    Как риелтору <br>
-                    дополнительно <br>
-                    зарабатывать <br>
-                    <span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>
-                    с одной сделки.
+                    Как риелтору <br>дополнительно <br>зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки.
                 </h1>
                 
                 <!-- Clean Premium White Button -->
@@ -124,7 +133,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
                 
-                <!-- Founder Photo -->
+                <!-- Founder Photo (Vertical 3:4 Portrait) -->
                 <div class="lg:col-span-5">
                     <div class="bg-neutral-900 overflow-hidden rounded-none border border-neutral-800/60 aspect-[3/4]">
                         <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover filter grayscale">
@@ -183,7 +192,7 @@
                                     <div>
                                         <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">Личный кабинет:</h3>
                                         <p class="text-xs text-neutral-500 font-light leading-relaxed mb-4">
-                                            Вы онлайн отслеживаете статус ваших сделок, движение денежных средств и баланс накопленного бонуса.
+                                            Вы онлайн отслеживаете статус ваших сделок, движение денежных средств и баланс бонуса.
                                         </p>
                                     </div>
                                     <!-- Flat 2D mockup preview -->
@@ -275,7 +284,7 @@
                     <button onclick="switchTab(2)" id="tab-btn-2" class="w-full text-left p-6 bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
                         <div class="flex flex-col">
                             <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
-                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Топ-100 дизайнеров России</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase">Топ-100 дизайнеров России</span>
                         </div>
                         <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
                     </button>
@@ -284,7 +293,7 @@
                     <button onclick="switchTab(3)" id="tab-btn-3" class="w-full text-left p-6 bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
                         <div class="flex flex-col">
                             <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">03 // ЭКСКЛЮЗИВ</span>
-                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Революционные материалы OTTINGER</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase">Революционные материалы OTTINGER</span>
                         </div>
                         <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
                     </button>
@@ -293,7 +302,7 @@
                     <button onclick="switchTab(4)" id="tab-btn-4" class="w-full text-left p-6 bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
                         <div class="flex flex-col">
                             <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">04 // ТЕХНОЛОГИЧНОСТЬ</span>
-                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Цифровой контроль 24/7</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase font-bold">Цифровой контроль 24/7</span>
                         </div>
                         <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
                     </button>
@@ -535,25 +544,33 @@
             }
         }
 
-        // Add event listener to slider & run wiggle animation on load
+        // Add event listener to slider & run wiggle animation on load (triggered by IntersectionObserver)
         if (slider) {
             slider.addEventListener('input', updateCalculator);
             
-            // INITIAL ANIMATION ON LOAD (AUTOSLIDE WIGGLE TO SHOW INTERACTIVITY)
-            window.addEventListener('DOMContentLoaded', () => {
-                const steps = [80, 95, 110, 125, 110, 95, 80, 65, 50, 65, 80];
-                let currentStep = 0;
-                
-                const interval = setInterval(() => {
-                    if (currentStep >= steps.length) {
-                        clearInterval(interval);
-                        return;
+            // INTERSECTION OBSERVER FOR LIVE SCROLL-TRIGGERED WIGGLE (SMOOTH & ENGAGING)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const steps = [80, 100, 120, 140, 120, 100, 80, 60, 45, 60, 80];
+                        let currentStep = 0;
+                        
+                        const interval = setInterval(() => {
+                            if (currentStep >= steps.length) {
+                                clearInterval(interval);
+                                return;
+                            }
+                            slider.value = steps[currentStep];
+                            updateCalculator();
+                            currentStep++;
+                        }, 80);
+                        
+                        observer.unobserve(entry.target); // Trigger only once
                     }
-                    slider.value = steps[currentStep];
-                    updateCalculator();
-                    currentStep++;
-                }, 100);
-            });
+                });
+            }, { threshold: 0.3 });
+            
+            observer.observe(slider);
         }
 
 
@@ -594,7 +611,7 @@
                 tabText.style.opacity = '1';
             }, 200);
 
-            // Update Active Button styling (with thin amber left border highlight & no outline focus)
+            // Update Active Button styling (with thin amber/white left border highlight & no outline focus)
             for (let i = 1; i <= 4; i++) {
                 const btn = document.getElementById(`tab-btn-${i}`);
                 if (!btn) continue;
