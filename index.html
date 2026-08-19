@@ -28,6 +28,12 @@
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
         
+        /* GLOBAL RESET FOR BUTTON BLUE FOCUS OUTLINE */
+        button:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
         /* PREMIUM CUSTOM PULSE ANIMATIONS (Quiet Luxury Style) */
         @keyframes pulse-btn {
             0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3); }
@@ -120,7 +126,7 @@
             
             <!-- Mobile-Only Elegant Photo Box (Visible strictly on smartphones, hidden on desktop) -->
             <div class="block lg:hidden w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800/80">
-                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-80">
+                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90">
             </div>
 
             <!-- Left: Huge Typography Offer & CTA Button -->
@@ -270,7 +276,7 @@
         </div>
     </section>
 
-    <!-- BLOCK 3: STANDARDS OF QUALITY (INTERACTIVE TABS with Approved Minimal Intro) -->
+    <!-- BLOCK 3: STANDARDS OF QUALITY (MINIMAL ACCORDION ON ALL DEVICES) -->
     <section id="standards" class="py-24 lg:py-32 thin-border-t bg-[#080808]">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
@@ -291,66 +297,91 @@
                 <div class="lg:col-span-4 hidden lg:block"></div>
             </div>
 
-            <!-- INTERACTIVE ROW (Tabs on Left, Image & Short Text on Right) -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 pt-12 thin-border-t">
+            <!-- INTERACTIVE ARCHITECTURAL ACCORDION (100% MOBILE & DESKTOP COMPLIANT) -->
+            <div class="mt-12 thin-border-t divide-y divide-neutral-800/60">
                 
-                <!-- Left: 4 Clickable Interactive Tabs (Vertical Menu) -->
-                <div class="lg:col-span-5 space-y-4">
-                    
-                    <!-- Tab 1 Button -->
-                    <button onclick="switchTab(1)" id="tab-btn-1" class="w-full text-left p-6 thin-border bg-stone-900/30 hover:bg-stone-900/60 transition-all duration-300 group flex justify-between items-center active-tab-style">
-                        <div class="flex flex-col">
-                            <span class="text-[10px] text-amber-500 tracking-wider font-semibold block mb-1">01 // ОБУЧЕНИЕ КАДРОВ</span>
-                            <span class="text-sm font-medium text-white tracking-wide uppercase">Собственная Академия Мастеров</span>
+                <!-- ACCORDION ITEM 1 -->
+                <div class="py-2">
+                    <button onclick="switchAccordion(1)" id="acc-btn-1" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
+                            <span class="text-[10px] text-amber-500 tracking-wider font-semibold block transition duration-300">01 // ОБУЧЕНИЕ КАДРОВ</span>
+                            <span class="text-sm font-medium text-white tracking-wide uppercase transition duration-300">Собственная Академия Мастеров</span>
                         </div>
-                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
+                        <span id="acc-icon-1" class="text-xs text-amber-500 transition-transform duration-300">↑</span>
                     </button>
-
-                    <!-- Tab 2 Button (Sleek left border on active) -->
-                    <button onclick="switchTab(2)" id="tab-btn-2" class="w-full text-left p-6 bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
-                        <div class="flex flex-col">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
-                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase">Топ-100 дизайнеров России</span>
+                    <!-- Content inside the accordion (Text on Top, Image on Bottom) -->
+                    <div id="acc-content-1" class="transition-all duration-500 ease-in-out overflow-hidden max-h-[1000px] opacity-100">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
+                            <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
+                                Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.
+                            </div>
+                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
+                                <img src="academy.jpg" alt="Академия" class="w-full h-full object-cover">
+                            </div>
                         </div>
-                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
-                    </button>
-
-                    <!-- Tab 3 Button -->
-                    <button onclick="switchTab(3)" id="tab-btn-3" class="w-full text-left p-6 bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
-                        <div class="flex flex-col">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">03 // ЭКСКЛЮЗИВ</span>
-                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase">Революционные материалы OTTINGER</span>
-                        </div>
-                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
-                    </button>
-
-                    <!-- Tab 4 Button -->
-                    <button onclick="switchTab(4)" id="tab-btn-4" class="w-full text-left p-6 bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
-                        <div class="flex flex-col">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">04 // ТЕХНОЛОГИЧНОСТЬ</span>
-                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase font-bold">Цифровой контроль 24/7</span>
-                        </div>
-                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
-                    </button>
-
+                    </div>
                 </div>
 
-                <!-- Right: Dynamic Content (Visual + Shortened Text) -->
-                <div class="lg:col-span-7">
-                    <div class="flex flex-col h-full justify-between">
-                        
-                        <!-- NEW: Description is now on TOP of the image block -->
-                        <div class="mb-8 pb-8 border-b border-neutral-850">
-                            <p id="tab-text" class="text-sm text-neutral-400 font-light leading-relaxed">
-                                Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.
-                            </p>
+                <!-- ACCORDION ITEM 2 -->
+                <div class="py-2">
+                    <button onclick="switchAccordion(2)" id="acc-btn-2" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
+                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Топ-100 дизайнеров России</span>
                         </div>
-
-                        <!-- NEW: Image container is now on BOTTOM, below the description text -->
-                        <div class="w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
-                            <img id="tab-image" src="academy.jpg" alt="Академия мастеров" class="w-full h-full object-cover transition-all duration-500">
+                        <span id="acc-icon-2" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
+                    </button>
+                    <div id="acc-content-2" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
+                            <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
+                                Ведущий дизайнер наших проектов — Сергей Эмих, входящий в список Топ-100 дизайнеров России. Мы находим и реализуем индивидуальные планировочные и инженерные решения для каждого объекта, добиваясь бескомпромиссного совпадения дизайн-проекта и готового ремонта. Вашим клиентам не придется искать компромиссы.
+                            </div>
+                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
+                                <img src="emikh.jpg" alt="Сергей Эмих" class="w-full h-full object-cover">
+                            </div>
                         </div>
+                    </div>
+                </div>
 
+                <!-- ACCORDION ITEM 3 -->
+                <div class="py-2">
+                    <button onclick="switchAccordion(3)" id="acc-btn-3" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
+                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">03 // ЭКСКЛЮЗИВ</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Революционные материалы OTTINGER</span>
+                        </div>
+                        <span id="acc-icon-3" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
+                    </button>
+                    <div id="acc-content-3" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
+                            <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
+                                В финишной отделке мы используем собственные инновационные материалы OTTINGER, которые стали технологической революцией на рынке Сочи. Это гарантирует вечный ресурс ремонта и на 100% исключает появление микротрещин или деформаций со временем.
+                            </div>
+                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
+                                <img src="ottinger.jpg" alt="Материалы" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION ITEM 4 -->
+                <div class="py-2">
+                    <button onclick="switchAccordion(4)" id="acc-btn-4" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
+                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">04 // ТЕХНОЛОГИЧНОСТЬ</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Цифровой контроль 24/7</span>
+                        </div>
+                        <span id="acc-icon-4" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
+                    </button>
+                    <div id="acc-content-4" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
+                            <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
+                                Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик.
+                            </div>
+                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
+                                <img src="control.jpg" alt="Контроль" class="w-full h-full object-cover">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -505,7 +536,7 @@
                     <a href="https://t.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">Telegram</a>
                 </div>
             </div>
-            <h3 class="text-2xl md:text-3xl font-light text-white mb-4">Давайте зарабом на вашем следующем объекте</h3>
+            <h3 class="text-2xl md:text-3xl font-light text-white mb-4">Давайте заработаем на вашем следующем объекте</h3>
             <p class="text-neutral-500 text-xs font-light tracking-wide mb-10 max-w-sm mx-auto">Оставьте свой телефон. Мы перезвоним, ответим на вопросы и закрепим за вами условия.</p>
             <form onsubmit="handleFormSubmit(event)" class="max-w-md mx-auto space-y-6">
                 <div>
@@ -625,53 +656,28 @@
         }
 
 
-        // INTERACTIVE TABS LOGIC FOR BLOCK 3
-        const tabData = {
-            1: {
-                img: "academy.jpg",
-                text: "Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте."
-            },
-            2: {
-                img: "emikh.jpg",
-                text: "Ведущий дизайнер наших проектов — Сергей Эмих, входящий в Топ-100 дизайнеров России. Мы находим и реализуем индивидуальные планировочные и инженерные решения для каждого объекта, добиваясь бескомпромиссного совпадения дизайн-проекта и готового ремонта. Вашим клиентам не придется искать компромиссы."
-            },
-            3: {
-                img: "ottinger.jpg",
-                text: "В финишной отделке мы используем собственные инновационные материалы OTTINGER, которые стали технологической революцией на рынке Сочи. Это гарантирует вечный ресурс ремонта и на 100% исключает появление микротрещин или деформаций со временем."
-            },
-            4: {
-                img: "control.jpg",
-                text: "Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом OUR объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик."
-            }
-        };
-
-        function switchTab(tabNum) {
-            // Get DOM elements
-            const tabImg = document.getElementById('tab-image');
-            const tabText = document.getElementById('tab-text');
-            if (!tabImg || !tabText) return;
-
-            // Update Image & Text with smooth transition
-            tabImg.style.opacity = '0';
-            tabText.style.opacity = '0';
-
-            setTimeout(() => {
-                tabImg.src = tabData[tabNum].img;
-                tabText.textContent = tabData[tabNum].text;
-                tabImg.style.opacity = '1';
-                tabText.style.opacity = '1';
-            }, 200);
-
-            // Update Active Button styling (with thin amber/white left border highlight & no outline focus)
+        // INTERACTIVE ACCORDION LOGIC FOR BLOCK 3
+        function switchAccordion(activeNum) {
             for (let i = 1; i <= 4; i++) {
-                const btn = document.getElementById(`tab-btn-${i}`);
-                if (!btn) continue;
+                const btn = document.getElementById(`acc-btn-${i}`);
+                const content = document.getElementById(`acc-content-${i}`);
+                const icon = document.getElementById(`acc-icon-${i}`);
+                if (!btn || !content || !icon) continue;
+                
                 const spanNum = btn.querySelector('span:first-child');
                 const spanText = btn.querySelector('span:last-child');
 
-                if (i === tabNum) {
+                if (i === activeNum) {
+                    // Expand with smooth CSS transitions
+                    content.style.maxHeight = "1200px";
+                    content.style.opacity = "1";
+                    icon.textContent = "↑";
+                    icon.classList.add('text-amber-500');
+                    icon.classList.remove('text-neutral-500');
+                    
                     btn.classList.add('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
                     btn.classList.remove('bg-transparent');
+                    
                     if (spanNum) {
                         spanNum.classList.add('text-amber-500');
                         spanNum.classList.remove('text-neutral-500');
@@ -681,8 +687,16 @@
                         spanText.classList.remove('text-neutral-400');
                     }
                 } else {
+                    // Collapse smoothly
+                    content.style.maxHeight = "0px";
+                    content.style.opacity = "0";
+                    icon.textContent = "↓";
+                    icon.classList.remove('text-amber-500');
+                    icon.classList.add('text-neutral-500');
+                    
                     btn.classList.remove('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
                     btn.classList.add('bg-transparent');
+                    
                     if (spanNum) {
                         spanNum.classList.remove('text-amber-500');
                         spanNum.classList.add('text-neutral-500');
@@ -695,9 +709,9 @@
             }
         }
 
-        // Initialize active tab on load
+        // Initialize active accordion on load
         window.addEventListener('DOMContentLoaded', () => {
-            switchTab(1);
+            switchAccordion(1);
         });
     </script>
 </body>
