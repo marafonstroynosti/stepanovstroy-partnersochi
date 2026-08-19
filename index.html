@@ -89,54 +89,67 @@
 
     <!-- HEADER -->
     <header class="fixed top-0 left-0 w-full bg-[#080808]/90 backdrop-blur-md z-50 thin-border-b">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-24 flex items-center justify-between">
             <div class="flex flex-col">
-                <span class="text-lg font-bold tracking-[0.25em] text-white uppercase font-title">S T E P a N O V</span>
-                <span class="text-[9px] text-neutral-500 tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
+                <!-- Mobile-friendly compact logo config: prevents any text-wrapping on mobile -->
+                <span class="text-base sm:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P A N O V</span>
+                <span class="text-[7px] sm:text-[9px] text-neutral-500 tracking-[0.25em] sm:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
             </div>
             <div>
-                <a href="#callback" class="text-xs uppercase tracking-[0.2em] text-white border border-neutral-700 hover:border-white px-6 py-3 transition-all duration-500 rounded-none">
+                <!-- Hidden strictly on mobile (hidden md:block) to prevent messy overlapping -->
+                <a href="#callback" class="hidden md:block text-xs uppercase tracking-[0.2em] text-white border border-neutral-700 hover:border-white px-6 py-3 transition-all duration-500 rounded-none">
                     Стать партнером
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION WITH FULL-SCREEN CARD DESIGN (NO STRETCH, IMMERSIVE OVERLAY) -->
-    <section class="min-h-screen flex flex-col justify-center pt-24 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
-        <div class="max-w-7xl mx-auto w-full relative z-10 py-6">
+    <!-- HERO SECTION WITH DUAL RESPONSIVE BACKGROUND & LAYOUT (STACKED ON MOBILE) -->
+    <section class="min-h-screen flex flex-col justify-center pt-24 relative px-6 lg:px-12 overflow-hidden bg-[#080808]">
+        
+        <!-- Ambient Background Image (Shown strictly on Desktop/Tablets, hidden on mobile) -->
+        <div class="absolute inset-0 z-0 hidden lg:block">
+            <img src="deal.jpg" alt="Интерьер" class="w-full h-full object-cover grayscale opacity-65">
+            <!-- Left-to-Right dark gradient mask -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+            <!-- Very subtle bottom vignette -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808]/40 via-transparent to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 py-12 md:py-24 relative z-10">
             
-            <!-- Elegant Media Card: Aspect 4:3 on mobile, Aspect 16:10 on desktop (Strictly preserves image proportions) -->
-            <div class="relative w-full aspect-[4/3] md:aspect-[16/10] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl">
-                
-                <!-- Background image inside the card -->
-                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90 transition-transform duration-700 hover:scale-102">
-                
-                <!-- Gradient overlays inside the card to guarantee 100% text readability -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent"></div>
-
-                <!-- Overlay Content Block -->
-                <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 z-10 flex flex-col items-start max-w-3xl">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-4 md:mb-6 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
-                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-light text-white leading-[1.2] lg:leading-[1.1] tracking-tight mb-8 drop-shadow-md">
-                        Как риелтору <br class="hidden sm:block">дополнительно зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки.
-                    </h1>
-                    
-                    <!-- Clean Premium White Button (Pulse Animation) -->
-                    <a href="#founder" class="inline-block bg-white text-black text-center font-semibold uppercase tracking-[0.2em] text-[10px] py-4 px-8 md:py-5 md:px-10 transition-all duration-500 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
-                        узнать подробнее
-                    </a>
-                </div>
-
-                <!-- Minimalist architectural caption inside the card (bottom right, desktop only) -->
-                <div class="absolute bottom-8 right-8 hidden md:flex flex-col items-end text-neutral-400 space-y-1 drop-shadow-sm z-10">
-                    <span class="text-[8px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «STEPANOV STROY»</span>
-                    <span class="text-[7px] tracking-widest uppercase">СОЧИ</span>
-                </div>
-
+            <!-- Mobile-Only Elegant Photo Box (Visible strictly on smartphones, hidden on desktop) -->
+            <div class="block lg:hidden w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800/80">
+                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90">
             </div>
 
+            <!-- Left: Huge Typography Offer & CTA Button -->
+            <div class="lg:col-span-8 flex flex-col justify-center items-start">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-500 mb-6 lg:mb-8 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-tight lg:leading-[1.1] tracking-tight mb-8 lg:mb-10 drop-shadow-md">
+                    Как риелтору <br class="hidden sm:block">дополнительно <br>зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки.
+                </h1>
+                
+                <!-- Clean Premium White Button (Pulse Animation) -->
+                <a href="#founder" class="inline-block bg-white text-black text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
+                    узнать подробнее
+                </a>
+            </div>
+
+            <!-- Right: Kept empty (Desktop only) -->
+            <div class="lg:col-span-4 hidden lg:flex flex-col justify-end items-end pb-4">
+                <div class="flex flex-col items-end text-neutral-300 space-y-2 drop-shadow-sm">
+                    <span class="text-[9px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «STEPANOV STROY»</span>
+                    <span class="text-[8px] tracking-widest uppercase">СОЧИ</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Minimalist bottom page indicator -->
+        <div class="absolute bottom-10 left-6 lg:left-12 hidden lg:flex items-center gap-4 z-10">
+            <span class="text-[10px] tracking-widest text-neutral-600">01 / INTRODUCTION</span>
+            <div class="w-16 h-[1px] bg-neutral-800"></div>
         </div>
     </section>
 
@@ -175,7 +188,7 @@
                                 </p>
                             </div>
 
-                            <!-- INTERACTIVE LIVE PARTNER CABINET -->
+                            <!-- INTERACTIVE LIVE PARTNER CABINET (Fully Functional) -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#0f0f0f] p-8 thin-border my-8 rounded-none">
                                 
                                 <!-- Left Column: Range Slider Calculator with Interactive Hint -->
@@ -191,6 +204,7 @@
                                             <span class="text-sm font-light text-neutral-500">м²</span>
                                         </div>
                                         <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
+                                        <!-- NEW: Muted slow pulsing guidance text -->
                                         <span class="text-[9px] text-amber-500/80 uppercase tracking-widest block mt-4 animate-pulse">← Двигайте ползунок медленно для расчета →</span>
                                     </div>
                                     <div class="pt-6 border-t border-neutral-800/60 mt-6">
@@ -352,7 +366,7 @@
                 <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Как происходит партнерство</h2>
             </div>
 
-            <!-- Steps Minimalist Table-style layout -->
+            <!-- Steps Minimalist Table-style layout (CHANGED TO 3 COLUMNS) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
                 <!-- Step 1 -->
                 <div class="pt-6 thin-border-t">
