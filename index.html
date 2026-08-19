@@ -27,7 +27,22 @@
         .thin-border-t {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
-        /* Custom range slider styling for minimal look */
+        
+        /* PREMIUM CUSTOM PULSE ANIMATIONS (Quiet Luxury Style) */
+        @keyframes pulse-btn {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3); }
+            50% { transform: scale(1.03); box-shadow: 0 0 20px 4px rgba(255, 255, 255, 0.15); }
+        }
+        .animate-pulse-btn {
+            animation: pulse-btn 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse-thumb {
+            0%, 100% { filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4)); }
+            50% { filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.8)); }
+        }
+
+        /* Custom range slider styling with pulsing thumb glow */
         input[type=range]::-webkit-slider-runnable-track {
             background: #262626;
             height: 2px;
@@ -35,11 +50,12 @@
         input[type=range]::-webkit-slider-thumb {
             background: #f59e0b;
             border: none;
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 0;
-            margin-top: -5px;
+            margin-top: -6px;
             -webkit-appearance: none;
+            animation: pulse-thumb 2s infinite ease-in-out;
         }
         input[type=range]::-moz-range-track {
             background: #262626;
@@ -48,10 +64,12 @@
         input[type=range]::-moz-range-thumb {
             background: #f59e0b;
             border: none;
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 0;
+            animation: pulse-thumb 2s infinite ease-in-out;
         }
+
         /* Disable scrolling while page is loading */
         .loading-lock {
             overflow: hidden !important;
@@ -61,7 +79,7 @@
 </head>
 <body class="text-neutral-200 antialiased selection:bg-neutral-800 selection:text-white loading-lock">
 
-    <!-- NEW: PREMIUM ARCHITECTURAL PRELOADER OVERLAY -->
+    <!-- PREMIUM ARCHITECTURAL PRELOADER OVERLAY -->
     <div id="preloader" class="fixed inset-0 bg-[#080808] z-[9999] flex items-center justify-end pr-12 lg:pr-24 transition-transform duration-1000 ease-in-out">
         <div class="font-title text-white font-light select-none text-7xl md:text-[9rem] flex items-baseline gap-1">
             <span id="loadPercent">0</span>
@@ -106,7 +124,7 @@
                 </h1>
                 
                 <!-- Clean Premium White Button -->
-                <a href="#founder" class="inline-block bg-white text-black hover:bg-neutral-200 text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none shadow-xl">
+                <a href="#founder" class="inline-block bg-white text-black text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none shadow-xl animate-pulse-btn">
                     узнать подробнее
                 </a>
             </div>
@@ -179,7 +197,8 @@
                                             <span class="text-sm font-light text-neutral-500">м²</span>
                                         </div>
                                         <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
-                                        <span class="text-[9px] text-neutral-500 uppercase tracking-widest block mt-4 animate-pulse">← Двигайте ползунок для расчета →</span>
+                                        <!-- NEW: Muted slow pulsing guidance text -->
+                                        <span class="text-[9px] text-amber-500/80 uppercase tracking-widest block mt-4 animate-pulse">← Двигайте ползунок медленно для расчета →</span>
                                     </div>
                                     <div class="pt-6 border-t border-neutral-800/60 mt-6">
                                         <span class="text-[10px] text-neutral-500 uppercase tracking-widest block mb-2">Ваш бонус:</span>
@@ -320,9 +339,7 @@
 
                         <!-- Dynamic Description Text -->
                         <div class="mt-8 pt-8 border-t border-neutral-850">
-                            <p id="tab-text" class="text-sm text-neutral-400 font-light leading-relaxed">
-                                Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.
-                            </p>
+                            <p id="tab-text" class="text-sm text-neutral-400 font-light leading-relaxed">Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.</p>
                         </div>
 
                     </div>
@@ -504,8 +521,39 @@
         </div>
     </footer>
 
-    <!-- Handler logic & Calculator logic -->
+    <!-- Handler logic & Preloader + Calculator logic -->
     <script>
+        // PRELOADER ENGINE (Smoothly counts to 100% based on actual window load state)
+        (function() {
+            let count = 0;
+            const percentEl = document.getElementById('loadPercent');
+            const preloader = document.getElementById('preloader');
+            
+            if (!percentEl || !preloader) return;
+
+            // Smooth increment interval
+            const timer = setInterval(() => {
+                if (count < 100) {
+                    count += Math.floor(Math.random() * 3) + 1;
+                    if (count > 99) count = 99; // Hold at 99% until fully loaded
+                    percentEl.textContent = count;
+                }
+            }, 50);
+
+            // Guarantee 100% and slide up on full window load
+            window.addEventListener('load', () => {
+                clearInterval(timer);
+                percentEl.textContent = "100";
+                setTimeout(() => {
+                    preloader.classList.add('-translate-y-full');
+                    document.body.classList.remove('loading-lock');
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 1000);
+                }, 300); // Elegant small pause at 100%
+            });
+        })();
+
         function handleFormSubmit(event) {
             event.preventDefault();
             const phone = event.target.querySelector('input').value;
