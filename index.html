@@ -96,8 +96,8 @@
                 <span class="text-[7px] sm:text-[9px] text-neutral-500 tracking-[0.25em] sm:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
             </div>
             <div>
-                <!-- Hidden strictly on mobile (hidden md:block) to prevent messy overlapping -->
-                <a href="#callback" class="hidden md:block text-xs uppercase tracking-[0.2em] text-white border border-neutral-700 hover:border-white px-6 py-3 transition-all duration-500 rounded-none">
+                <!-- Responsive: clean borderless link on mobile, premium bordered button on desktop -->
+                <a href="#callback" class="text-[10px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-white border-b border-transparent md:border md:border-neutral-700 hover:border-white px-0 py-1 md:px-6 md:py-3 transition-all duration-500 rounded-none">
                     Стать партнером
                 </a>
             </div>
@@ -120,7 +120,7 @@
             
             <!-- Mobile-Only Elegant Photo Box (Visible strictly on smartphones, hidden on desktop) -->
             <div class="block lg:hidden w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800/80">
-                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90">
+                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-80">
             </div>
 
             <!-- Left: Huge Typography Offer & CTA Button -->
@@ -339,14 +339,16 @@
                 <div class="lg:col-span-7">
                     <div class="flex flex-col h-full justify-between">
                         
-                        <!-- Big Display Image -->
-                        <div class="w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
-                            <img id="tab-image" src="academy.jpg" alt="Академия мастеров" class="w-full h-full object-cover transition-all duration-500">
+                        <!-- NEW: Description is now on TOP of the image block -->
+                        <div class="mb-8 pb-8 border-b border-neutral-850">
+                            <p id="tab-text" class="text-sm text-neutral-400 font-light leading-relaxed">
+                                Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.
+                            </p>
                         </div>
 
-                        <!-- Dynamic Description Text -->
-                        <div class="mt-8 pt-8 border-t border-neutral-850">
-                            <p id="tab-text" class="text-sm text-neutral-400 font-light leading-relaxed">Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.</p>
+                        <!-- NEW: Image container is now on BOTTOM, below the description text -->
+                        <div class="w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
+                            <img id="tab-image" src="academy.jpg" alt="Академия мастеров" class="w-full h-full object-cover transition-all duration-500">
                         </div>
 
                     </div>
@@ -503,7 +505,7 @@
                     <a href="https://t.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">Telegram</a>
                 </div>
             </div>
-            <h3 class="text-2xl md:text-3xl font-light text-white mb-4">Давайте заработаем на вашем следующем объекте</h3>
+            <h3 class="text-2xl md:text-3xl font-light text-white mb-4">Давайте зарабом на вашем следующем объекте</h3>
             <p class="text-neutral-500 text-xs font-light tracking-wide mb-10 max-w-sm mx-auto">Оставьте свой телефон. Мы перезвоним, ответим на вопросы и закрепим за вами условия.</p>
             <form onsubmit="handleFormSubmit(event)" class="max-w-md mx-auto space-y-6">
                 <div>
