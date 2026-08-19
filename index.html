@@ -89,24 +89,26 @@
 
     <!-- HEADER -->
     <header class="fixed top-0 left-0 w-full bg-[#080808]/90 backdrop-blur-md z-50 thin-border-b">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-24 flex items-center justify-between">
             <div class="flex flex-col">
-                <span class="text-lg font-bold tracking-[0.25em] text-white uppercase font-title">S T E P A N O V</span>
-                <span class="text-[9px] text-neutral-500 tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
+                <!-- Mobile-first responsive logo sizes & letter spacing -->
+                <span class="text-base sm:text-lg font-bold tracking-[0.18em] sm:tracking-[0.25em] text-white uppercase font-title">S T E P A N O V</span>
+                <span class="text-[7px] sm:text-[9px] text-neutral-500 tracking-[0.3em] sm:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
             </div>
             <div>
-                <a href="#callback" class="text-xs uppercase tracking-[0.2em] text-white border border-neutral-700 hover:border-white px-6 py-3 transition-all duration-500 rounded-none">
+                <!-- Hidden strictly on mobile (hidden md:block) to prevent messy overlapping -->
+                <a href="#callback" class="hidden md:block text-xs uppercase tracking-[0.2em] text-white border border-neutral-700 hover:border-white px-6 py-3 transition-all duration-500 rounded-none">
                     Стать партнером
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION WITH FULL-SCREEN AMBIENT BACKGROUND -->
+    <!-- HERO SECTION WITH DUAL RESPONSIVE BACKGROUND & LAYOUT -->
     <section class="min-h-screen flex flex-col justify-center pt-24 relative px-6 lg:px-12 overflow-hidden bg-[#080808]">
         
-        <!-- Ambient Background Image -->
-        <div class="absolute inset-0 z-0">
+        <!-- Ambient Background Image (Shown strictly on Desktop/Tablets, hidden on mobile) -->
+        <div class="absolute inset-0 z-0 hidden lg:block">
             <img src="deal.jpg" alt="Интерьер" class="w-full h-full object-cover grayscale opacity-65">
             <!-- Left-to-Right dark gradient mask -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
@@ -114,22 +116,27 @@
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808]/40 via-transparent to-transparent"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 py-16 md:py-24 relative z-10">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 py-12 md:py-24 relative z-10">
             
+            <!-- Mobile-Only Elegant Photo Box (Visible strictly on smartphones, hidden on desktop) -->
+            <div class="block lg:hidden w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800/80">
+                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-80">
+            </div>
+
             <!-- Left: Huge Typography Offer & CTA Button -->
             <div class="lg:col-span-8 flex flex-col justify-center items-start">
-                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
-                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-[1.1] tracking-tight mb-10 drop-shadow-md">
-                    Как риелтору <br>дополнительно <br>зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки.
+                <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-500 mb-6 lg:mb-8 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-[1.1] tracking-tight mb-8 lg:mb-10 drop-shadow-md">
+                    Как риелтору <br class="hidden sm:block">дополнительно <br>зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки.
                 </h1>
                 
-                <!-- Clean Premium White Button -->
-                <a href="#founder" class="inline-block bg-white text-black text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none shadow-xl animate-pulse-btn">
+                <!-- Clean Premium White Button (Pulse Animation) -->
+                <a href="#founder" class="inline-block bg-white text-black text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
                     узнать подробнее
                 </a>
             </div>
 
-            <!-- Right: Kept empty -->
+            <!-- Right: Kept empty (Desktop only) -->
             <div class="lg:col-span-4 hidden lg:flex flex-col justify-end items-end pb-4">
                 <div class="flex flex-col items-end text-neutral-300 space-y-2 drop-shadow-sm">
                     <span class="text-[9px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «STEPANOV STROY»</span>
@@ -350,7 +357,7 @@
         </div>
     </section>
 
-    <!-- WORKFLOW & REWARDS -->
+    <!-- WORKFLOW & REWARDS (OPTIMIZED TO 3 COLUMNS) -->
     <section class="py-24 lg:py-32 thin-border-t">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
@@ -359,31 +366,25 @@
                 <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Как происходит партнерство</h2>
             </div>
 
-            <!-- Steps Minimalist Table-style layout -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-24">
+            <!-- Steps Minimalist Table-style layout (CHANGED TO 3 COLUMNS) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
                 <!-- Step 1 -->
                 <div class="pt-6 thin-border-t">
-                    <span class="text-xs text-neutral-600 font-medium block mb-4">01 //</span>
+                    <span class="text-xs text-neutral-600 font-medium block mb-4">01 // ПЕРЕДАЧА</span>
                     <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Передача контакта</h3>
-                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Вы передаете нам контакт клиента, планирующего ремонт недвижимости в Сочи.</p>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Вы просто отправляете нам контакт клиента, планирующего ремонт или дизайн недвижимости в Сочи. Всё дальнейшее общение с ним мы берем на себя.</p>
                 </div>
                 <!-- Step 2 -->
                 <div class="pt-6 thin-border-t">
-                    <span class="text-xs text-neutral-600 font-medium block mb-4">02 //</span>
-                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Встреча в офисе</h3>
-                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Встречаемся в нашем сочинском офисе, готовим концепт дизайна и рассчитываем смету.</p>
+                    <span class="text-xs text-neutral-600 font-medium block mb-4">02 // ДОГОВОР</span>
+                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Договор и первый платеж</h3>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Мы встречаемся с клиентом в офисе, утверждаем проект, подписываем официальный строительный договор, и клиент вносит авансовый платеж за ремонт.</p>
                 </div>
                 <!-- Step 3 -->
                 <div class="pt-6 thin-border-t">
-                    <span class="text-xs text-neutral-600 font-medium block mb-4">03 //</span>
-                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Договор</h3>
-                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Подписываем официальный двухсторонний договор. Фиксируем цену и заходим на объект.</p>
-                </div>
-                <!-- Step 4 -->
-                <div class="pt-6 thin-border-t">
-                    <span class="text-xs text-neutral-600 font-medium block mb-4">04 //</span>
-                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Выплата бонуса</h3>
-                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Выплачиваем гарантированное вознаграждение по удобной и гибкой схеме.</p>
+                    <span class="text-xs text-neutral-600 font-medium block mb-4">03 // ВЫПЛАТА</span>
+                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Выплата вашего бонуса</h3>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed">В ту же секунду, как клиент оплачивает аванс, ваш партнерский бонус начисляется в личный кабинет. Вы мгновенно выводите деньги любым удобным способом.</p>
                 </div>
             </div>
 
