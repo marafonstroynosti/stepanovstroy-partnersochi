@@ -108,7 +108,6 @@
                 </a>
             </div>
         </div>
-        
     </header>
 
     <!-- HERO SECTION (STACKED: PHOTO ON TOP, TEXT & BUTTON ON BOTTOM - NO OVERLAPPING) -->
@@ -124,7 +123,7 @@
             <div class="flex flex-col items-start w-full">
                 <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-500 mb-4 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
                 <h1 class="text-2xl sm:text-4xl lg:text-5xl font-light text-white leading-tight lg:leading-[1.1] tracking-tight mb-8 drop-shadow-md">
-                    Как риелтору <br class="hidden sm:block">дополнительно зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>со сделки
+                    Как риелтору <br class="hidden sm:block">дополнительно зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки.
                 </h1>
                 
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between w-full gap-6 pt-4 border-t border-neutral-900/40">
@@ -647,4 +646,63 @@
         }
 
 
-        // INTER
+        // INTERACTIVE ACCORDION LOGIC FOR BLOCK 3
+        function switchAccordion(activeNum) {
+            for (let i = 1; i <= 4; i++) {
+                const btn = document.getElementById(`acc-btn-${i}`);
+                const content = document.getElementById(`acc-content-${i}`);
+                const icon = document.getElementById(`acc-icon-${i}`);
+                if (!btn || !content || !icon) continue;
+                
+                const spanNum = btn.querySelector('span:first-child');
+                const spanText = btn.querySelector('span:last-child');
+
+                if (i === activeNum) {
+                    // Expand with smooth CSS transitions
+                    content.style.maxHeight = "1200px";
+                    content.style.opacity = "1";
+                    icon.textContent = "↑";
+                    icon.classList.add('text-amber-500');
+                    icon.classList.remove('text-neutral-500');
+                    
+                    btn.classList.add('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
+                    btn.classList.remove('bg-transparent');
+                    
+                    if (spanNum) {
+                        spanNum.classList.add('text-amber-500');
+                        spanNum.classList.remove('text-neutral-500');
+                    }
+                    if (spanText) {
+                        spanText.classList.add('text-white');
+                        spanText.classList.remove('text-neutral-400');
+                    }
+                } else {
+                    // Collapse smoothly
+                    content.style.maxHeight = "0px";
+                    content.style.opacity = "0";
+                    icon.textContent = "↓";
+                    icon.classList.remove('text-amber-500');
+                    icon.classList.add('text-neutral-500');
+                    
+                    btn.classList.remove('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
+                    btn.classList.add('bg-transparent');
+                    
+                    if (spanNum) {
+                        spanNum.classList.remove('text-amber-500');
+                        spanNum.classList.add('text-neutral-500');
+                    }
+                    if (spanText) {
+                        spanText.classList.remove('text-white');
+                        spanText.classList.add('text-neutral-400');
+                    }
+                }
+            }
+        }
+
+        // Initialize active accordion on load
+        window.addEventListener('DOMContentLoaded', () => {
+            switchAccordion(1);
+        });
+    </script>
+</body>
+</html>
