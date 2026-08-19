@@ -110,39 +110,34 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH TALL CARD DESIGN (4:3 ON ALL DEVICES, NO STRETCH) -->
+    <!-- HERO SECTION WITH TALL CARD DESIGN (STACKED: PHOTO ON TOP, TEXT & BUTTON ON BOTTOM) -->
     <section class="min-h-screen flex flex-col justify-center pt-24 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
-        <div class="max-w-7xl mx-auto w-full relative z-10 py-6">
+        <div class="max-w-4xl mx-auto w-full relative z-10 py-6">
             
-            <!-- STAGE 4 APPROVED: Forced aspect-ratio [4/3] on all devices to strictly prevent image stretching -->
-            <div class="relative w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl">
-                
-                <!-- Background image inside the card -->
+            <!-- Top: Elegant Photo Box (Strictly preserves 4:3 on mobile, 16:10 on desktop - no stretch) -->
+            <div class="relative w-full aspect-[4/3] md:aspect-[16/10] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl mb-10">
                 <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90 transition-transform duration-700 hover:scale-102">
-                
-                <!-- Gradient overlays inside the card to guarantee 100% text readability -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent"></div>
+            </div>
 
-                <!-- Overlay Content Block -->
-                <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 z-10 flex flex-col items-start max-w-3xl">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-4 md:mb-6 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
-                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-light text-white leading-[1.2] lg:leading-[1.1] tracking-tight mb-8 drop-shadow-md">
-                        Как риелтору <br class="hidden sm:block">дополнительно зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки.
-                    </h1>
-                    
+            <!-- Bottom: Clean Text & CTA Button Block (Text is strictly NOT on top of the image) -->
+            <div class="flex flex-col items-start w-full">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-500 mb-4 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
+                <h1 class="text-2xl sm:text-4xl lg:text-5xl font-light text-white leading-tight lg:leading-[1.1] tracking-tight mb-8 drop-shadow-md">
+                    Как риелтору <br class="hidden sm:block">дополнительно зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки.
+                </h1>
+                
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between w-full gap-6 pt-4 border-t border-neutral-900/40">
                     <!-- Clean Premium White Button (Pulse Animation) -->
-                    <a href="#founder" class="inline-block bg-white text-black text-center font-semibold uppercase tracking-[0.2em] text-[10px] py-4 px-8 md:py-5 md:px-10 transition-all duration-500 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
+                    <a href="#founder" class="inline-block bg-white text-black text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
                         узнать подробнее
                     </a>
+                    
+                    <!-- Minimalist architectural caption (aligned next to the button on desktop) -->
+                    <div class="flex flex-col items-start sm:items-end text-neutral-500 space-y-1">
+                        <span class="text-[8px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «STEPANOV STROY»</span>
+                        <span class="text-[7px] tracking-widest uppercase">СОЧИ</span>
+                    </div>
                 </div>
-
-                <!-- Minimalist architectural caption inside the card (bottom right, desktop only) -->
-                <div class="absolute bottom-8 right-8 hidden md:flex flex-col items-end text-neutral-400 space-y-1 drop-shadow-sm z-10">
-                    <span class="text-[8px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «STEPANOV STROY»</span>
-                    <span class="text-[7px] tracking-widest uppercase">СОЧИ</span>
-                </div>
-
             </div>
 
         </div>
@@ -179,7 +174,7 @@
                             <!-- Highlighted Personal Rule (Manifesto Quote) -->
                             <div class="pl-6 border-l-2 border-amber-500/70 my-8">
                                 <p class="text-white italic text-sm font-light leading-relaxed">
-                                    «Мое главное правило работы с партнерами — вы получаете свои деньги сразу, независимо от обстоятельств на стройке. Как только клиент заключает договор и вносит аванс, мы выплачиваем вам ваш бонус. Дальнейшие этапы работ, поставки материалов или любые изменения на объекте никак не влияют на вашу выплату. Ваша прибыль полностью защищена с первого дня».
+                                    «Мое главное правило работы с партнерами — вы получаете свои деньги сразу, независимо от обстоятельствах на стройке. Как только клиент заключает договор и вносит аванс, мы выплачиваем вам ваш бонус. Дальнейшие этапы работ, поставки материалов или любые изменения на объекте никак не влияют на вашу выплату. Ваша прибыль полностью защищена с первого дня».
                                 </p>
                             </div>
 
