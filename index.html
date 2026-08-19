@@ -1,458 +1,636 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Партнерская программа для партнеров в Сочи | STEPANOV STROY</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #080808; }
-h1, h2, h3, .font-title { font-family: 'Syne', sans-serif; }
-.thin-border { border: 1px solid rgba(255, 255, 255, 0.08); }
-.thin-border-b { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-.thin-border-t { border-top: 1px solid rgba(255, 255, 255, 0.08); }
-input[type=range]::-webkit-slider-runnable-track { background: #262626; height: 2px; }
-input[type=range]::-webkit-slider-thumb { background: #f59e0b; border: none; width: 12px; height: 12px; margin-top: -5px; -webkit-appearance: none; }
-input[type=range]::-moz-range-track { background: #262626; height: 2px; }
-input[type=range]::-moz-range-thumb { background: #f59e0b; border: none; width: 12px; height: 12px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Партнерская программа для партнеров в Сочи | STEPANOV STROY</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Syne for Architectural Premium Feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #080808;
+        }
+        h1, h2, h3, .font-title {
+            font-family: 'Syne', sans-serif;
+        }
+        .thin-border {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .thin-border-b {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .thin-border-t {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        /* Custom range slider styling for minimal look */
+        input[type=range]::-webkit-slider-runnable-track {
+            background: #262626;
+            height: 2px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            background: #f59e0b;
+            border: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 0;
+            margin-top: -5px;
+            -webkit-appearance: none;
+        }
+        input[type=range]::-moz-range-track {
+            background: #262626;
+            height: 2px;
+        }
+        input[type=range]::-moz-range-thumb {
+            background: #f59e0b;
+            border: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 0;
+        }
+    </style>
 </head>
 <body class="text-neutral-200 antialiased selection:bg-neutral-800 selection:text-white">
 
-<!-- HEADER -->
-<header class="fixed top-0 left-0 w-full bg-[#080808]/90 backdrop-blur-md z-50 thin-border-b">
-<div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
-<div class="flex flex-col">
-<span class="text-lg font-bold tracking-[0.25em] text-white uppercase font-title">S T E P A N O V</span>
-<span class="text-[9px] text-neutral-500 tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
-</div>
-<div>
-<a href="#callback" class="text-xs uppercase tracking-[0.2em] text-white border border-neutral-700 hover:border-white px-6 py-3 transition-all duration-500">Стать партнером</a>
-</div>
-</div>
-</header>
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full bg-[#080808]/90 backdrop-blur-md z-50 thin-border-b">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-lg font-bold tracking-[0.25em] text-white uppercase font-title">S T E P A N O V</span>
+                <span class="text-[9px] text-neutral-500 tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
+            </div>
+            <div>
+                <a href="#callback" class="text-xs uppercase tracking-[0.2em] text-white border border-neutral-700 hover:border-white px-6 py-3 transition-all duration-500 rounded-none">
+                    Стать партнером
+                </a>
+            </div>
+        </div>
+    </header>
 
-<!-- HERO SECTION -->
-<section class="min-h-screen flex flex-col justify-center pt-24 relative px-6 lg:px-12 overflow-hidden bg-[#080808]">
-<div class="absolute inset-0 z-0">
-<img src="deal.jpg" alt="Интерьер" class="w-full h-full object-cover grayscale opacity-65">
-<div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-[#080808]/40 via-transparent to-transparent"></div>
-</div>
-<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 py-16 md:py-24 relative z-10">
-<div class="lg:col-span-8 flex flex-col justify-center items-start">
-<span class="text-xs uppercase tracking-[0.3em] text-neutral-400 mb-8 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
-<h1 class="text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-[1.1] tracking-tight mb-10 drop-shadow-md">
-Как риелтору <br>дополнительно <br>зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки.
-</h1>
-<a href="#founder" class="inline-block bg-white text-black hover:bg-neutral-200 text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 shadow-xl">узнать подробнее</a>
-</div>
-<div class="lg:col-span-4 hidden lg:flex flex-col justify-end items-end pb-4">
-<div class="flex flex-col items-end text-neutral-300 space-y-2 drop-shadow-sm">
-<span class="text-[9px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «STEPANOV STROY»</span>
-<span class="text-[8px] tracking-widest uppercase">СОЧИ</span>
-</div>
-</div>
-</div>
-<div class="absolute bottom-10 left-6 lg:left-12 hidden lg:flex items-center gap-4 z-10">
-<span class="text-[10px] tracking-widest text-neutral-600">01 / INTRODUCTION</span>
-<div class="w-16 h-[1px] bg-neutral-800"></div>
-</div>
-</section>
+    <!-- HERO SECTION WITH FULL-SCREEN AMBIENT BACKGROUND -->
+    <section class="min-h-screen flex flex-col justify-center pt-24 relative px-6 lg:px-12 overflow-hidden bg-[#080808]">
+        
+        <!-- Ambient Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="deal.jpg" alt="Интерьер" class="w-full h-full object-cover grayscale opacity-65">
+            <!-- Left-to-Right dark gradient mask -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+            <!-- Very subtle bottom vignette -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808]/40 via-transparent to-transparent"></div>
+        </div>
 
-<!-- BLOCK 2: FOUNDER & PARTNERSHIP -->
-<section id="founder" class="py-24 lg:py-32 thin-border-t bg-[#0a0a0a]">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-<div class="lg:col-span-5">
-<div class="bg-neutral-900 overflow-hidden border border-neutral-800/60 aspect-[3/4]">
-<img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover filter grayscale">
-</div>
-</div>
-<div class="lg:col-span-7 flex flex-col justify-between h-full pt-4">
-<div>
-<span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">PARTNERSHIP PHILOSOPHY</span>
-<h2 class="text-2xl md:text-4xl font-light text-white mb-8 tracking-tight leading-tight">«Собственная надежная платформа для безопасного роста вашего дохода»</h2>
-<div class="space-y-6 text-neutral-400 text-sm font-light leading-relaxed">
-<p>Привет! Меня зовут <strong class="text-white font-medium">Кирилл Степанов</strong>, я сооснователь компании <span class="text-white">«STEPANOV STROY»</span>.</p>
-<p>Уже более 10 лет мы помогаем нашим партнерам — брокерам, дизайнерам, архитекторам и агентствам — монетизировать свои рекомендации без рисков для репутации. Мы полностью берем на себя всю рутину, замеры, проектирование и реализацию, гарантируя вашим клиентам безупречный результат.</p>
-<div class="pl-6 border-l-2 border-amber-500/70 my-8">
-<p class="text-white italic text-sm font-light leading-relaxed">«Мое главное правило работы с партнерами — вы получаете свои деньги сразу, независимо от обстоятельств на стройке. Как только клиент заключает договор и вносит аванс, мы выплачиваем вам ваш бонус. Дальнейшие этапы работ, поставки материалов или любые изменения на объекте никак не влияют на вашу выплату. Ваша прибыль полностью защищена с первого дня».</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#0f0f0f] p-6 md:p-8 my-8 thin-border">
-<div class="flex flex-col justify-between">
-<div>
-<h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-6">Калькулятор дохода:</h3>
-<div class="flex items-center justify-between text-stone-400 mb-4">
-<span class="text-[10px] uppercase tracking-wider">Площадь</span>
-<span class="text-[10px]">Ставка: <span id="rateValue" class="text-white font-medium">7 000</span> ₽/м²</span>
-</div>
-<div class="flex items-baseline gap-2 mb-4">
-<span id="areaValue" class="text-3xl font-light text-white">80</span><span class="text-sm font-light text-neutral-500">м²</span>
-</div>
-<input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
-</div>
-<div class="pt-6 border-t border-neutral-800/60 mt-6">
-<span class="text-[10px] text-neutral-500 uppercase tracking-widest block mb-2">Ваш бонус:</span>
-<span id="bonusValue" class="text-3xl font-light text-amber-500 tracking-tight block">560 000 ₽</span>
-</div>
-</div>
-<div class="flex flex-col justify-between md:border-l md:border-neutral-800/60 md:pl-8 pt-6 md:pt-0">
-<div>
-<h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">Личный кабинет:</h3>
-<p class="text-xs text-neutral-500 font-light leading-relaxed mb-4">Вы онлайн отслеживаете статус сделок, движение денежных средств и баланс бонуса.</p>
-</div>
-<div class="w-full aspect-[4/3] bg-[#0d0d0d] overflow-hidden border border-neutral-800/80 grayscale">
-<div class="p-4 flex flex-col justify-between h-full bg-[#080808]">
-<div class="flex items-center justify-between border-b border-neutral-800 pb-2">
-<span class="text-[8px] text-white tracking-widest uppercase font-bold">● LIVE CABINET</span>
-<span class="text-[8px] text-neutral-500">ОНЛАЙН</span>
-</div>
-<div class="flex justify-between items-center my-2">
-<div>
-<span class="text-[10px] text-white font-semibold uppercase block">ЖК «Сокол»</span>
-<span class="text-[8px] text-neutral-500"><span id="cabinetArea">80</span> м² // Отделка</span>
-</div>
-<span id="cabinetBonus" class="text-[10px] text-amber-500 font-medium">560 000 ₽</span>
-</div>
-<div class="border-t border-neutral-800 pt-2 flex justify-between items-center">
-<span class="text-[8px] text-neutral-500 uppercase">Статус выплаты:</span>
-<span class="text-[10px] text-emerald-500 font-bold uppercase">Гарантировано</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p class="mb-10">Мы выплачиваем вознаграждение в любом формате (наличные, на карту, на р/с ИП, самозанятого или ООО). Все вопросы с налогами берем на себя.</p>
-<div class="pt-10 border-t border-neutral-800/40 w-full">
-<a href="#standards" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-800 hover:border-white transition-all duration-500 text-[10px] uppercase tracking-[0.25em] text-neutral-400 hover:text-white">
-<span>Смотреть технологии и стандарты реализации</span>
-<span class="text-amber-500 group-hover:translate-y-1 transition-all duration-300">↓</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 py-16 md:py-24 relative z-10">
+            
+            <!-- Left: Huge Typography Offer & CTA Button -->
+            <div class="lg:col-span-8 flex flex-col justify-center items-start">
+                <span class="text-xs uppercase tracking-[0.3em] text-neutral-400 mb-8 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-[1.1] tracking-tight mb-10 drop-shadow-md">
+                    Как риелтору <br>
+                    дополнительно <br>
+                    зарабатывать <br>
+                    <span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>
+                    с одной сделки.
+                </h1>
+                
+                <!-- Clean Premium White Button -->
+                <a href="#founder" class="inline-block bg-white text-black hover:bg-neutral-200 text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none shadow-xl">
+                    узнать подробнее
+                </a>
+            </div>
 
-<!-- BLOCK 3: STANDARDS OF QUALITY -->
-<section id="standards" class="py-24 lg:py-32 thin-border-t bg-[#080808]">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
-<div class="lg:col-span-8 flex flex-col items-start">
-<span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">OUR STANDARDS</span>
-<h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight mb-8">Стандарты качества, <br class="hidden sm:block">которые мы задаем на рынке</h2>
-<p class="border-l-2 border-amber-500/50 pl-6 italic text-neutral-400 text-sm md:text-base leading-relaxed font-light max-w-3xl">«Качественный ремонт — это не случайность, а система. Мы полностью исключили человеческий фактор и создали четыре золотых стандарта реализации объектов любой сложности:»</p>
-</div>
-<div class="lg:col-span-4 hidden lg:block"></div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 pt-12 thin-border-t">
-<div class="lg:col-span-5 space-y-4">
-<button onclick="switchTab(1)" id="tab-btn-1" class="w-full text-left p-6 thin-border bg-stone-900/30 hover:bg-stone-900/60 transition-all duration-300 group flex justify-between items-center">
-<div class="flex flex-col">
-<span class="text-[10px] text-amber-500 tracking-wider font-semibold block mb-1">01 // ОБУЧЕНИЕ КАДРОВ</span>
-<span class="text-sm font-medium text-white tracking-wide uppercase">Собственная Академия Мастеров</span>
-</div>
-<span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
-</button>
-<button onclick="switchTab(2)" id="tab-btn-2" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
-<div class="flex flex-col">
-<span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРМЕНИ</span>
-<span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase">Топ-100 дизайнеров России</span>
-</div>
-<span class="text-xs text-neutral-600 group-hover:text-white">→</span>
-</button>
-<button onclick="switchTab(3)" id="tab-btn-3" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
-<div class="flex flex-col">
-<span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">03 // ЭКСКЛЮЗИВ</span>
-<span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase">Революционные материалы OTTINGER</span>
-</div>
-<span class="text-xs text-neutral-600 group-hover:text-white">→</span>
-</button>
-<button onclick="switchTab(4)" id="tab-btn-4" class="w-full text-left p-6 thin-border bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
-<div class="flex flex-col">
-<span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">04 // ТЕХНОЛОГИЧНОСТЬ</span>
-<span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase">Цифровой контроль 24/7</span>
-</div>
-<span class="text-xs text-neutral-600 group-hover:text-white">→</span>
-</button>
-</div>
-<div class="lg:col-span-7">
-<div class="flex flex-col h-full justify-between">
-<div class="w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
-<img id="tab-image" src="academy.jpg" alt="Академия мастеров" class="w-full h-full object-cover transition-all duration-500">
-</div>
-<div class="mt-8 pt-8 border-t border-neutral-850">
-<p id="tab-text" class="text-sm text-neutral-400 font-light leading-relaxed">Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+            <!-- Right: Kept empty -->
+            <div class="lg:col-span-4 hidden lg:flex flex-col justify-end items-end pb-4">
+                <div class="flex flex-col items-end text-neutral-300 space-y-2 drop-shadow-sm">
+                    <span class="text-[9px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «STEPANOV STROY»</span>
+                    <span class="text-[8px] tracking-widest uppercase">СОЧИ</span>
+                </div>
+            </div>
 
-<!-- WORKFLOW & REWARDS -->
-<section class="py-24 lg:py-32 thin-border-t">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<div class="mb-16 lg:mb-24">
-<span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">THE PROCESS</span>
-<h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Как происходит партнерство</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-24">
-<div class="pt-6 thin-border-t">
-<span class="text-xs text-neutral-600 font-medium block mb-4">01 //</span>
-<h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Передача контакта</h3>
-<p class="text-xs text-neutral-500 font-light leading-relaxed">Вы передаете нам контакт клиента, планирующего ремонт недвижимости в Сочи.</p>
-</div>
-<div class="pt-6 thin-border-t">
-<span class="text-xs text-neutral-600 font-medium block mb-4">02 //</span>
-<h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Встреча в офисе</h3>
-<p class="text-xs text-neutral-500 font-light leading-relaxed">Встречаемся в нашем сочинском офисе, готовим концепт дизайна и рассчитываем смету.</p>
-</div>
-<div class="pt-6 thin-border-t">
-<span class="text-xs text-neutral-600 font-medium block mb-4">03 //</span>
-<h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Договор</h3>
-<p class="text-xs text-neutral-500 font-light leading-relaxed">Подписываем официальный двухсторонний договор. Фиксируем цену и заходим на объект.</p>
-</div>
-<div class="pt-6 thin-border-t">
-<span class="text-xs text-neutral-600 font-medium block mb-4">04 //</span>
-<h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Выплата бонуса</h3>
-<p class="text-xs text-neutral-500 font-light leading-relaxed">Выплачиваем гарантированное вознаграждение по удобной и гибкой схеме.</p>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto pt-12 thin-border-t">
-<div class="flex flex-col justify-between py-4">
-<div>
-<span class="text-[10px] uppercase tracking-[0.2em] text-neutral-500">ОБЪЕКТЫ ДО 60 КВ. М</span>
-<h3 class="text-xl font-light text-white mt-2 mb-4">Компактные квартиры и студии</h3>
-</div>
-<div class="mt-8">
-<span class="text-[9px] text-neutral-500 uppercase tracking-widest block">выплата</span>
-<span class="text-3xl lg:text-5xl font-light text-white">от 250 000 ₽</span>
-</div>
-</div>
-<div class="flex flex-col justify-between py-4 md:border-l md:border-neutral-800 md:pl-12">
-<div>
-<span class="text-[10px] uppercase tracking-[0.2em] text-neutral-500">ОБЪЕКТЫ СВЫШЕ 60 КВ. М</span>
-<h3 class="text-xl font-light text-white mt-2 mb-4">Семейные апартаменты и виллы</h3>
-</div>
-<div class="mt-8">
-<span class="text-[9px] text-neutral-500 uppercase tracking-widest block">выплата</span>
-<span class="text-3xl lg:text-5xl font-light text-white">от 500 000 ₽</span>
-</div>
-</div>
-</div>
-</div>
-</section>
+        </div>
 
-<!-- PORTFOLIO -->
-<section class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<div class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-<div>
-<span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">PORTFOLIO</span>
-<h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Наши объекты в Сочи</h2>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="group block">
-<div class="aspect-video bg-neutral-900 overflow-hidden border border-neutral-850">
-<img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
-</div>
-<div class="mt-4 flex justify-between items-baseline">
-<h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">ЖК «Морская Симфония»</h4>
-<span class="text-[10px] text-neutral-500 font-light">75 кв.м</span>
-</div>
-</div>
-<div class="group block">
-<div class="aspect-video bg-neutral-900 overflow-hidden border border-neutral-850">
-<img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
-</div>
-<div class="mt-4 flex justify-between items-baseline">
-<h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">ЖК «Актер Гэлакси»</h4>
-<span class="text-[10px] text-neutral-500 font-light">110 кв.м</span>
-</div>
-</div>
-<div class="group block">
-<div class="aspect-video bg-neutral-900 overflow-hidden border border-neutral-850">
-<img src="https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
-</div>
-<div class="mt-4 flex justify-between items-baseline">
-<h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">Пентхаус у моря</h4>
-<span class="text-[10px] text-neutral-500 font-light">45 кв.м</span>
-</div>
-</div>
-</div>
-</div>
-</section>
+        <!-- Minimalist bottom page indicator -->
+        <div class="absolute bottom-10 left-6 lg:left-12 hidden lg:flex items-center gap-4 z-10">
+            <span class="text-[10px] tracking-widest text-neutral-600">01 / INTRODUCTION</span>
+            <div class="w-16 h-[1px] bg-neutral-800"></div>
+        </div>
+    </section>
 
-<!-- OFFICE EVENTS -->
-<section class="py-24 lg:py-32 thin-border-t">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-<div class="lg:col-span-7">
-<span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">EVENTS</span>
-<h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-8">Приглашаем в сочинский офис на партнерские встречи</h2>
-<div class="space-y-6 text-neutral-400 text-sm font-light leading-relaxed max-w-2xl">
-<p>Мы не просто работаем по звонку — мы развиваем сильное сообщество профессионалов рынка недвижимости Сочи. </p>
-<p>В нашем офисе регулярно проходят полезные встречи и закрытые эвенты для риелторов. В неформальной обстановке мы детально обсуждаем гибкие условия сотрудничества, обмениваемся опытом и разбираем новые кейсы.</p>
-</div>
-<div class="mt-10">
-<a href="#callback" class="inline-block bg-white text-black hover:bg-neutral-200 uppercase tracking-[0.2em] text-xs font-semibold py-5 px-8 transition-all duration-500">принять участие в эвенте</a>
-</div>
-</div>
-<div class="lg:col-span-5">
-<div class="bg-neutral-900 border border-neutral-800/80 aspect-[4/3] rounded-none overflow-hidden grayscale">
-<img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1000&q=80" alt="Встреча партнеров" class="w-full h-full object-cover">
-</div>
-</div>
-</div>
-</div>
-</section>
+    <!-- BLOCK 2: FOUNDER & PARTNERSHIP (Кирилл Степанов) -->
+    <section id="founder" class="py-24 lg:py-32 thin-border-t bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                
+                <!-- Founder Photo -->
+                <div class="lg:col-span-5">
+                    <div class="bg-neutral-900 overflow-hidden rounded-none border border-neutral-800/60 aspect-[3/4]">
+                        <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover filter grayscale">
+                    </div>
+                </div>
 
-<!-- FORM SECTION -->
-<section id="callback" class="py-24 lg:py-32 bg-[#050505] thin-border-t">
-<div class="max-w-3xl mx-auto px-6 text-center">
-<div class="flex flex-col items-center mb-12">
-<div class="w-24 h-24 overflow-hidden rounded-none border border-neutral-800 mb-6 grayscale">
-<img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover">
-</div>
-<span class="text-[9px] uppercase tracking-[0.3em] text-neutral-500 block">ПЕРСОНАЛЬНЫЙ КУРАТОР</span>
-<h4 class="text-lg font-light text-white mt-2">Кирилл Степанов</h4>
-<p class="text-neutral-500 text-xs italic mt-3 max-w-md leading-relaxed font-light">«Я лично гарантирую, что ваши люди получат дизайн и ремонт высочайшего уровня, а вы — свой бонус точно в срок».</p>
-<div class="flex gap-6 mt-6 text-[10px] tracking-widest uppercase font-light">
-<a href="https://wa.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">WhatsApp</a>
-<span class="text-neutral-800">|</span>
-<a href="https://t.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">Telegram</a>
-</div>
-</div>
-<h3 class="text-2xl md:text-3xl font-light text-white mb-4">Давайте заработаем на вашем следующем объекте</h3>
-<p class="text-neutral-500 text-xs font-light tracking-wide mb-10 max-w-sm mx-auto">Оставьте свой телефон. Мы перезвоним, ответим на вопросы и закрепим за вами условия.</p>
-<form onsubmit="handleFormSubmit(event)" class="max-w-md mx-auto space-y-6">
-<div>
-<input type="tel" required placeholder="Введите ваш телефон" class="w-full px-6 py-4 rounded-none bg-[#0a0a0a] border border-neutral-800 focus:border-white focus:outline-none text-white text-center text-xs tracking-[0.2em] uppercase transition duration-300">
-</div>
-<button type="submit" class="w-full bg-white text-black hover:bg-neutral-200 font-semibold py-5 uppercase tracking-[0.2em] text-xs transition-all duration-500">стать партнером</button>
-</form>
-</div>
-</section>
+                <!-- Bio, Manifesto, Calculator & Partner Cabinet -->
+                <div class="lg:col-span-7 flex flex-col justify-between h-full pt-4">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">PARTNERSHIP PHILOSOPHY</span>
+                        <h2 class="text-2xl md:text-4xl font-light text-white mb-8 tracking-tight leading-tight">
+                            «Собственная надежная платформа для безопасного роста вашего дохода»
+                        </h2>
+                        
+                        <div class="space-y-6 text-neutral-400 text-sm font-light leading-relaxed">
+                            <p>
+                                Привет! Меня зовут <strong class="text-white font-medium">Кирилл Степанов</strong>, я сооснователь компании <span class="text-white">«STEPANOV STROY»</span>. 
+                            </p>
+                            <p>
+                                Уже более 10 лет мы помогаем нашим партнерам — брокерам, дизайнерам, архитекторам и агентствам — монетизировать свои рекомендации без рисков для репутации. Мы полностью берем на себя всю рутину, замеры, проектирование и реализацию, гарантируя вашим клиентам безупречный результат.
+                            </p>
+                            
+                            <!-- Highlighted Personal Rule (Manifesto Quote) -->
+                            <div class="pl-6 border-l-2 border-amber-500/70 my-8">
+                                <p class="text-white italic text-sm font-light leading-relaxed">
+                                    «Мое главное правило работы с партнерами — вы получаете свои деньги сразу, независимо от обстоятельств на стройке. Как только клиент заключает договор и вносит аванс, мы выплачиваем вам ваш бонус. Дальнейшие этапы работ, поставки материалов или любые изменения на объекте никак не влияют на вашу выплату. Ваша прибыль полностью защищена с первого дня».
+                                </p>
+                            </div>
 
-<!-- FOOTER -->
-<footer class="bg-[#050505] py-12 thin-border-t">
-<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
-<span class="text-[10px] text-neutral-600 tracking-wider">&copy; 2026 STEPANOV STROY. Все права защищены.</span>
-<span class="text-[10px] text-neutral-600 tracking-wider uppercase">Сочи, Приморская улица, офис 12.</span>
-</div>
-</footer>
+                            <!-- INTERACTIVE LIVE PARTNER CABINET (Fully Functional) -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#0f0f0f] p-8 thin-border my-8 rounded-none">
+                                
+                                <!-- Left Column: Range Slider Calculator with Interactive Hint -->
+                                <div class="flex flex-col justify-between">
+                                    <div>
+                                        <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-6">Калькулятор дохода:</h3>
+                                        <div class="flex items-center justify-between text-stone-400 mb-4">
+                                            <span class="text-[10px] uppercase tracking-wider">Площадь объекта</span>
+                                            <span class="text-[10px]">Ставка: <span id="rateValue" class="text-white font-medium">7 000</span> ₽/м²</span>
+                                        </div>
+                                        <div class="flex items-baseline gap-2 mb-4">
+                                            <span id="areaValue" class="text-3xl font-light text-white">80</span>
+                                            <span class="text-sm font-light text-neutral-500">м²</span>
+                                        </div>
+                                        <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
+                                        <span class="text-[9px] text-neutral-500 uppercase tracking-widest block mt-4 animate-pulse">← Двигайте ползунок для расчета →</span>
+                                    </div>
+                                    <div class="pt-6 border-t border-neutral-800/60 mt-6">
+                                        <span class="text-[10px] text-neutral-500 uppercase tracking-widest block mb-2">Ваш бонус:</span>
+                                        <span id="bonusValue" class="text-3xl font-light text-amber-500 tracking-tight block transition-all duration-300">560 000 ₽</span>
+                                    </div>
+                                </div>
 
-<script>
-function handleFormSubmit(event) {
-event.preventDefault();
-const phone = event.target.querySelector('input').value;
-if(phone) {
-alert('Спасибо. Заявка отправлена. Кирилл Степанов свяжется с вами в течение 15 минут.');
-event.target.reset();
-}
-}
+                                <!-- Right Column: Partner Personal Cabinet with CTA Button inside -->
+                                <div class="flex flex-col justify-between md:border-l md:border-neutral-800/60 md:pl-8 pt-6 md:pt-0">
+                                    <div>
+                                        <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">Личный кабинет:</h3>
+                                        <p class="text-xs text-neutral-500 font-light leading-relaxed mb-4">
+                                            Вы онлайн отслеживаете статус ваших сделок, движение денежных средств и баланс накопленного бонуса.
+                                        </p>
+                                    </div>
+                                    <!-- Flat 2D mockup preview -->
+                                    <div class="w-full h-full bg-[#0d0d0d] overflow-hidden border border-neutral-800/80">
+                                        <div class="p-4 flex flex-col justify-between h-full bg-[#080808]">
+                                            <div class="flex items-center justify-between border-b border-neutral-800 pb-2">
+                                                <span class="text-[8px] text-white tracking-widest uppercase font-bold">● LIVE CABINET</span>
+                                                <span class="text-[8px] text-neutral-500">ОНЛАЙН</span>
+                                            </div>
+                                            
+                                            <!-- Dynamic row -->
+                                            <div class="flex justify-between items-center my-3">
+                                                <div>
+                                                    <span class="text-[10px] text-white font-semibold uppercase block">ЖК «Сокол»</span>
+                                                    <span class="text-[8px] text-neutral-500"><span id="cabinetArea">80</span> м² // Отделка</span>
+                                                </div>
+                                                <span id="cabinetBonus" class="text-[10px] text-amber-500 font-medium">560 000 ₽</span>
+                                            </div>
 
-// RANGE SLIDER CALCULATOR LOGIC
-const slider = document.getElementById('areaSlider');
-const areaVal = document.getElementById('areaValue');
-const rateVal = document.getElementById('rateValue');
-const bonusVal = document.getElementById('bonusValue');
-const cabinetArea = document.getElementById('cabinetArea');
-const cabinetBonus = document.getElementById('cabinetBonus');
+                                            <!-- NEW: High-converting Action Button inside the mockup -->
+                                            <div class="border-t border-neutral-800 pt-3 flex justify-center">
+                                                <a href="#callback" class="w-full text-center bg-amber-500 hover:bg-white text-stone-950 hover:text-stone-950 font-bold uppercase tracking-widest text-[9px] py-2 transition duration-300">
+                                                    Получить выплату
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-function updateCalculator() {
-const area = parseInt(slider.value);
-let rate = 5000;
-if (area > 60) { rate = 7000; }
-const bonus = area * rate;
-const formattedBonus = bonus.toLocaleString('ru-RU') + ' ₽';
+                            </div>
 
-areaVal.textContent = area;
-rateVal.textContent = rate.toLocaleString('ru-RU');
-bonusVal.textContent = formattedBonus;
-if (cabinetArea && cabinetBonus) {
-cabinetArea.textContent = area;
-cabinetBonus.textContent = formattedBonus;
-}
-}
-if (slider) {
-slider.addEventListener('input', updateCalculator);
-updateCalculator();
-}
+                            <p class="mb-10">
+                                Мы выплачиваем вознаграждение в любом удобном для вас формате (наличные, на карту, на расчетный счет ИП, самозанятого или ООО). Все вопросы с налогами и закрывающими документами мы берем на себя.
+                            </p>
 
-// INTERACTIVE TABS LOGIC FOR BLOCK 3
-const tabData = {
-1: {
-img: "academy.jpg",
-text: "Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте."
-},
-2: {
-img: "emikh.jpg",
-text: "Ведущий дизайнер наших проектов — Сергей Эмих, входящий в Топ-100 дизайнеров России. Мы находим и реализуем индивидуальные планировочные и инженерные решения для каждого объекта, добиваясь бескомпромиссного совпадения дизайн-проекта и готового ремонта. Вашим клиентам не придется искать компромиссы."
-},
-3: {
-img: "ottinger.jpg",
-text: "В финишной отделке мы используем собственные инновационные материалы OTTINGER, которые стали технологической революцией на рынке Сочи. Это гарантирует вечный ресурс ремонта и на 100% исключает появление микротрещин или деформаций со временем."
-},
-4: {
-img: "control.jpg",
-text: "Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом OUR объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик."
-}
-};
+                            <!-- NEW: Serious, Architectural Transition Button (Fits exact column width) -->
+                            <div class="pt-10 border-t border-neutral-800/40 w-full">
+                                <a href="#standards" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-800 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-neutral-400 hover:text-white">
+                                    <span>Смотреть технологии и стандарты реализации</span>
+                                    <span class="text-amber-500 group-hover:translate-y-1 transition-transform duration-300">↓</span>
+                                </a>
+                            </div>
 
-function switchTab(tabNum) {
-const tabImg = document.getElementById('tab-image');
-const tabText = document.getElementById('tab-text');
-if (!tabImg || !tabText) return;
+                        </div>
+                    </div>
+                </div>
 
-tabImg.style.opacity = '0';
-tabText.style.opacity = '0';
+            </div>
+        </div>
+    </section>
 
-setTimeout(() => {
-tabImg.src = tabData[tabNum].img;
-tabText.textContent = tabData[tabNum].text;
-tabImg.style.opacity = '1';
-tabText.style.opacity = '1';
-}, 200);
+    <!-- BLOCK 3: STANDARDS OF QUALITY (INTERACTIVE TABS with Approved Minimal Intro) -->
+    <section id="standards" class="py-24 lg:py-32 thin-border-t bg-[#080808]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <!-- Section Header (Stacked vertically on left for perfect usability and modern aesthetic) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
+                <div class="lg:col-span-8 flex flex-col items-start">
+                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">OUR STANDARDS</span>
+                    <!-- Approved Headline -->
+                    <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight mb-8">
+                        Стандарты качества, <br class="hidden sm:block">которые мы задаем на рынке
+                    </h2>
+                    <!-- Approved Subheadline (Stacked below the title for perfect flow) -->
+                    <p class="border-l-2 border-amber-500/50 pl-6 italic text-neutral-400 text-sm md:text-base leading-relaxed font-light max-w-3xl">
+                        «Качественный ремонт — это не случайность, а система. Мы полностью исключили человеческий фактор и создали четыре золотых стандарта реализации объектов любой сложности:»
+                    </p>
+                </div>
+                <!-- Right columns kept empty for luxurious breathing room -->
+                <div class="lg:col-span-4 hidden lg:block"></div>
+            </div>
 
-for (let i = 1; i <= 4; i++) {
-const btn = document.getElementById(`tab-btn-${i}`);
-if (!btn) continue;
-const spanNum = btn.querySelector('span:first-child');
-const spanText = btn.querySelector('span:last-child');
+            <!-- INTERACTIVE ROW (Tabs on Left, Image & Short Text on Right) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 pt-12 thin-border-t">
+                
+                <!-- Left: 4 Clickable Interactive Tabs (Vertical Menu) -->
+                <div class="lg:col-span-5 space-y-4">
+                    
+                    <!-- Tab 1 Button -->
+                    <button onclick="switchTab(1)" id="tab-btn-1" class="w-full text-left p-6 thin-border bg-stone-900/30 hover:bg-stone-900/60 transition-all duration-300 group flex justify-between items-center active-tab-style">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] text-amber-500 tracking-wider font-semibold block mb-1">01 // ОБУЧЕНИЕ КАДРОВ</span>
+                            <span class="text-sm font-medium text-white tracking-wide uppercase">Собственная Академия Мастеров</span>
+                        </div>
+                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
+                    </button>
 
-if (i === tabNum) {
-btn.classList.add('bg-stone-900/30', 'thin-border');
-btn.classList.remove('bg-transparent');
-if (spanNum) {
-spanNum.classList.add('text-amber-500');
-spanNum.classList.remove('text-neutral-500');
-}
-if (spanText) {
-spanText.classList.add('text-white');
-spanText.classList.remove('text-neutral-400');
-}
-} else {
-btn.classList.remove('bg-stone-900/30', 'thin-border');
-btn.classList.add('bg-transparent');
-if (spanNum) {
-spanNum.classList.remove('text-amber-500');
-spanNum.classList.add('text-neutral-500');
-}
-if (spanText) {
-spanText.classList.remove('text-white');
-spanText.classList.add('text-neutral-400');
-}
-}
-}
-}
-</script>
+                    <!-- Tab 2 Button (Sleek left border on active) -->
+                    <button onclick="switchTab(2)" id="tab-btn-2" class="w-full text-left p-6 bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Топ-100 дизайнеров России</span>
+                        </div>
+                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
+                    </button>
+
+                    <!-- Tab 3 Button -->
+                    <button onclick="switchTab(3)" id="tab-btn-3" class="w-full text-left p-6 bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">03 // ЭКСКЛЮЗИВ</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Революционные материалы OTTINGER</span>
+                        </div>
+                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
+                    </button>
+
+                    <!-- Tab 4 Button -->
+                    <button onclick="switchTab(4)" id="tab-btn-4" class="w-full text-left p-6 bg-transparent hover:bg-stone-900/30 transition-all duration-500 group flex justify-between items-center">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block mb-1">04 // ТЕХНОЛОГИЧНОСТЬ</span>
+                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Цифровой контроль 24/7</span>
+                        </div>
+                        <span class="text-xs text-neutral-600 group-hover:text-white transition duration-300">→</span>
+                    </button>
+
+                </div>
+
+                <!-- Right: Dynamic Content (Visual + Shortened Text) -->
+                <div class="lg:col-span-7">
+                    <div class="flex flex-col h-full justify-between">
+                        
+                        <!-- Big Display Image -->
+                        <div class="w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale">
+                            <img id="tab-image" src="academy.jpg" alt="Академия мастеров" class="w-full h-full object-cover transition-all duration-500">
+                        </div>
+
+                        <!-- Dynamic Description Text -->
+                        <div class="mt-8 pt-8 border-t border-neutral-850">
+                            <p id="tab-text" class="text-sm text-neutral-400 font-light leading-relaxed">
+                                Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WORKFLOW & REWARDS -->
+    <section class="py-24 lg:py-32 thin-border-t">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="mb-16 lg:mb-24">
+                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">THE PROCESS</span>
+                <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Как происходит партнерство</h2>
+            </div>
+
+            <!-- Steps Minimalist Table-style layout -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-24">
+                <!-- Step 1 -->
+                <div class="pt-6 thin-border-t">
+                    <span class="text-xs text-neutral-600 font-medium block mb-4">01 //</span>
+                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Передача контакта</h3>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Вы передаете нам контакт клиента, планирующего ремонт недвижимости в Сочи.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="pt-6 thin-border-t">
+                    <span class="text-xs text-neutral-600 font-medium block mb-4">02 //</span>
+                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Встреча в офисе</h3>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Встречаемся в нашем сочинском офисе, готовим концепт дизайна и рассчитываем смету.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="pt-6 thin-border-t">
+                    <span class="text-xs text-neutral-600 font-medium block mb-4">03 //</span>
+                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Договор</h3>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Подписываем официальный двухсторонний договор. Фиксируем цену и заходим на объект.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="pt-6 thin-border-t">
+                    <span class="text-xs text-neutral-600 font-medium block mb-4">04 //</span>
+                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Выплата бонуса</h3>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Выплачиваем гарантированное вознаграждение по удобной и гибкой схеме.</p>
+                </div>
+            </div>
+
+            <!-- Rates (Strict Minimal Grid) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto pt-12 thin-border-t">
+                <div class="flex flex-col justify-between py-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-neutral-500">ОБЪЕКТЫ ДО 60 КВ. М</span>
+                        <h3 class="text-xl font-light text-white mt-2 mb-4">Компактные квартиры и студии</h3>
+                    </div>
+                    <div class="mt-8">
+                        <span class="text-[9px] text-neutral-500 uppercase tracking-widest block">выплата</span>
+                        <span class="text-3xl lg:text-5xl font-light text-white">от 250 000 ₽</span>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between py-4 md:border-l md:border-neutral-800 md:pl-12">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-neutral-500">ОБЪЕКТЫ СВЫШЕ 60 КВ. М</span>
+                        <h3 class="text-xl font-light text-white mt-2 mb-4">Семейные апартаменты и виллы</h3>
+                    </div>
+                    <div class="mt-8">
+                        <span class="text-[9px] text-neutral-500 uppercase tracking-widest block">выплата</span>
+                        <span class="text-3xl lg:text-5xl font-light text-white">от 500 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">PORTFOLIO</span>
+                    <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Наши объекты в Сочи</h2>
+                </div>
+            </div>
+
+            <!-- Portfolio Image Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group block">
+                    <div class="aspect-video bg-neutral-900 overflow-hidden rounded-none border border-neutral-850">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="mt-4 flex justify-between items-baseline">
+                        <h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">ЖК «Морская Симфония»</h4>
+                        <span class="text-[10px] text-neutral-500 font-light">75 кв.м</span>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="group block">
+                    <div class="aspect-video bg-neutral-900 overflow-hidden rounded-none border border-neutral-850">
+                        <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="mt-4 flex justify-between items-baseline">
+                        <h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">ЖК «Актер Гэлакси»</h4>
+                        <span class="text-[10px] text-neutral-500 font-light">110 кв.м</span>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group block">
+                    <div class="aspect-video bg-neutral-900 overflow-hidden rounded-none border border-neutral-850">
+                        <img src="https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="mt-4 flex justify-between items-baseline">
+                        <h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">Пентхаус у моря</h4>
+                        <span class="text-[10px] text-neutral-500 font-light">45 кв.м</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OFFICE EVENTS -->
+    <section class="py-24 lg:py-32 thin-border-t">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                <div class="lg:col-span-7">
+                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">EVENTS</span>
+                    <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-8">Приглашаем в сочинский офис на партнерские встречи</h2>
+                    <div class="space-y-6 text-neutral-400 text-sm font-light leading-relaxed max-w-2xl">
+                        <p>Мы не просто работаем по звонку — мы развиваем сильное сообщество профессионалов рынка недвижимости Сочи. </p>
+                        <p>В нашем офисе регулярно проходят полезные встречи и закрытые эвенты для риелторов. В неформальной обстановке мы детально обсуждаем гибкие условия сотрудничества, обмениваемся опытом и разбираем новые кейсы.</p>
+                    </div>
+                    <div class="mt-10">
+                        <a href="#callback" class="inline-block bg-white text-black hover:bg-neutral-200 uppercase tracking-[0.2em] text-xs font-semibold py-5 px-8 transition-all duration-500">принять участие в эвенте</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5">
+                    <div class="bg-neutral-900 border border-neutral-800/80 aspect-[4/3] rounded-none overflow-hidden grayscale">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1000&q=80" alt="Встреча партнеров" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
+    <section id="callback" class="py-24 lg:py-32 bg-[#050505] thin-border-t">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <div class="flex flex-col items-center mb-12">
+                <div class="w-24 h-24 overflow-hidden rounded-none border border-neutral-800 mb-6 grayscale">
+                    <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-500 block">ПЕРСОНАЛЬНЫЙ КУРАТОР</span>
+                <h4 class="text-lg font-light text-white mt-2">Кирилл Степанов</h4>
+                <p class="text-neutral-500 text-xs italic mt-3 max-w-md leading-relaxed font-light">«Я лично гарантирую, что ваши люди получат дизайн и ремонт высочайшего уровня, а вы — свой бонус точно в срок».</p>
+                <div class="flex gap-6 mt-6 text-[10px] tracking-widest uppercase font-light">
+                    <a href="https://wa.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">WhatsApp</a>
+                    <span class="text-neutral-800">|</span>
+                    <a href="https://t.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">Telegram</a>
+                </div>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-light text-white mb-4">Давайте заработаем на вашем следующем объекте</h3>
+            <p class="text-neutral-500 text-xs font-light tracking-wide mb-10 max-w-sm mx-auto">Оставьте свой телефон. Мы перезвоним, ответим на вопросы и закрепим за вами условия.</p>
+            <form onsubmit="handleFormSubmit(event)" class="max-w-md mx-auto space-y-6">
+                <div>
+                    <input type="tel" required placeholder="Введите ваш телефон" class="w-full px-6 py-4 rounded-none bg-[#0a0a0a] border border-neutral-800 focus:border-white focus:outline-none text-white text-center text-xs tracking-[0.2em] uppercase transition duration-300">
+                </div>
+                <button type="submit" class="w-full bg-white text-black hover:bg-neutral-200 font-semibold py-5 uppercase tracking-[0.2em] text-xs transition-all duration-500">стать партнером</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#050505] py-12 thin-border-t">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <span class="text-[10px] text-neutral-600 tracking-wider">&copy; 2026 STEPANOV STROY. Все права защищены.</span>
+            <span class="text-[10px] text-neutral-600 tracking-wider uppercase">Сочи, Приморская улица, офис 12.</span>
+        </div>
+    </footer>
+
+    <!-- Handler logic & Calculator logic -->
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const phone = event.target.querySelector('input').value;
+            if(phone) {
+                alert('Спасибо. Заявка отправлена. Кирилл Степанов свяжется с вами в течение 15 минут.');
+                event.target.reset();
+            }
+        }
+
+        // RANGE SLIDER CALCULATOR LOGIC + LIVE MOCKUP CABINET SYNERGY
+        const slider = document.getElementById('areaSlider');
+        const areaVal = document.getElementById('areaValue');
+        const rateVal = document.getElementById('rateValue');
+        const bonusVal = document.getElementById('bonusValue');
+        const cabinetArea = document.getElementById('cabinetArea');
+        const cabinetBonus = document.getElementById('cabinetBonus');
+
+        function updateCalculator() {
+            const area = parseInt(slider.value);
+            let rate = 5000;
+            if (area > 60) {
+                rate = 7000;
+            }
+            const bonus = area * rate;
+            const formattedBonus = bonus.toLocaleString('ru-RU') + ' ₽';
+
+            // Update Slider DOM
+            areaVal.textContent = area;
+            rateVal.textContent = rate.toLocaleString('ru-RU');
+            bonusVal.textContent = formattedBonus;
+
+            // Update Live Personal Cabinet DOM
+            if (cabinetArea && cabinetBonus) {
+                cabinetArea.textContent = area;
+                cabinetBonus.textContent = formattedBonus;
+            }
+        }
+
+        // Add event listener to slider & run wiggle animation on load
+        if (slider) {
+            slider.addEventListener('input', updateCalculator);
+            
+            // INITIAL ANIMATION ON LOAD (AUTOSLIDE WIGGLE TO SHOW INTERACTIVITY)
+            window.addEventListener('DOMContentLoaded', () => {
+                const steps = [80, 95, 110, 125, 110, 95, 80, 65, 50, 65, 80];
+                let currentStep = 0;
+                
+                const interval = setInterval(() => {
+                    if (currentStep >= steps.length) {
+                        clearInterval(interval);
+                        return;
+                    }
+                    slider.value = steps[currentStep];
+                    updateCalculator();
+                    currentStep++;
+                }, 100);
+            });
+        }
+
+
+        // INTERACTIVE TABS LOGIC FOR BLOCK 3
+        const tabData = {
+            1: {
+                img: "academy.jpg",
+                text: "Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте."
+            },
+            2: {
+                img: "emikh.jpg",
+                text: "Ведущий дизайнер наших проектов — Сергей Эмих, входящий в Топ-100 дизайнеров России. Мы находим и реализуем индивидуальные планировочные и инженерные решения для каждого объекта, добиваясь бескомпромиссного совпадения дизайн-проекта и готового ремонта. Вашим клиентам не придется искать компромиссы."
+            },
+            3: {
+                img: "ottinger.jpg",
+                text: "В финишной отделке мы используем собственные инновационные материалы OTTINGER, которые стали технологической революцией на рынке Сочи. Это гарантирует вечный ресурс ремонта и на 100% исключает появление микротрещин или деформаций со временем."
+            },
+            4: {
+                img: "control.jpg",
+                text: "Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом OUR объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик."
+            }
+        };
+
+        function switchTab(tabNum) {
+            // Get DOM elements
+            const tabImg = document.getElementById('tab-image');
+            const tabText = document.getElementById('tab-text');
+            if (!tabImg || !tabText) return;
+
+            // Update Image & Text with smooth transition
+            tabImg.style.opacity = '0';
+            tabText.style.opacity = '0';
+
+            setTimeout(() => {
+                tabImg.src = tabData[tabNum].img;
+                tabText.textContent = tabData[tabNum].text;
+                tabImg.style.opacity = '1';
+                tabText.style.opacity = '1';
+            }, 200);
+
+            // Update Active Button styling (with thin amber left border highlight & no outline focus)
+            for (let i = 1; i <= 4; i++) {
+                const btn = document.getElementById(`tab-btn-${i}`);
+                if (!btn) continue;
+                const spanNum = btn.querySelector('span:first-child');
+                const spanText = btn.querySelector('span:last-child');
+
+                if (i === tabNum) {
+                    btn.classList.add('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
+                    btn.classList.remove('bg-transparent');
+                    if (spanNum) {
+                        spanNum.classList.add('text-amber-500');
+                        spanNum.classList.remove('text-neutral-500');
+                    }
+                    if (spanText) {
+                        spanText.classList.add('text-white');
+                        spanText.classList.remove('text-neutral-400');
+                    }
+                } else {
+                    btn.classList.remove('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
+                    btn.classList.add('bg-transparent');
+                    if (spanNum) {
+                        spanNum.classList.remove('text-amber-500');
+                        spanNum.classList.add('text-neutral-500');
+                    }
+                    if (spanText) {
+                        spanText.classList.remove('text-white');
+                        spanText.classList.add('text-neutral-400');
+                    }
+                }
+            }
+        }
+
+        // Initialize active tab on load
+        window.addEventListener('DOMContentLoaded', () => {
+            switchTab(1);
+        });
+    </script>
 </body>
 </html>
