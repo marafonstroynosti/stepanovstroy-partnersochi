@@ -93,29 +93,29 @@
         </div>
     </div>
 
-    <!-- HEADER -->
+    <!-- HEADER (COMPACT, NON-OVERLAPPING ON MOBILE) -->
     <header class="fixed top-0 left-0 w-full bg-[#080808]/90 backdrop-blur-md z-50 thin-border-b">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-24 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 md:h-24 flex items-center justify-between">
             <div class="flex flex-col">
-                <!-- Mobile-friendly compact logo config: prevents any text-wrapping on mobile -->
-                <span class="text-base sm:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P a N O V</span>
-                <span class="text-[7px] sm:text-[9px] text-neutral-500 tracking-[0.25em] sm:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
+                <!-- Compact logo setup for mobile - guaranteed never to wrap -->
+                <span class="text-xs sm:text-base md:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P a N O V</span>
+                <span class="text-[7px] sm:text-[8px] md:text-[9px] text-neutral-500 tracking-[0.2em] md:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
             </div>
             <div>
-                <!-- Responsive: clean borderless link on mobile, premium bordered button on desktop -->
-                <a href="#callback" class="text-[9px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-white border border-neutral-700/60 md:border md:border-neutral-700 hover:border-white px-3 py-2 md:px-6 md:py-3 transition-all duration-500 rounded-none">
+                <!-- Compact button on mobile (no overlap), premium on desktop -->
+                <a href="#callback" class="text-[8px] sm:text-[10px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.2em] text-white border border-neutral-700/60 md:border md:border-neutral-700 px-2 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 hover:border-white transition-all duration-500 rounded-none">
                     Стать партнером
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION WITH TALL CARD DESIGN (STACKED: PHOTO ON TOP, TEXT & BUTTON ON BOTTOM) -->
-    <section class="min-h-screen flex flex-col justify-center pt-24 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
+    <!-- HERO SECTION (STACKED: PHOTO ON TOP, TEXT & BUTTON ON BOTTOM - NO OVERLAPPING) -->
+    <section class="min-h-screen flex flex-col justify-center pt-20 sm:pt-24 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
         <div class="max-w-4xl mx-auto w-full relative z-10 py-6">
             
             <!-- Top: Elegant Photo Box (Strictly preserves 4:3 on mobile, 16:10 on desktop - no stretch) -->
-            <div class="relative w-full aspect-[4/3] md:aspect-[16/10] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl mb-10">
+            <div class="w-full aspect-[4/3] md:aspect-[16/10] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl mb-8">
                 <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90 transition-transform duration-700 hover:scale-102">
             </div>
 
@@ -174,7 +174,7 @@
                             <!-- Highlighted Personal Rule (Manifesto Quote) -->
                             <div class="pl-6 border-l-2 border-amber-500/70 my-8">
                                 <p class="text-white italic text-sm font-light leading-relaxed">
-                                    «Мое главное правило работы с партнерами — вы получаете свои деньги сразу, независимо от обстоятельствах на стройке. Как только клиент заключает договор и вносит аванс, мы выплачиваем вам ваш бонус. Дальнейшие этапы работ, поставки материалов или любые изменения на объекте никак не влияют на вашу выплату. Ваша прибыль полностью защищена с первого дня».
+                                    «Мое главное правило работы с партнерами — вы получаете свои деньги сразу, независимо от обстоятельств на стройке. Как только клиент заключает договор и вносит аванс, мы выплачиваем вам ваш бонус. Дальнейшие этапы работ, поставки материалов или любые изменения на объекте никак не влияют на вашу выплату. Ваша прибыль полностью защищена с первого дня».
                                 </p>
                             </div>
 
@@ -646,63 +646,4 @@
         }
 
 
-        // INTERACTIVE ACCORDION LOGIC FOR BLOCK 3
-        function switchAccordion(activeNum) {
-            for (let i = 1; i <= 4; i++) {
-                const btn = document.getElementById(`acc-btn-${i}`);
-                const content = document.getElementById(`acc-content-${i}`);
-                const icon = document.getElementById(`acc-icon-${i}`);
-                if (!btn || !content || !icon) continue;
-                
-                const spanNum = btn.querySelector('span:first-child');
-                const spanText = btn.querySelector('span:last-child');
-
-                if (i === activeNum) {
-                    // Expand with smooth CSS transitions
-                    content.style.maxHeight = "1200px";
-                    content.style.opacity = "1";
-                    icon.textContent = "↑";
-                    icon.classList.add('text-amber-500');
-                    icon.classList.remove('text-neutral-500');
-                    
-                    btn.classList.add('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
-                    btn.classList.remove('bg-transparent');
-                    
-                    if (spanNum) {
-                        spanNum.classList.add('text-amber-500');
-                        spanNum.classList.remove('text-neutral-500');
-                    }
-                    if (spanText) {
-                        spanText.classList.add('text-white');
-                        spanText.classList.remove('text-neutral-400');
-                    }
-                } else {
-                    // Collapse smoothly
-                    content.style.maxHeight = "0px";
-                    content.style.opacity = "0";
-                    icon.textContent = "↓";
-                    icon.classList.remove('text-amber-500');
-                    icon.classList.add('text-neutral-500');
-                    
-                    btn.classList.remove('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
-                    btn.classList.add('bg-transparent');
-                    
-                    if (spanNum) {
-                        spanNum.classList.remove('text-amber-500');
-                        spanNum.classList.add('text-neutral-500');
-                    }
-                    if (spanText) {
-                        spanText.classList.remove('text-white');
-                        spanText.classList.add('text-neutral-400');
-                    }
-                }
-            }
-        }
-
-        // Initialize active accordion on load
-        window.addEventListener('DOMContentLoaded', () => {
-            switchAccordion(1);
-        });
-    </script>
-</body>
-</html>
+        // INTER
