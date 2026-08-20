@@ -98,8 +98,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 md:h-24 flex items-center justify-between">
             <div class="flex flex-col">
                 <!-- Mobile-friendly compact logo config: prevents any text-wrapping on mobile -->
-                <span class="text-xs sm:text-base md:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P a N O V</span>
-                <span class="text-[7px] sm:text-[8px] md:text-[9px] text-neutral-500 tracking-[0.2em] md:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
+                <span class="text-base sm:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P a N O V</span>
+                <span class="text-[7px] sm:text-[9px] text-neutral-500 tracking-[0.25em] sm:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
             </div>
             <div>
                 <!-- Compact button on mobile (no overlap), premium on desktop -->
@@ -110,53 +110,36 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (DUAL RESPONSIVE: STACKED WITH NO OVERLAP ON MOBILE, CENTRED ON DESKTOP) -->
-    <section class="h-auto lg:h-screen lg:min-h-screen flex flex-col justify-start lg:justify-center pt-20 sm:pt-24 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
-        
-        <!-- Desktop-Only Ambient Background Image -->
-        <div class="absolute inset-0 z-0 hidden lg:block">
-            <img src="deal.jpg" alt="Интерьер" class="w-full h-full object-cover grayscale opacity-65">
-            <!-- Left-to-Right dark gradient mask -->
-            <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
-            <!-- Very subtle bottom vignette -->
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808]/40 via-transparent to-transparent"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 py-6 md:py-24 relative z-10">
+    <!-- HERO SECTION (STACKED: PHOTO ON TOP, TEXT & BUTTON ON BOTTOM - NO OVERLAPPING) -->
+    <section class="min-h-screen flex flex-col justify-center pt-24 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
+        <div class="max-w-4xl mx-auto w-full relative z-10 py-6">
             
-            <!-- Mobile-Only Elegant Photo Box (16:10 cinematic ratio for best space-saving on mobile) -->
-            <div class="block lg:hidden w-full aspect-[16/10] bg-neutral-900 overflow-hidden border border-neutral-800/80 mb-4">
-                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90">
+            <!-- Top: Elegant Photo Box (Strictly preserves 4:3 on mobile, 16:10 on desktop - no stretch) -->
+            <div class="w-full aspect-[4/3] md:aspect-[16/10] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl mb-10">
+                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90 transition-transform duration-700 hover:scale-102">
             </div>
 
-            <!-- Left: Huge Typography Offer & CTA Button -->
-            <div class="lg:col-span-8 flex flex-col justify-center items-start">
-                <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-neutral-500 mb-4 lg:mb-8 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
-                <!-- Adjusted size and leading for perfect readability on mobile -->
-                <h1 class="text-xl sm:text-5xl lg:text-7xl font-light text-white leading-snug lg:leading-[1.1] tracking-tight mb-6 lg:mb-10 drop-shadow-md">
-                    Как риелтору <br class="hidden sm:block">дополнительно <br class="hidden sm:block">зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br class="hidden sm:block">с одной сделки.
+            <!-- Bottom: Clean Text & CTA Button Block (Text is strictly NOT on top of the image) -->
+            <div class="flex flex-col items-start w-full">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-500 mb-4 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
+                <h1 class="text-2xl sm:text-4xl lg:text-5xl font-light text-white leading-tight lg:leading-[1.1] tracking-tight mb-8 drop-shadow-md">
+                    Как риелтору <br class="hidden sm:block">дополнительно зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки.
                 </h1>
                 
-                <!-- Clean Premium White Button (Pulse Animation) -->
-                <a href="#founder" class="inline-block bg-white text-black text-center font-semibold uppercase tracking-[0.2em] text-xs py-4 px-8 md:py-5 md:px-10 transition-all duration-500 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
-                    узнать подробнее
-                </a>
-            </div>
-
-            <!-- Right: Kept empty (Desktop only) -->
-            <div class="lg:col-span-4 hidden lg:flex flex-col justify-end items-end pb-4">
-                <div class="flex flex-col items-end text-neutral-300 space-y-2 drop-shadow-sm">
-                    <span class="text-[9px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «STEPANOV STROY»</span>
-                    <span class="text-[8px] tracking-widest uppercase">СОЧИ</span>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between w-full gap-6 pt-4 border-t border-neutral-900/40">
+                    <!-- Clean Premium White Button (Pulse Animation) -->
+                    <a href="#founder" class="inline-block bg-white text-black text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
+                        узнать подробнее
+                    </a>
+                    
+                    <!-- Minimalist architectural caption (aligned next to the button on desktop) -->
+                    <div class="flex flex-col items-start sm:items-end text-neutral-500 space-y-1">
+                        <span class="text-[8px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «STEPANOV STROY»</span>
+                        <span class="text-[7px] tracking-widest uppercase">СОЧИ</span>
+                    </div>
                 </div>
             </div>
 
-        </div>
-
-        <!-- Minimalist bottom page indicator (Desktop only) -->
-        <div class="absolute bottom-10 left-6 lg:left-12 hidden lg:flex items-center gap-4 z-10">
-            <span class="text-[10px] tracking-widest text-neutral-600">01 / INTRODUCTION</span>
-            <div class="w-16 h-[1px] bg-neutral-800"></div>
         </div>
     </section>
 
@@ -487,13 +470,13 @@
                     <!-- Text Left on Desktop -->
                     <div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1">
                         <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 02 // ПЕНТХАУС</span>
-                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Безупречная реализация авторского проекта</h3>
+                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 650 000 ₽ сочинскому брокеру за рекомендацию отделки</h3>
                         <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
-                            Наш сочинский партнер-дизайнер передал нам в реализацию видовые апартаменты площадью 120 м² в ЖК «Актёр Гэлакси». Проект требовал высочайшей точности скрытых работ: монтажа сложной приточно-вытяжной вентиляции, скрытых дверей и бесшовных стыков материалов. Мы сохранили авторский надзор дизайнера, реализовали объект с бескомпромиссным качеством по чертежам и выплатили партнеру бонус за комплектацию в размере 650 000 ₽. Дизайнер получил довольного клиента, готовый объект в портфолио и выплату без строительной головной боли.
+                            Клиент сочинского риелтора приобрел видовые апартаменты площадью 120 м² в ЖК «Актёр Гэлакси». Квартира требовала премиальной финишной отделки под ключ. Брокер передал контакт клиента нам. Мы оперативно разработали проект силами нашего сочинского дизайнера, согласовали смету и зашли на объект. Сразу после внесения клиентом первого платежа партнер получил выплату в размере 650 000 ₽ на карту. Риелтор заработал крупную сумму на сопутствующей услуге, полностью защитив свою репутацию.
                         </p>
                         <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
                             <span>120 м² // ЖК «Актёр Гэлакси»</span>
-                            <span class="text-amber-500 font-medium">Дизайнер: Топ-100 России</span>
+                            <span class="text-amber-500 font-medium">Выплата: 650 000 ₽</span>
                         </div>
                     </div>
                     <!-- Image Right on Desktop -->
@@ -512,14 +495,14 @@
                         </div>
                     </div>
                     <div class="lg:col-span-5 flex flex-col justify-center">
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-500 mb-3">КЕЙС 03 // ДИЗАЙНЕРСКИЕ АПАРТАМЕНТЫ</span>
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 03 // ДИЗАЙНЕРСКИЕ АПАРТАМЕНТЫ</span>
                         <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 560 000 ₽ иногороднему брокеру за удаленный объект в Сочи</h3>
                         <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
                             Иногородний брокер продал клиенту апартаменты площадью 85 м² в ЖК «Альпийский Квартал» под сдачу и отдых. Так как партнер постоянно находился в своем городе, он передал объект нашей сочинской команде на полный цикл реализации под ключ. Наш сочинский дизайнер разработал проект на месте, а за ходом работ брокер и клиент следили через камеры 24/7 и ежедневные финансовые отчеты в нашем приложении. Партнер получил выплату в размере 560 000 ₽, находясь в своем городе, а клиент — готовый объект без единого прилета в Сочи.
                         </p>
                         <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
                             <span>85 м² // ЖК «Альпийский Квартал»</span>
-                            <span class="text-amber-500 font-medium">Контроль: 24/7</span>
+                            <span class="text-amber-500 font-medium">Выплата: 560 000 ₽</span>
                         </div>
                     </div>
                 </div>
@@ -528,10 +511,10 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                     <!-- Text Left on Desktop -->
                     <div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1">
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-500 mb-3">КЕЙС 04 // ЭЛИТНЫЕ АПАРТАМЕНТЫ</span>
-                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Реализация проекта питерского архитектора и выплата 850 000 ₽</h3>
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 04 // ЭЛИТНЫЕ АПАРТАМЕНТЫ</span>
+                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 850 000 ₽ руководителю агентства недвижимости</h3>
                         <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
-                            Архитектор из Санкт-Петербурга разработал сложнейший неоклассический проект для апартаментов площадью 160 м² в элитном сочинском ЖК «Королевский Парк». Для качественного воплощения идеи ему требовался надежный местный генподрядчик в Сочи. Мы взяли на себя всю инженерную подготовку, закупки материалов и управление строительством, строго соблюдая авторские чертежи. Партнер получил безупречно выполненный объект для своего портфолио без необходимости летать в Сочи для контроля бригад, и заслуженную комиссию в размере 850 000 ₽.
+                            Клиент сочинского агентства недвижимости приобрел элитные апартаменты площадью 160 м² в ЖК «Королевский Парк» под чистовую отделку. Руководитель агентства передал контакт клиента нам. Мы оперативно согласовали техническое задание и зашли на объект. Сразу после внесения клиентом авансового платежа партнер получил выплату в размере 850 000 ₽ на расчетный счет своей компании. Это позволило агентству монетизировать сделку дважды и получить лояльного клиента.
                         </p>
                         <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
                             <span>160 м² // ЖК «Королевский Парк»</span>
