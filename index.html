@@ -437,49 +437,81 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO -->
-    <section class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t">
+    <!-- PORTFOLIO (B2B SUCCESS STORIES CHESS GRID) -->
+    <section id="portfolio" class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
-            <div class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-                <div>
-                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">PORTFOLIO</span>
-                    <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Наши объекты в Сочи</h2>
-                </div>
+            <div class="mb-20">
+                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">PORTFOLIO</span>
+                <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Кейсы успешного партнерства</h2>
+                <p class="text-xs text-neutral-500 font-light mt-4 leading-relaxed max-w-2xl">Посмотрите, как мы решаем задачи наших партнеров и сколько они зарабатывают с нами на каждом объекте:</p>
             </div>
 
-            <!-- Portfolio Image Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="group block">
-                    <div class="aspect-video bg-neutral-900 overflow-hidden border border-neutral-850">
-                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
+            <!-- CHESS GRID OF CASES -->
+            <div class="space-y-24 lg:space-y-32">
+                
+                <!-- Case 1: Sochi Villa (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-500">
+                            <img src="portfolio-1.jpg" alt="Infinity Villa" class="w-full h-full object-cover">
+                        </div>
                     </div>
-                    <div class="mt-4 flex justify-between items-baseline">
-                        <h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">ЖК «Морская Симфония»</h4>
-                        <span class="text-[10px] text-neutral-500 font-light">75 кв.м</span>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="group block">
-                    <div class="aspect-video bg-neutral-900 overflow-hidden border border-neutral-850">
-                        <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
-                    </div>
-                    <div class="mt-4 flex justify-between items-baseline">
-                        <h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">ЖК «Актер Гэлакси»</h4>
-                        <span class="text-[10px] text-neutral-500 font-light">110 кв.м</span>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="group block">
-                    <div class="aspect-video bg-neutral-900 overflow-hidden rounded-none border border-neutral-850">
-                        <img src="https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
-                    </div>
-                    <div class="mt-4 flex justify-between items-baseline">
-                        <h4 class="text-xs uppercase tracking-[0.15em] text-white font-medium">Пентхаус у моря</h4>
-                        <span class="text-[10px] text-neutral-500 font-light">45 кв.м</span>
+                    <div class="lg:col-span-5 flex flex-col justify-center">
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 01 // ЧАСТНАЯ ВИЛЛА</span>
+                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 1 500 000 ₽ партнеру на старте работ</h3>
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
+                            Брокер продал загородный участок и порекомендовал клиенту нас для проектирования и строительства виллы. Мы заключили договор, и партнер получил свой бонус в размере 1.5 млн рублей сразу после внесения клиентом аванса. Всю дальнейшую стройку, замеры и согласования мы вели с клиентом напрямую, не отвлекая брокера от его основных сделок.
+                        </p>
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
+                            <span>680 м² // Красная Поляна</span>
+                            <span class="text-amber-500 font-medium">Выплата: 1 500 000 ₽</span>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Case 2: Sochi Penthouse (Text Left, Image Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                    <!-- Text Left on Desktop -->
+                    <div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1">
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 02 // ПЕНТХАУС</span>
+                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Безупречная реализация авторского проекта</h3>
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
+                            Дизайнер интерьеров передал нам проект со сложнейшими узлами примыкания, встроенной мебелью и скрытой инженерией. Мы сохранили авторский надзор дизайнера, идеально реализовали проект без переделок и уложились точно в срок. Дизайнер получил довольного клиента, готовое портфолио в журнал и партнерский бонус за реализацию.
+                        </p>
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
+                            <span>120 м² // ЖК Rose Del Mare</span>
+                            <span class="text-amber-500 font-medium">Дизайнер: Топ-100 России</span>
+                        </div>
+                    </div>
+                    <!-- Image Right on Desktop -->
+                    <div class="lg:col-span-7 order-1 lg:order-2">
+                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-500">
+                            <img src="portfolio-2.jpg" alt="Rose Del Mare" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 3: Designer Apartment (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-500">
+                            <img src="portfolio-3.jpg" alt="Alps Concept" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col justify-center">
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 03 // ДИЗАЙНЕРСКИЕ АПАРТАМЕНТЫ</span>
+                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Удаленный контроль для партнера из другого города</h3>
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
+                            Дизайнер из Москвы вел объект в Сочи удаленно. Благодаря нашему оцифрованному контролю, круглосуточному видеонаблюдению на объекте и ежедневным отчетам в приложении, проект был сдан без единого выезда дизайнера в Сочи. Все скрытые сантехнические и электрические узлы были сданы по видеосвязи с первого раза.
+                        </p>
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
+                            <span>85 м² // ЖК «Альпийский Квартал»</span>
+                            <span class="text-amber-500 font-medium">Контроль: 24/7</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
