@@ -93,51 +93,56 @@
         </div>
     </div>
 
-    <!-- HEADER (COMPACT, NON-OVERLAPPING ON MOBILE) -->
+    <!-- HEADER -->
     <header class="fixed top-0 left-0 w-full bg-[#080808]/90 backdrop-blur-md z-50 thin-border-b">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 md:h-24 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-24 flex items-center justify-between">
             <div class="flex flex-col">
-                <!-- Compact logo setup for mobile - guaranteed never to wrap -->
-                <span class="text-xs sm:text-base md:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P a N O V</span>
-                <span class="text-[7px] sm:text-[8px] md:text-[9px] text-neutral-500 tracking-[0.2em] md:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
+                <!-- Mobile-friendly compact logo config: prevents any text-wrapping on mobile -->
+                <span class="text-base sm:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P a N O V</span>
+                <span class="text-[7px] sm:text-[9px] text-neutral-500 tracking-[0.25em] sm:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
             </div>
             <div>
-                <!-- Compact button on mobile (no overlap), premium on desktop -->
-                <a href="#callback" class="text-[8px] sm:text-[10px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.2em] text-white border border-neutral-700/60 md:border md:border-neutral-700 px-2 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 hover:border-white transition-all duration-500 rounded-none">
+                <!-- Responsive: clean borderless link on mobile, premium bordered button on desktop -->
+                <a href="#callback" class="text-[9px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-white border border-neutral-700/60 md:border md:border-neutral-700 hover:border-white px-3 py-2 md:px-6 md:py-3 transition-all duration-500 rounded-none">
                     Стать партнером
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION (STACKED: PHOTO ON TOP, TEXT & BUTTON ON BOTTOM - NO OVERLAPPING) -->
-    <section class="min-h-screen flex flex-col justify-center pt-20 sm:pt-24 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
-        <div class="max-w-4xl mx-auto w-full relative z-10 py-6">
+    <!-- HERO SECTION WITH TALL CARD DESIGN (4:3 ON ALL DEVICES, NO STRETCH) -->
+    <section class="min-h-screen flex flex-col justify-center pt-24 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
+        <div class="max-w-7xl mx-auto w-full relative z-10 py-6">
             
-            <!-- Top: Elegant Photo Box (Strictly preserves 4:3 on mobile, 16:10 on desktop - no stretch) -->
-            <div class="w-full aspect-[4/3] md:aspect-[16/10] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl mb-8">
-                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90 transition-transform duration-700 hover:scale-102">
-            </div>
-
-            <!-- Bottom: Clean Text & CTA Button Block (Text is strictly NOT on top of the image) -->
-            <div class="flex flex-col items-start w-full">
-                <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-500 mb-4 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
-                <h1 class="text-2xl sm:text-4xl lg:text-5xl font-light text-white leading-tight lg:leading-[1.1] tracking-tight mb-8 drop-shadow-md">
-                    Как риелтору <br class="hidden sm:block">дополнительно зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки
-                </h1>
+            <!-- STAGE 4 APPROVED: Forced aspect-ratio [4/3] on all devices to strictly prevent image stretching -->
+            <div class="relative w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl">
                 
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between w-full gap-6 pt-4 border-t border-neutral-900/40">
+                <!-- Background image inside the card -->
+                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90 transition-transform duration-700 hover:scale-102">
+                
+                <!-- Gradient overlays inside the card to guarantee 100% text readability -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent"></div>
+
+                <!-- Overlay Content Block -->
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 z-10 flex flex-col items-start max-w-3xl">
+                    <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-4 md:mb-6 block drop-shadow-sm">PARTNERSHIP / SOCHI</span>
+                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-light text-white leading-[1.2] lg:leading-[1.1] tracking-tight mb-8 drop-shadow-md">
+                        Как риелтору <br class="hidden sm:block">дополнительно зарабатывать <br><span class="font-normal italic text-neutral-400">от 250 000 ₽</span> <br>с одной сделки.
+                    </h1>
+                    
                     <!-- Clean Premium White Button (Pulse Animation) -->
-                    <a href="#founder" class="inline-block bg-white text-black text-center font-semibold uppercase tracking-[0.2em] text-xs py-5 px-10 transition-all duration-500 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
+                    <a href="#founder" class="inline-block bg-white text-black text-center font-semibold uppercase tracking-[0.2em] text-[10px] py-4 px-8 md:py-5 md:px-10 transition-all duration-500 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
                         узнать подробнее
                     </a>
-                    
-                    <!-- Minimalist architectural caption (aligned next to the button on desktop) -->
-                    <div class="flex flex-col items-start sm:items-end text-neutral-500 space-y-1">
-                        <span class="text-[8px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «STEPANOV STROY»</span>
-                        <span class="text-[7px] tracking-widest uppercase">СОЧИ</span>
-                    </div>
                 </div>
+
+                <!-- Minimalist architectural caption inside the card (bottom right, desktop only) -->
+                <div class="absolute bottom-8 right-8 hidden md:flex flex-col items-end text-neutral-400 space-y-1 drop-shadow-sm z-10">
+                    <span class="text-[8px] uppercase tracking-[0.2em] text-white">01 // ПЕРЕГОВОРНАЯ «STEPANOV STROY»</span>
+                    <span class="text-[7px] tracking-widest uppercase">СОЧИ</span>
+                </div>
+
             </div>
 
         </div>
@@ -447,7 +452,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="group block">
-                    <div class="aspect-video bg-neutral-900 overflow-hidden rounded-none border border-neutral-850">
+                    <div class="aspect-video bg-neutral-900 overflow-hidden border border-neutral-850">
                         <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
                     </div>
                     <div class="mt-4 flex justify-between items-baseline">
@@ -457,7 +462,7 @@
                 </div>
                 <!-- Card 2 -->
                 <div class="group block">
-                    <div class="aspect-video bg-neutral-900 overflow-hidden rounded-none border border-neutral-850">
+                    <div class="aspect-video bg-neutral-900 overflow-hidden border border-neutral-850">
                         <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=1200&q=80" alt="Интерьер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
                     </div>
                     <div class="mt-4 flex justify-between items-baseline">
