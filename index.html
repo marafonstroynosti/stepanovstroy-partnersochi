@@ -9,7 +9,7 @@
     <!-- Google Fonts: Plus Jakarta Sans & Syne for Architectural Premium Feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=200;300;400;500;600&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -110,64 +110,64 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Elegant Split-Layout Concept) -->
+    <!-- HERO SECTION -->
     <section class="min-h-screen flex flex-col justify-center pt-24 pb-12 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
-        <div class="max-w-7xl mx-auto w-full relative z-10">
+        <div class="max-w-6xl mx-auto w-full relative z-10 flex flex-col justify-center space-y-10">
             
-            <div class="text-left mb-8 lg:mb-12">
+            <div class="text-center sm:text-left">
                 <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-neutral-500 block">PARTNERSHIP / SOCHI</span>
             </div>
 
-            <!-- Two-Column Grid: Text Left, Graphic Right -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+            <!-- Image Container with Overlaid Text -->
+            <div class="relative w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-[16/9] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl">
+                <!-- Grayscale photo with perfect transparency to see characters -->
+                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-65">
                 
-                <!-- Left Column: Content & CTA (6 Cols on Desktop) -->
-                <div class="lg:col-span-7 flex flex-col justify-center text-left order-2 lg:order-1 mt-6 lg:mt-0">
-                    
-                    <!-- Main Value Proposition (Bold, clean and visible) -->
-                    <h1 class="text-2xl sm:text-4xl lg:text-[3.25rem] font-extrabold text-white tracking-tight mb-8 uppercase leading-tight">
-                        Платим партнерам <br>
-                        <span class="text-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.2)]">от 250 000 руб</span> <br class="hidden sm:inline">
-                        за каждый ремонт
-                    </h1>
+                <!-- Overlay gradient: left-to-right on desktop for text contrast, bottom-to-top on mobile -->
+                <div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 md:via-black/65 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent md:hidden"></div>
 
-                    <!-- Stats List (Perfect layout alignment, zero overlapping) -->
-                    <div class="space-y-4 sm:space-y-6 border-l border-neutral-800 pl-6 mb-10">
-                        <!-- Stat 1 -->
-                        <div class="flex items-baseline gap-3">
-                            <span class="text-amber-500 text-xl sm:text-2xl lg:text-3xl font-black font-title leading-none shrink-0">10+</span>
-                            <span class="text-[11px] sm:text-sm text-neutral-400 font-medium uppercase tracking-wider">лет опыта в ремонтах</span>
-                        </div>
-                        <!-- Stat 2 -->
-                        <div class="flex items-baseline gap-3">
-                            <span class="text-amber-500 text-xl sm:text-2xl lg:text-3xl font-black font-title leading-none shrink-0">1000+</span>
-                            <span class="text-[11px] sm:text-sm text-neutral-400 font-medium uppercase tracking-wider">успешных проектов</span>
-                        </div>
-                        <!-- Stat 3 -->
-                        <div class="flex items-baseline gap-3">
-                            <span class="text-amber-500 text-xl sm:text-2xl lg:text-3xl font-black font-title leading-none shrink-0">100+</span>
-                            <span class="text-[11px] sm:text-sm text-neutral-400 font-medium uppercase tracking-wider">активных партнеров с нами зарабатывают</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Yellow Button -->
-                    <div class="flex">
-                        <a href="#calculator" class="inline-block bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.2em] text-[10px] sm:text-xs py-5 px-10 transition-all duration-300 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
-                            рассчитать вашу комиссию
-                        </a>
-                    </div>
-                </div>
+                <!-- Text overlay with balanced margins -->
+                <div class="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-8 z-10">
+                    <div class="max-w-xl lg:max-w-2xl space-y-8 sm:space-y-10 md:space-y-12">
+                        
+                        <!-- Main Header (Properly spaced) -->
+                        <h1 class="text-xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight uppercase leading-tight">
+                            Платим партнерам <br>
+                            <span class="text-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.2)]">от 250 000 руб</span> <br>
+                            за каждый ремонт
+                        </h1>
 
-                <!-- Right Column: Black and White Premium Photograph (5 Cols on Desktop) -->
-                <div class="lg:col-span-5 order-1 lg:order-2">
-                    <div class="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/5] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl">
-                        <!-- Image in elegant grayscale, fully visible with professional framing -->
-                        <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90 transition-opacity duration-500 hover:opacity-100">
-                        <!-- Light gradient overlay to preserve quiet luxury style depth -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
+                        <!-- Generously spaced stats block (Zero clutter, comfortable vertical rhythm) -->
+                        <div class="space-y-6 sm:space-y-8 md:space-y-10">
+                            <!-- Fact 1 -->
+                            <div class="flex items-center gap-4 sm:gap-6 md:gap-8 font-bold uppercase tracking-tight text-white font-title drop-shadow-md leading-normal">
+                                <span class="text-amber-500 text-2xl sm:text-4xl lg:text-5xl font-extrabold font-title leading-none w-16 sm:w-24 md:w-28 shrink-0">10+</span>
+                                <span class="text-[10px] sm:text-xs lg:text-sm text-neutral-200 font-medium tracking-widest leading-relaxed">лет опыта в ремонтах</span>
+                            </div>
+                            
+                            <!-- Fact 2 -->
+                            <div class="flex items-center gap-4 sm:gap-6 md:gap-8 font-bold uppercase tracking-tight text-white font-title drop-shadow-md leading-normal">
+                                <span class="text-amber-500 text-2xl sm:text-4xl lg:text-5xl font-extrabold font-title leading-none w-16 sm:w-24 md:w-28 shrink-0">1000+</span>
+                                <span class="text-[10px] sm:text-xs lg:text-sm text-neutral-200 font-medium tracking-widest leading-relaxed">успешных проектов</span>
+                            </div>
+                            
+                            <!-- Fact 3 -->
+                            <div class="flex items-center gap-4 sm:gap-6 md:gap-8 font-bold uppercase tracking-tight text-white font-title drop-shadow-md leading-normal">
+                                <span class="text-amber-500 text-2xl sm:text-4xl lg:text-5xl font-extrabold font-title leading-none w-16 sm:w-24 md:w-28 shrink-0">100+</span>
+                                <span class="text-[10px] sm:text-xs lg:text-sm text-neutral-200 font-medium tracking-widest leading-relaxed">активных партнеров <br class="hidden sm:inline">с нами зарабатывают</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+            </div>
 
+            <!-- CTA Button positioned cleanly below the banner card -->
+            <div class="text-center sm:text-left pt-2">
+                <a href="#calculator" class="inline-block bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.2em] text-[10px] sm:text-xs py-5 px-10 transition-all duration-300 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
+                    рассчитать вашу комиссию
+                </a>
             </div>
 
         </div>
@@ -282,7 +282,7 @@
 
                             <!-- NEW: Serious, Architectural Transition Button (Fits exact column width) -->
                             <div class="pt-10 border-t border-neutral-800/40 w-full">
-                                <a href="#standards" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-800 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-neutral-400 hover:text-white">
+                                <a href="#standards" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-850 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-neutral-400 hover:text-white">
                                     <span>Смотреть технологии и стандарты реализации</span>
                                     <span class="text-amber-500 group-hover:translate-y-1 transition-transform duration-300">↓</span>
                                 </a>
@@ -335,7 +335,7 @@
                             <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
                                 Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.
                             </div>
-                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
+                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-805 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
                                 <img src="academy.jpg" alt="Академия" class="w-full h-full object-cover">
                             </div>
                         </div>
@@ -356,7 +356,7 @@
                             <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
                                 Ведущий дизайнер наших проектов — Сергей Эмих, входящий в список Топ-100 дизайнеров России. Мы находим и реализуем индивидуальные планировочные и инженерные решения для каждого объекта, добиваясь бескомпромиссного совпадения дизайн-проекта и готового ремонта. Вашим клиентам не придется искать компромиссы.
                             </div>
-                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
+                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-805 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
                                 <img src="emikh.jpg" alt="Сергей Эмих" class="w-full h-full object-cover">
                             </div>
                         </div>
@@ -377,7 +377,7 @@
                             <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
                                 В финишной отделке мы используем собственные инновационные материалы OTTINGER, которые стали технологической революцией на рынке Сочи. Это гарантирует вечный ресурс ремонта и на 100% исключает появление микротрещин или деформаций со временем.
                             </div>
-                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
+                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-805 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
                                 <img src="ottinger.jpg" alt="Материалы" class="w-full h-full object-cover">
                             </div>
                         </div>
@@ -398,7 +398,7 @@
                             <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
                                 Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик.
                             </div>
-                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
+                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-805 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
                                 <img src="control.jpg" alt="Контроль" class="w-full h-full object-cover">
                             </div>
                         </div>
