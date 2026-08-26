@@ -9,7 +9,7 @@
     <!-- Google Fonts: Plus Jakarta Sans & Syne for Architectural Premium Feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=200;300;400;500;600&family=Syne:wght=400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -110,57 +110,64 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="min-h-screen flex flex-col justify-center pt-24 pb-8 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
-        <div class="max-w-4xl mx-auto w-full relative z-10 flex flex-col justify-center space-y-6">
+    <!-- HERO SECTION (Elegant Split-Layout Concept) -->
+    <section class="min-h-screen flex flex-col justify-center pt-24 pb-12 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
+        <div class="max-w-7xl mx-auto w-full relative z-10">
             
-            <div class="text-center">
+            <div class="text-left mb-8 lg:mb-12">
                 <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-neutral-500 block">PARTNERSHIP / SOCHI</span>
             </div>
 
-            <!-- Image Container with Stats (Now properly balanced and scaled down) -->
-            <div class="relative w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-[16/9] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl">
-                <!-- Grayscale image with perfect opacity for balanced details -->
-                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-75">
-                <!-- Sophisticated overlay gradient to keep texts highly readable -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/70"></div>
+            <!-- Two-Column Grid: Text Left, Graphic Right -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
                 
-                <!-- Overlay stats content (Organically sized to never overflow) -->
-                <div class="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-6 z-10">
-                    <div class="space-y-4 sm:space-y-6 lg:space-y-8 max-w-xl">
-                        
-                        <!-- Fact 1 -->
-                        <div class="flex items-center gap-3 sm:gap-5 font-bold uppercase tracking-tight text-white font-title drop-shadow-md leading-none">
-                            <span class="text-amber-500 text-2xl sm:text-3xl lg:text-4xl font-extrabold font-title leading-none w-16 sm:w-24 shrink-0">10+</span>
-                            <span class="text-[10px] sm:text-xs lg:text-sm text-neutral-200 font-medium tracking-wide">лет ОПЫТА в ремонтах</span>
-                        </div>
-                        
-                        <!-- Fact 2 -->
-                        <div class="flex items-center gap-3 sm:gap-5 font-bold uppercase tracking-tight text-white font-title drop-shadow-md leading-none">
-                            <span class="text-amber-500 text-2xl sm:text-3xl lg:text-4xl font-extrabold font-title leading-none w-16 sm:w-24 shrink-0">1000+</span>
-                            <span class="text-[10px] sm:text-xs lg:text-sm text-neutral-200 font-medium tracking-wide">проектов</span>
-                        </div>
-                        
-                        <!-- Fact 3 -->
-                        <div class="flex items-center gap-3 sm:gap-5 font-bold uppercase tracking-tight text-white font-title drop-shadow-md leading-none">
-                            <span class="text-amber-500 text-2xl sm:text-3xl lg:text-4xl font-extrabold font-title leading-none w-16 sm:w-24 shrink-0">100+</span>
-                            <span class="text-[10px] sm:text-xs lg:text-sm text-neutral-200 font-medium tracking-wide">партнеров с нами зарабатывают</span>
-                        </div>
+                <!-- Left Column: Content & CTA (6 Cols on Desktop) -->
+                <div class="lg:col-span-7 flex flex-col justify-center text-left order-2 lg:order-1 mt-6 lg:mt-0">
+                    
+                    <!-- Main Value Proposition (Bold, clean and visible) -->
+                    <h1 class="text-2xl sm:text-4xl lg:text-[3.25rem] font-extrabold text-white tracking-tight mb-8 uppercase leading-tight">
+                        Платим партнерам <br>
+                        <span class="text-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.2)]">от 250 000 руб</span> <br class="hidden sm:inline">
+                        за каждый ремонт
+                    </h1>
 
+                    <!-- Stats List (Perfect layout alignment, zero overlapping) -->
+                    <div class="space-y-4 sm:space-y-6 border-l border-neutral-800 pl-6 mb-10">
+                        <!-- Stat 1 -->
+                        <div class="flex items-baseline gap-3">
+                            <span class="text-amber-500 text-xl sm:text-2xl lg:text-3xl font-black font-title leading-none shrink-0">10+</span>
+                            <span class="text-[11px] sm:text-sm text-neutral-400 font-medium uppercase tracking-wider">лет опыта в ремонтах</span>
+                        </div>
+                        <!-- Stat 2 -->
+                        <div class="flex items-baseline gap-3">
+                            <span class="text-amber-500 text-xl sm:text-2xl lg:text-3xl font-black font-title leading-none shrink-0">1000+</span>
+                            <span class="text-[11px] sm:text-sm text-neutral-400 font-medium uppercase tracking-wider">успешных проектов</span>
+                        </div>
+                        <!-- Stat 3 -->
+                        <div class="flex items-baseline gap-3">
+                            <span class="text-amber-500 text-xl sm:text-2xl lg:text-3xl font-black font-title leading-none shrink-0">100+</span>
+                            <span class="text-[11px] sm:text-sm text-neutral-400 font-medium uppercase tracking-wider">активных партнеров с нами зарабатывают</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Yellow Button -->
+                    <div class="flex">
+                        <a href="#calculator" class="inline-block bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.2em] text-[10px] sm:text-xs py-5 px-10 transition-all duration-300 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
+                            рассчитать вашу комиссию
+                        </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Content below the image (Now perfectly visible & compact to avoid clipping) -->
-            <div class="text-center">
-                <h2 class="text-base sm:text-xl lg:text-2xl font-bold text-white tracking-wide mb-4 uppercase">
-                    Платим партнерам <span class="text-amber-500 font-extrabold">от 250 000 руб</span> за ремонт
-                </h2>
-                
-                <!-- Yellow Button linking to the calculator -->
-                <a href="#calculator" class="inline-block bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.2em] text-[10px] sm:text-xs py-4 px-8 transition-all duration-300 rounded-none shadow-xl animate-pulse-btn w-full sm:w-auto">
-                    рассчитать вашу комиссию
-                </a>
+                <!-- Right Column: Black and White Premium Photograph (5 Cols on Desktop) -->
+                <div class="lg:col-span-5 order-1 lg:order-2">
+                    <div class="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/5] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl">
+                        <!-- Image in elegant grayscale, fully visible with professional framing -->
+                        <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-90 transition-opacity duration-500 hover:opacity-100">
+                        <!-- Light gradient overlay to preserve quiet luxury style depth -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -532,7 +539,7 @@
                         <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 560 000 ₽ иногороднему брокеру за удаленный объект в Сочи</h3>
                         <div class="text-xs text-neutral-400 space-y-4 font-light leading-relaxed mb-6">
                             <p><strong class="text-white font-medium">Задача:</strong> Региональный брокер из Новосибирска продал апартаменты площадью 85 м² под инвестиции. Так как инвестор и агент находились удаленно, требовалась команда для полной реализации проекта без их личного присутствия в Сочи.</p>
-                            <p><strong class="text-white font-medium">Решение:</strong> Мы полностью оцифровали весь процесс ремонта. Партнер and инвестор ежедневно контролировали этапы работ и закупки через камеры 24/7 и финансовые отчеты в нашем приложении.</p>
+                            <p><strong class="text-white font-medium">Решение:</strong> Мы полностью оцифровали весь процесс ремонта. Партнер и инвестор ежедневно контролировали этапы работ и закупки через камеры 24/7 и финансовые отчеты в нашем приложении.</p>
                             <p><strong class="text-white font-medium">Результат:</strong> Объект сдан точно в срок. Брокер получил выплату 560 000 ₽ удаленно, расширив свою линейку услуг в Сочи без командировок.</p>
                         </div>
                         <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
@@ -560,7 +567,7 @@
                     </div>
                     <!-- Image Right on Desktop -->
                     <div class="lg:col-span-7 order-1 lg:order-2">
-                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-550">
+                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-855 grayscale hover:grayscale-0 transition duration-550">
                             <img src="portfolio-4.jpg" alt="Korolevsky Park" class="w-full h-full object-cover">
                         </div>
                     </div>
