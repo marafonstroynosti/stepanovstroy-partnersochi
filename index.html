@@ -81,6 +81,11 @@
             overflow: hidden !important;
             height: 100vh !important;
         }
+
+        /* Smooth CSS transitions for scroll-reveal phrases */
+        .reveal-phrase {
+            transition: color 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
+        }
     </style>
 </head>
 <body class="text-neutral-200 antialiased selection:bg-neutral-800 selection:text-white loading-lock">
@@ -122,36 +127,36 @@
         </div>
 
         <!-- Content wrapper: perfectly centered horizontally and vertically -->
-        <div class="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center justify-center text-center space-y-6 sm:space-y-8 md:space-y-10 py-16">
+        <div class="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center justify-center text-center space-y-8 sm:space-y-10 md:space-y-12 py-16">
             
             <div class="text-center">
                 <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-neutral-400 block mb-1">PARTNERSHIP / SOCHI</span>
             </div>
 
             <!-- Highly legible main heading centered (Strictly 3 lines, with immediate payout accent) -->
-            <h1 class="text-xl sm:text-4xl md:text-5xl lg:text-[4.25rem] xl:text-[4.5rem] font-extrabold text-white tracking-tight uppercase leading-[1.2] max-w-5xl mx-auto">
+            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-[4.25rem] xl:text-[4.5rem] font-extrabold text-white tracking-tight uppercase leading-[1.2] max-w-5xl mx-auto">
                 <span class="inline-block sm:whitespace-nowrap">Платим партнерам <span class="text-amber-500">сразу</span></span><br>
                 <span class="text-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.25)] inline-block sm:whitespace-nowrap">от 250 000 руб</span> <br>
                 <span class="inline-block">за ремонт</span>
             </h1>
 
             <!-- Grid-based stats block (Arranged in ascending order, strictly cols-3 on mobile to stay on one line) -->
-            <div class="grid grid-cols-3 gap-3 sm:gap-12 lg:gap-16 w-full max-w-4xl mx-auto py-2 sm:py-4">
+            <div class="grid grid-cols-3 gap-3 sm:gap-12 lg:gap-16 w-full max-w-4xl mx-auto py-4">
                 <!-- Fact 1: 10+ -->
                 <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
-                    <span class="text-amber-500 text-xl sm:text-4xl lg:text-5xl font-black font-title leading-none">10+</span>
+                    <span class="text-amber-500 text-3xl sm:text-4xl lg:text-5xl font-black font-title leading-none">10+</span>
                     <span class="text-[8px] sm:text-xs text-neutral-300 font-medium uppercase tracking-widest leading-normal sm:leading-relaxed">лет опыта в ремонте</span>
                 </div>
                 
-                <!-- Fact 2: 100+ -->
+                <!-- Fact 2: 250+ -->
                 <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
-                    <span class="text-amber-500 text-xl sm:text-4xl lg:text-5xl font-black font-title leading-none">100+</span>
+                    <span class="text-amber-500 text-3xl sm:text-4xl lg:text-5xl font-black font-title leading-none">250+</span>
                     <span class="text-[8px] sm:text-xs text-neutral-300 font-medium uppercase tracking-widest leading-normal sm:leading-relaxed">партнеров с нами зарабатывают</span>
                 </div>
                 
-                <!-- Fact 3: 1000+ -->
+                <!-- Fact 3: 300+ -->
                 <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
-                    <span class="text-amber-500 text-xl sm:text-4xl lg:text-5xl font-black font-title leading-none">1000+</span>
+                    <span class="text-amber-500 text-3xl sm:text-4xl lg:text-5xl font-black font-title leading-none">300+</span>
                     <span class="text-[8px] sm:text-xs text-neutral-300 font-medium uppercase tracking-widest leading-relaxed">реализованных объектов</span>
                 </div>
             </div>
@@ -172,116 +177,142 @@
         </div>
     </section>
 
-    <!-- BLOCK 2: FOUNDER & PARTNERSHIP (Кирилл Степанов) -->
-    <section id="founder" class="py-24 lg:py-32 thin-border-t bg-[#0a0a0a]">
+    <!-- BLOCK 2: INTERACTIVE CALCULATOR (Placed at the top of secondary sections) -->
+    <section id="calculator" class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="mb-12 lg:mb-16 text-center">
+                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">INCOME CALCULATOR</span>
+                <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">
+                    Рассчитайте вашу комиссию за ремонт
+                </h2>
+                <p class="text-xs text-neutral-500 font-light mt-4 leading-relaxed max-w-xl mx-auto">
+                    Используйте калькулятор, чтобы моментально узнать размер вашего бонуса. Все выплаты автоматически фиксируются в личном кабинете партнера.
+                </p>
+            </div>
+
+            <!-- INTERACTIVE LIVE PARTNER CABINET (Spacious Full Width Grid) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-[#0f0f0f] p-6 sm:p-12 thin-border rounded-none max-w-5xl mx-auto shadow-2xl">
+                
+                <!-- Left Column: Range Slider Calculator with Interactive Hint -->
+                <div class="flex flex-col justify-between space-y-8 lg:space-y-0">
+                    <div>
+                        <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-6">Калькулятор дохода:</h3>
+                        <div class="flex items-center justify-between text-stone-400 mb-4">
+                            <span class="text-[10px] uppercase tracking-wider">Площадь объекта</span>
+                            <span class="text-[10px]">Ставка: <span id="rateValue" class="text-white font-medium">7 000</span> ₽/м²</span>
+                        </div>
+                        <div class="flex items-baseline gap-2 mb-4">
+                            <span id="areaValue" class="text-4xl font-light text-white font-title">80</span>
+                            <span class="text-sm font-light text-neutral-500">м²</span>
+                        </div>
+                        <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
+                        <!-- NEW: Muted slow pulsing guidance text -->
+                        <span class="text-[9px] text-amber-500/80 uppercase tracking-widest block mt-4 animate-pulse">← Двигайте ползунок медленно для расчета →</span>
+                    </div>
+                    <div class="pt-6 border-t border-neutral-800/60 mt-6">
+                        <span class="text-[10px] text-neutral-500 uppercase tracking-widest block mb-2">Ваш бонус:</span>
+                        <span id="bonusValue" class="text-3xl font-light text-amber-500 tracking-tight block transition-all duration-300">560 000 ₽</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Partner Personal Cabinet with CTA Button inside -->
+                <div class="flex flex-col justify-between lg:border-l lg:border-neutral-800/60 lg:pl-8 pt-6 lg:pt-0">
+                    <div>
+                        <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">Личный кабинет:</h3>
+                        <p class="text-xs text-neutral-500 font-light leading-relaxed mb-4">
+                            Вы онлайн отслеживаете статус ваших сделок, движение денежных средств и баланс бонуса в реальном времени.
+                        </p>
+                    </div>
+                    <!-- Flat 2D mockup preview -->
+                    <div class="w-full h-full bg-[#0d0d0d] overflow-hidden border border-neutral-800/80">
+                        <div class="p-4 flex flex-col justify-between h-full bg-[#080808]">
+                            <div class="flex items-center justify-between border-b border-neutral-800 pb-2">
+                                <span class="text-[8px] text-white tracking-widest uppercase font-bold">● LIVE CABINET</span>
+                                <span class="text-[8px] text-neutral-500 font-medium">ОНЛАЙН</span>
+                            </div>
+                            
+                            <!-- Dynamic row -->
+                            <div class="flex justify-between items-center my-3">
+                                <div>
+                                    <span class="text-[10px] text-white font-semibold uppercase block">ЖК «Сокол»</span>
+                                    <span class="text-[8px] text-neutral-500"><span id="cabinetArea">80</span> м² // Отделка</span>
+                                </div>
+                                <span id="cabinetBonus" class="text-[10px] text-amber-500 font-medium">560 000 ₽</span>
+                            </div>
+
+                            <!-- NEW: High-converting Action Button inside the mockup -->
+                            <div class="border-t border-neutral-800 pt-3 flex justify-center">
+                                <a href="#callback" class="w-full text-center bg-amber-500 hover:bg-white text-stone-950 hover:text-stone-950 font-bold uppercase tracking-widest text-[9px] py-2 transition duration-300">
+                                    Получить выплату
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BLOCK 3: FOUNDER MANIFESTO (With Sticky Portrait and Scroll-Linked Reveal Text) -->
+    <section id="founder" class="py-24 lg:py-32 bg-[#080808] thin-border-t overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
                 
-                <!-- Founder Photo (Vertical 3:4 Portrait) -->
-                <div class="lg:col-span-5">
-                    <div class="bg-neutral-900 overflow-hidden rounded-none border border-neutral-800/60 aspect-[3/4]">
+                <!-- Left: Sticky Founder Portrait (Only sticky on desktop lg: screens) -->
+                <div class="lg:col-span-5 lg:sticky lg:top-32 z-20">
+                    <div class="bg-neutral-900 overflow-hidden border border-neutral-850 aspect-[3/4] max-w-sm mx-auto lg:mx-0 shadow-2xl">
                         <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover filter grayscale">
                     </div>
                 </div>
 
-                <!-- Bio, Manifesto, Calculator & Partner Cabinet -->
-                <div class="lg:col-span-7 flex flex-col justify-between h-full pt-4">
-                    <div>
-                        <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">PARTNERSHIP PHILOSOPHY</span>
-                        <h2 class="text-2xl md:text-4xl font-light text-white mb-8 tracking-tight leading-tight">
-                            «Собственная надежная платформа для безопасного роста вашего дохода»
-                        </h2>
+                <!-- Right: Interactive Reveal Text -->
+                <div class="lg:col-span-7 flex flex-col justify-center h-full pt-4">
+                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">FOUNDER'S PHILOSOPHY</span>
+                    
+                    <!-- Scrolling Text Wrapper -->
+                    <div class="space-y-8 lg:space-y-12">
                         
-                        <div class="space-y-6 text-neutral-400 text-sm font-light leading-relaxed">
-                            <p>
-                                Привет! Меня зовут <strong class="text-white font-medium">Кирилл Степанов</strong>, я сооснователь компании <span class="text-white">«STEPANOV STROY»</span>. 
-                            </p>
-                            <p>
-                                Уже более 10 лет мы помогаем нашим партнерам — брокерам, дизайнерам, архитекторам и агентствам — монетизировать свои рекомендации без рисков для репутации. Мы полностью берем на себя всю рутину, замеры, проектирование и реализацию, гарантируя вашим клиентам безупречный результат.
-                            </p>
-                            
-                            <!-- Highlighted Personal Rule (Manifesto Quote) -->
-                            <div class="pl-6 border-l-2 border-amber-500/70 my-8">
-                                <p class="text-white italic text-sm font-light leading-relaxed">
-                                    «Мое главное правило работы с партнерами — вы получаете свои деньги сразу, независимо от обстоятельств на стройке. Как только клиент заключает договор и вносит аванс, мы выплачиваем вам ваш бонус. Дальнейшие этапы работ, поставки материалов или любые изменения на объекте никак не влияют на вашу выплату. Ваша прибыль полностью защищена с первого дня».
-                                </p>
+                        <p class="text-neutral-400 text-xs font-light uppercase tracking-[0.2em] mb-4">Манифест Кирилла Степанова</p>
+                        
+                        <!-- Interactive Paragraphs (Dimmed by default, highlighted on scroll) -->
+                        <div class="space-y-10 sm:space-y-12 lg:space-y-16">
+                            <!-- Sentence 1 -->
+                            <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left">
+                                Привет! Я <strong class="text-white font-medium">Кирилл Степанов</strong>, сооснователь «STEPANOV STROY».
                             </div>
 
-                            <!-- INTERACTIVE LIVE PARTNER CABINET (Fully Functional) -->
-                            <div id="calculator" class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#0f0f0f] p-8 thin-border my-8 rounded-none scroll-mt-28">
-                                
-                                <!-- Left Column: Range Slider Calculator with Interactive Hint -->
-                                <div class="flex flex-col justify-between">
-                                    <div>
-                                        <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-6">Калькулятор дохода:</h3>
-                                        <div class="flex items-center justify-between text-stone-400 mb-4">
-                                            <span class="text-[10px] uppercase tracking-wider">Площадь объекта</span>
-                                            <span class="text-[10px]">Ставка: <span id="rateValue" class="text-white font-medium">7 000</span> ₽/м²</span>
-                                        </div>
-                                        <div class="flex items-baseline gap-2 mb-4">
-                                            <span id="areaValue" class="text-3xl font-light text-white">80</span>
-                                            <span class="text-sm font-light text-neutral-500">м²</span>
-                                        </div>
-                                        <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
-                                        <!-- NEW: Muted slow pulsing guidance text -->
-                                        <span class="text-[9px] text-amber-500/80 uppercase tracking-widest block mt-4 animate-pulse">← Двигайте ползунок медленно для расчета →</span>
-                                    </div>
-                                    <div class="pt-6 border-t border-neutral-800/60 mt-6">
-                                        <span class="text-[10px] text-neutral-500 uppercase tracking-widest block mb-2">Ваш бонус:</span>
-                                        <span id="bonusValue" class="text-3xl font-light text-amber-500 tracking-tight block transition-all duration-300">560 000 ₽</span>
-                                    </div>
-                                </div>
-
-                                <!-- Right Column: Partner Personal Cabinet with CTA Button inside -->
-                                <div class="flex flex-col justify-between md:border-l md:border-neutral-800/60 md:pl-8 pt-6 md:pt-0">
-                                    <div>
-                                        <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">Личный кабинет:</h3>
-                                        <p class="text-xs text-neutral-500 font-light leading-relaxed mb-4">
-                                            Вы онлайн отслеживаете статус ваших сделок, движение денежных средств и баланс бонуса.
-                                        </p>
-                                    </div>
-                                    <!-- Flat 2D mockup preview -->
-                                    <div class="w-full h-full bg-[#0d0d0d] overflow-hidden border border-neutral-800/80">
-                                        <div class="p-4 flex flex-col justify-between h-full bg-[#080808]">
-                                            <div class="flex items-center justify-between border-b border-neutral-800 pb-2">
-                                                <span class="text-[8px] text-white tracking-widest uppercase font-bold">● LIVE CABINET</span>
-                                                <span class="text-[8px] text-neutral-500">ОНЛАЙН</span>
-                                            </div>
-                                            
-                                            <!-- Dynamic row -->
-                                            <div class="flex justify-between items-center my-3">
-                                                <div>
-                                                    <span class="text-[10px] text-white font-semibold uppercase block">ЖК «Сокол»</span>
-                                                    <span class="text-[8px] text-neutral-500"><span id="cabinetArea">80</span> м² // Отделка</span>
-                                                </div>
-                                                <span id="cabinetBonus" class="text-[10px] text-amber-500 font-medium">560 000 ₽</span>
-                                            </div>
-
-                                            <!-- NEW: High-converting Action Button inside the mockup -->
-                                            <div class="border-t border-neutral-800 pt-3 flex justify-center">
-                                                <a href="#callback" class="w-full text-center bg-amber-500 hover:bg-white text-stone-950 hover:text-stone-950 font-bold uppercase tracking-widest text-[9px] py-2 transition duration-300">
-                                                    Получить выплату
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                            <!-- Sentence 2 -->
+                            <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left">
+                                Более 10 лет мы помогаем брокерам, дизайнерам и архитекторам монетизировать свои рекомендации без рисков для репутации.
                             </div>
 
-                            <p class="mb-10">
-                                Мы выплачиваем вознаграждение в любом удобном для вас формате (наличные, на карту, на расчетный счет ИП, самозанятого или ООО). Все вопросы с налогами и закрывающими документами мы берем на себя.
-                            </p>
-
-                            <!-- NEW: Serious, Architectural Transition Button (Fits exact column width) -->
-                            <div class="pt-10 border-t border-neutral-800/40 w-full">
-                                <a href="#standards" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-850 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-neutral-400 hover:text-white">
-                                    <span>Смотреть технологии и стандарты реализации</span>
-                                    <span class="text-amber-500 group-hover:translate-y-1 transition-transform duration-300">↓</span>
-                                </a>
+                            <!-- Sentence 3 -->
+                            <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left">
+                                Мы берем на себя всю рутину: замеры, проектирование и ремонт под ключ с гарантией безупречного результата.
                             </div>
 
+                            <!-- Sentence 4 -->
+                            <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left border-l-2 border-amber-500/50 pl-6 italic">
+                                <strong class="text-amber-500 font-semibold">Мое главное правило:</strong> вы получаете свой бонус сразу после подписания договора и аванса клиента.
+                            </div>
+
+                            <!-- Sentence 5 -->
+                            <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left border-l-2 border-amber-500/50 pl-6 italic">
+                                Ход стройки, закупки или любые изменения на объекте никак не влияют на выплату — ваша прибыль защищена с первого дня.
+                            </div>
                         </div>
+
+                    </div>
+
+                    <!-- Serious, Architectural Transition Button (Fits exact column width) -->
+                    <div class="pt-10 border-t border-neutral-800/40 w-full mt-12 sm:mt-16">
+                        <a href="#standards" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-850 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-neutral-400 hover:text-white">
+                            <span>Смотреть технологии и стандарты реализации</span>
+                            <span class="text-amber-500 group-hover:translate-y-1 transition-transform duration-300">↓</span>
+                        </a>
                     </div>
                 </div>
 
@@ -289,7 +320,7 @@
         </div>
     </section>
 
-    <!-- BLOCK 3: STANDARDS OF QUALITY (MINIMAL ACCORDION ON ALL DEVICES) -->
+    <!-- BLOCK 4: STANDARDS OF QUALITY (MINIMAL ACCORDION ON ALL DEVICES) -->
     <section id="standards" class="py-24 lg:py-32 thin-border-t bg-[#080808]">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
@@ -712,8 +743,33 @@
             observer.observe(slider);
         }
 
+        // SCROLL-LINKED REVEAL ENGINE FOR THE MANIFESTO BLOCK (100% Mobile & Desktop safe)
+        (function() {
+            const phrases = document.querySelectorAll('.reveal-phrase');
+            if (phrases.length === 0) return;
 
-        // INTERACTIVE ACCORDION LOGIC FOR BLOCK 3
+            const observerOptions = {
+                root: null,
+                rootMargin: '-25% 0px -30% 0px', // Sweet spot targeted precisely near the viewport center
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('text-neutral-600', 'opacity-40');
+                        entry.target.classList.add('text-white', 'opacity-100', 'scale-[1.02]');
+                    } else {
+                        entry.target.classList.add('text-neutral-600', 'opacity-40');
+                        entry.target.classList.remove('text-white', 'opacity-100', 'scale-[1.02]');
+                    }
+                });
+            }, observerOptions);
+
+            phrases.forEach(phrase => observer.observe(phrase));
+        })();
+
+        // INTERACTIVE ACCORDION LOGIC FOR BLOCK 4
         function switchAccordion(activeNum) {
             for (let i = 1; i <= 4; i++) {
                 const btn = document.getElementById(`acc-btn-${i}`);
