@@ -115,10 +115,10 @@
         
         <!-- Background elements stretching over the entire block -->
         <div class="absolute inset-0 z-0">
-            <!-- Full-bleed grayscale photo -->
-            <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-55">
-            <!-- Uniform dark overlay for centered text contrast -->
-            <div class="absolute inset-0 bg-black/75"></div>
+            <!-- Full-bleed grayscale photo with increased opacity for better detail visibility -->
+            <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-80">
+            <!-- Lighter dark overlay to make characters in B&W clearer, while maintaining typography contrast -->
+            <div class="absolute inset-0 bg-black/60"></div>
         </div>
 
         <!-- Content wrapper: perfectly centered horizontally and vertically -->
@@ -128,9 +128,9 @@
                 <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-neutral-400 block mb-1">PARTNERSHIP / SOCHI</span>
             </div>
 
-            <!-- Highly legible main heading centered (Even larger, custom line height) -->
-            <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.5rem] font-extrabold text-white tracking-tight uppercase leading-[1.1] max-w-4xl mx-auto">
-                Платим партнерам <span class="text-amber-500">сразу</span> <br class="hidden sm:inline">
+            <!-- Highly legible main heading centered (Even larger, custom line height, single line statement) -->
+            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-[4.25rem] xl:text-[4.5rem] font-extrabold text-white tracking-tight uppercase leading-[1.15] max-w-4xl mx-auto">
+                Платим партнерам <span class="text-amber-500">сразу</span><br>
                 <span class="text-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.25)]">от 250 000 руб</span> <br>
                 за ремонт
             </h1>
@@ -516,52 +516,6 @@
                     <div class="lg:col-span-7 order-1 lg:order-2">
                         <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-500 hover:scale-102">
                             <img src="portfolio-2.jpg" alt="Actor Galaxy" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case 3: Designer Apartment (Image Left, Text Right) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-                    <div class="lg:col-span-7">
-                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-855 grayscale hover:grayscale-0 transition duration-500 hover:scale-102">
-                            <img src="portfolio-3.jpg" alt="Alps Concept" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <div class="lg:col-span-5 flex flex-col justify-center">
-                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 03 // ИНВЕСТИЦИОННЫЕ АПАРТАМЕНТЫ</span>
-                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 560 000 ₽ иногороднему брокеру за удаленный объект в Сочи</h3>
-                        <div class="text-xs text-neutral-400 space-y-4 font-light leading-relaxed mb-6">
-                            <p><strong class="text-white font-medium">Задача:</strong> Региональный брокер из Новосибирска продал апартаменты площадью 85 м² под инвестиции. Так как инвестор и агент находились удаленно, требовалась команда для полной реализации проекта без их личного присутствия в Сочи.</p>
-                            <p><strong class="text-white font-medium">Решение:</strong> Мы полностью оцифровали весь процесс ремонта. Партнер и инвестор ежедневно контролировали этапы работ и закупки через камеры 24/7 и финансовые отчеты в нашем приложении.</p>
-                            <p><strong class="text-white font-medium">Результат:</strong> Объект сдан точно в срок. Брокер получил выплату 560 000 ₽ удаленно, расширив свою линейку услуг в Сочи без командировок.</p>
-                        </div>
-                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
-                            <span>85 м² // ЖК «Альпийский Квартал»</span>
-                            <span class="text-amber-500 font-medium">Выплата: 560 000 ₽</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case 4: Elite Apartment (Text Left, Image Right) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-                    <!-- Text Left on Desktop -->
-                    <div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1">
-                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 04 // ЭЛИТНЫЕ АПАРТАМЕНТЫ</span>
-                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 850 000 ₽ руководителю агентства недвижимости</h3>
-                        <div class="text-xs text-neutral-400 space-y-4 font-light leading-relaxed mb-6">
-                            <p><strong class="text-white font-medium">Задача:</strong> Частный риелтор продал пентхаус площадью 160 м² под чистовую отделку. Заказчику требовалась сертифицированная строительная компания для проведения финишных малярных работ премиум-уровня.</p>
-                            <p><strong class="text-white font-medium">Решение:</strong> Наша бригада маляров-технологов, обученных в собственной Академии STEPANOV STROY, выполнила высококачественную финишную подготовку и покраску поверхностей материалами OTTINGER.</p>
-                            <p><strong class="text-white font-medium">Результат:</strong> Риелтор монетизировал сделку дважды, получив сопутствующий партнерский бонус в размере 850 000 ₽ после старта работ.</p>
-                        </div>
-                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
-                            <span>160 м² // ЖК «Королевский Парк»</span>
-                            <span class="text-amber-500 font-medium">Выплата: 850 000 ₽</span>
-                        </div>
-                    </div>
-                    <!-- Image Right on Desktop -->
-                    <div class="lg:col-span-7 order-1 lg:order-2">
-                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-855 grayscale hover:grayscale-0 transition duration-550">
-                            <img src="portfolio-4.jpg" alt="Korolevsky Park" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
