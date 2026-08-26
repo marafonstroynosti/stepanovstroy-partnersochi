@@ -112,38 +112,49 @@
 
     <!-- HERO SECTION -->
     <section class="min-h-screen flex flex-col justify-center pt-24 pb-12 relative px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#080808]">
-        <div class="max-w-5xl mx-auto w-full relative z-10 flex flex-col justify-center">
+        <div class="max-w-6xl mx-auto w-full relative z-10 flex flex-col justify-center">
             
             <div class="text-center mb-6">
                 <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-neutral-500 block mb-2">PARTNERSHIP / SOCHI</span>
             </div>
 
             <!-- Image Container with Big Text directly on it -->
-            <div class="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl">
-                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-40">
-                <!-- Dark gradient overlay for extreme contrast and readability of white text -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/80"></div>
+            <div class="relative w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-[16/9] bg-neutral-900 overflow-hidden border border-neutral-800/80 shadow-2xl">
+                <!-- Image is made brighter (grayscale removed, opacity increased) -->
+                <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover opacity-80">
+                <!-- Soft visual overlay to balance both clear background visibility and contrast for white text -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/50"></div>
                 
-                <!-- Overlay content -->
-                <div class="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 lg:px-20 py-6 z-10">
-                    <div class="space-y-4 sm:space-y-6 md:space-y-8">
-                        <div class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-white font-title drop-shadow-md leading-none">
-                            <span class="text-amber-500">10+ лет</span> ОПЫТА в ремонтах
+                <!-- Overlay content (Numbers are now 2x larger) -->
+                <div class="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 lg:px-20 py-8 z-10">
+                    <div class="space-y-6 sm:space-y-8 md:space-y-12">
+                        
+                        <!-- Fact 1 -->
+                        <div class="flex flex-wrap items-center gap-x-4 sm:gap-x-6 md:gap-x-8 font-extrabold uppercase tracking-tight text-white font-title drop-shadow-md leading-none">
+                            <span class="text-amber-500 text-4xl sm:text-6xl md:text-8xl lg:text-[8rem] font-black">10+</span>
+                            <span class="text-xs sm:text-lg md:text-2xl lg:text-3xl text-neutral-100 font-medium tracking-wide">лет ОПЫТА в ремонтах</span>
                         </div>
-                        <div class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-white font-title drop-shadow-md leading-none">
-                            <span class="text-amber-500">1000+</span> проектов
+                        
+                        <!-- Fact 2 -->
+                        <div class="flex flex-wrap items-center gap-x-4 sm:gap-x-6 md:gap-x-8 font-extrabold uppercase tracking-tight text-white font-title drop-shadow-md leading-none">
+                            <span class="text-amber-500 text-4xl sm:text-6xl md:text-8xl lg:text-[8rem] font-black">1000+</span>
+                            <span class="text-xs sm:text-lg md:text-2xl lg:text-3xl text-neutral-100 font-medium tracking-wide">проектов</span>
                         </div>
-                        <div class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-white font-title drop-shadow-md leading-none">
-                            <span class="text-amber-500">100+</span> партнеров с нами зарабатывают
+                        
+                        <!-- Fact 3 -->
+                        <div class="flex flex-wrap items-center gap-x-4 sm:gap-x-6 md:gap-x-8 font-extrabold uppercase tracking-tight text-white font-title drop-shadow-md leading-none">
+                            <span class="text-amber-500 text-4xl sm:text-6xl md:text-8xl lg:text-[8rem] font-black">100+</span>
+                            <span class="text-xs sm:text-lg md:text-2xl lg:text-3xl text-neutral-100 font-medium tracking-wide">партнеров с нами зарабатывают</span>
                         </div>
+
                     </div>
                 </div>
             </div>
 
-            <!-- Content below the image -->
+            <!-- Content below the image (Text size increased by 3x) -->
             <div class="mt-8 sm:mt-12 text-center">
-                <h2 class="text-lg sm:text-2xl md:text-3xl font-light text-white tracking-wide mb-6 uppercase">
-                    Платим <span class="font-bold text-amber-500">от 250 000 руб</span> за ремонт
+                <h2 class="text-2xl sm:text-4xl md:text-5xl lg:text-[4.5rem] font-extrabold text-white tracking-tight mb-8 uppercase leading-tight">
+                    Платим <span class="text-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]">от 250 000 руб</span> за ремонт
                 </h2>
                 
                 <!-- Yellow Button linking to the calculator -->
@@ -512,7 +523,7 @@
                 <!-- Case 3: Designer Apartment (Image Left, Text Right) -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                     <div class="lg:col-span-7">
-                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
+                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-855 grayscale hover:grayscale-0 transition duration-500 hover:scale-102">
                             <img src="portfolio-3.jpg" alt="Alps Concept" class="w-full h-full object-cover">
                         </div>
                     </div>
