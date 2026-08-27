@@ -140,23 +140,29 @@
                 <span class="inline-block">за ремонт</span>
             </h1>
 
-            <!-- Grid-based stats block (Arranged in ascending order, strictly cols-3 on mobile to stay on one line) -->
+            <!-- Grid-based stats block (Count-Up Animation targets added natively) -->
             <div class="grid grid-cols-3 gap-3 sm:gap-12 lg:gap-16 w-full max-w-4xl mx-auto py-4">
                 <!-- Fact 1: 10+ -->
                 <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
-                    <span class="text-amber-500 text-3xl sm:text-4xl lg:text-5xl font-black font-title leading-none">10+</span>
+                    <span class="text-amber-500 text-xl sm:text-4xl lg:text-5xl font-black font-title leading-none">
+                        <span class="count-up" data-target="10">1</span>+
+                    </span>
                     <span class="text-[8px] sm:text-xs text-neutral-300 font-medium uppercase tracking-widest leading-normal sm:leading-relaxed">лет опыта в ремонте</span>
                 </div>
                 
                 <!-- Fact 2: 250+ -->
                 <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
-                    <span class="text-amber-500 text-3xl sm:text-4xl lg:text-5xl font-black font-title leading-none">250+</span>
+                    <span class="text-amber-500 text-xl sm:text-4xl lg:text-5xl font-black font-title leading-none">
+                        <span class="count-up" data-target="250">1</span>+
+                    </span>
                     <span class="text-[8px] sm:text-xs text-neutral-300 font-medium uppercase tracking-widest leading-normal sm:leading-relaxed">партнеров с нами зарабатывают</span>
                 </div>
                 
                 <!-- Fact 3: 300+ -->
                 <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
-                    <span class="text-amber-500 text-3xl sm:text-4xl lg:text-5xl font-black font-title leading-none">300+</span>
+                    <span class="text-amber-500 text-xl sm:text-4xl lg:text-5xl font-black font-title leading-none">
+                        <span class="count-up" data-target="300">1</span>+
+                    </span>
                     <span class="text-[8px] sm:text-xs text-neutral-300 font-medium uppercase tracking-widest leading-normal sm:leading-relaxed">реализованных объектов</span>
                 </div>
             </div>
@@ -302,11 +308,11 @@
                         </div>
                     </div>
 
-                    <!-- NEW: Telegram-blue transition button inviting to scroll to the Telegram letter below [1] -->
+                    <!-- NEW: Telegram-blue transition button inviting to scroll down to the Telegram letter block [1] -->
                     <div class="pt-10 border-t border-neutral-800/40 w-full mt-12 sm:mt-16">
-                        <a href="https://t.me/+rtNbTmu0jmZjNTE6" target="_blank" class="group flex items-center justify-between w-full px-6 py-5 border border-[#24A1DE]/30 hover:border-[#24A1DE] bg-[#24A1DE]/5 hover:bg-[#24A1DE]/10 transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-[#24A1DE]">
+                        <a href="#telegram-club" class="group flex items-center justify-between w-full px-6 py-5 border border-[#24A1DE]/30 hover:border-[#24A1DE] bg-[#24A1DE]/5 hover:bg-[#24A1DE]/10 transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-[#24A1DE]">
                             <span>Присоединиться к нашим партнерам</span> [1]
-                            <span class="text-[#24A1DE] group-hover:translate-y-1 transition-transform duration-300">→</span>
+                            <span class="text-[#24A1DE] group-hover:translate-x-1 transition-transform duration-300">→</span>
                         </a>
                     </div>
                 </div>
@@ -349,14 +355,14 @@
                     <span class="text-xs sm:text-sm uppercase tracking-wider text-neutral-400 font-medium">— Кирилл Степанов</span>
                 </div>
 
-                <!-- Highly Visible Telegram-branded Button (Official Blue, Glowing effect, updated URL and text) [1] -->
+                <!-- Highly Visible Telegram-branded Button (Official Blue, Glowing effect, updated URL and text) -->
                 <div class="pt-4 text-center sm:text-left">
                     <a href="https://t.me/+rtNbTmu0jmZjNTE6" target="_blank" class="inline-flex items-center justify-center gap-3 bg-[#24A1DE] hover:bg-[#1d84bd] text-white font-bold uppercase tracking-widest text-xs sm:text-sm py-5 px-10 transition-all duration-300 rounded-none shadow-[0_4px_30px_rgba(36,161,222,0.35)] animate-pulse-btn w-full sm:w-auto">
                         <!-- SVG Paper Plane Icon inside the button -->
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 12 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.46 1-.73 1.03-.58.06-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.63.15-.16 2.72-2.5 2.77-2.71.01-.03.01-.13-.01-.15-.02-.02-.08-.01-.13 0-.07.01-1.13.72-3.19 2.13-.3.2-.57.3-.82.3-.27 0-.79-.15-1.18-.28-.48-.15-.86-.23-.83-.49.02-.13.38-.27 1.09-.41 4.26-1.85 7.11-3.07 8.54-3.66 4.07-1.68 4.92-1.97 5.47-1.98.12 0 .39.03.57.17.13.11.17.26.19.37.02.1.03.35.01.53z"/>
                         </svg>
-                        <span>Присоединиться к нашим партнерам</span> [1]
+                        <span>Присоединиться к нашим партнерам</span>
                     </a>
                 </div>
 
@@ -371,7 +377,7 @@
             <!-- Section Header (Stacked vertically on left for perfect usability and modern aesthetic) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
                 <div class="lg:col-span-8 flex flex-col items-start">
-                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">OUR STANDARDS</span>
+                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 block">OUR STANDARDS</span>
                     <!-- Approved Headline -->
                     <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight mb-8">
                         Стандарты качества, <br class="hidden sm:block">которые мы задаем на рынке
@@ -417,7 +423,7 @@
                             <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
                             <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Топ-100 дизайнеров России</span>
                         </div>
-                        <span id="acc-icon-2" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
+                        <span id="acc-icon-2" class="text-xs text-neutral-555 transition-transform duration-300">↓</span>
                     </button>
                     <div id="acc-content-2" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
@@ -543,7 +549,7 @@
             <div class="mb-20">
                 <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">PORTFOLIO</span>
                 <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Кейсы успешного партнерства STEPANOV STROY</h2>
-                <p class="text-xs text-neutral-505 font-light mt-4 leading-relaxed max-w-2xl">Посмотрите, как мы решаем задачи наших партнеров и сколько они зарабатывают с нами на каждом объекте:</p>
+                <p class="text-xs text-neutral-500 font-light mt-4 leading-relaxed max-w-2xl">Посмотрите, как мы решаем задачи наших партнеров и сколько они зарабатывают с нами на каждом объекте:</p>
             </div>
 
             <!-- CHESS GRID OF CASES -->
@@ -709,6 +715,8 @@
                     document.body.classList.remove('loading-lock');
                     setTimeout(() => {
                         preloader.style.display = 'none';
+                        // Trigger count-up animation on preloader close [1]
+                        startCountUpAnimations();
                     }, 1000);
                 }, 300); // Elegant small pause at 100%
             };
@@ -719,6 +727,37 @@
                 window.addEventListener('load', removePreloader);
             }
         })();
+
+        // Count-Up Animation Engine for Hero Stats [1]
+        function startCountUpAnimations() {
+            const counters = document.querySelectorAll('.count-up');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'), 10);
+                const duration = 1400; // Animation duration in ms [1]
+                const startTime = performance.now();
+                
+                // Ease-out easing calculation [1]
+                const easeOutQuad = (t) => t * (2 - t);
+                
+                function updateCount(currentTime) {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / duration, 1);
+                    const easedProgress = easeOutQuad(progress);
+                    
+                    const currentValue = Math.floor(easedProgress * (target - 1) + 1);
+                    counter.textContent = currentValue;
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.textContent = target; // Ensure exact final value is set [1]
+                    }
+                }
+                
+                requestAnimationFrame(updateCount);
+            });
+        }
 
         function handleFormSubmit(event) {
             event.preventDefault();
