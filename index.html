@@ -205,7 +205,7 @@
                         </div>
                         <div class="flex items-baseline gap-2 mb-4">
                             <span id="areaValue" class="text-4xl font-light text-white font-title font-bold">80</span>
-                            <span class="text-sm font-light text-neutral-500">м²</span>
+                            <span class="text-sm font-light text-neutral-505">м²</span>
                         </div>
                         <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
                         <!-- NEW: Muted slow pulsing guidance text -->
@@ -308,10 +308,10 @@
                         </div>
                     </div>
 
-                    <!-- NEW: Telegram-blue transition button inviting to scroll down to the Telegram letter block [1] -->
+                    <!-- NEW: Telegram-blue transition button inviting to scroll down to the Telegram letter block -->
                     <div class="pt-10 border-t border-neutral-800/40 w-full mt-12 sm:mt-16">
                         <a href="#telegram-club" class="group flex items-center justify-between w-full px-6 py-5 border border-[#24A1DE]/30 hover:border-[#24A1DE] bg-[#24A1DE]/5 hover:bg-[#24A1DE]/10 transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-[#24A1DE]">
-                            <span>Присоединиться к нашим партнерам</span> [1]
+                            <span>Присоединиться к нашим партнерам</span>
                             <span class="text-[#24A1DE] group-hover:translate-x-1 transition-transform duration-300">→</span>
                         </a>
                     </div>
@@ -339,24 +339,20 @@
                     <p class="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium">Кому: <span class="text-white font-semibold">Партнерам и коллегам</span></p>
                 </div>
 
-                <!-- Letter Body (This text dynamically "types out" like a real keyboard on entering viewport!) -->
-                <div id="telegram-letter" class="space-y-6 text-sm sm:text-lg md:text-xl text-neutral-200 font-light leading-relaxed italic min-h-[220px]">
-                    <p class="typing-paragraph not-italic font-bold text-white text-lg sm:text-2xl mb-4">Приветствую, дорогие партнеры!</p>
-                    <p class="typing-paragraph">Я приглашаю вас подписаться на наш закрытый Telegram-канал для партнеров.</p>
-                    <p class="typing-paragraph">Всё о деньгах, кейсах партнеров, объектах и качестве наших работ и материалов.</p>
-                    <p class="typing-paragraph">Буду искренне рад видеть вас среди участников нашего сообщества. Присоединяйтесь!</p>
-                </div>
-
-                <!-- Hand-signed signature below the typing letter -->
-                <div class="pt-4 flex items-center gap-4 not-italic">
-                    <div class="w-8 h-8 rounded-full overflow-hidden grayscale border border-neutral-800">
-                        <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover">
+                <!-- Letter Body (Replaced with spacious, highly legible auto-typing single phrase) [1] -->
+                <div id="telegram-letter" class="space-y-6 text-sm sm:text-lg md:text-xl text-neutral-200 font-light leading-relaxed italic min-h-[140px] flex flex-col items-center justify-center text-center">
+                    <p class="typing-paragraph not-italic font-extrabold text-white text-xl sm:text-3xl lg:text-4xl tracking-wide uppercase">
+                        ЗДЕСЬ ВСЕ ЦИФРЫ И ФАКТЫ
+                    </p>
+                    
+                    <!-- Bouncing down arrow directing the eyes directly to the CTA button [1] -->
+                    <div class="text-[#24A1DE] text-3xl sm:text-4xl animate-bounce pt-2">
+                        ↓
                     </div>
-                    <span class="text-xs sm:text-sm uppercase tracking-wider text-neutral-400 font-medium">— Кирилл Степанов</span>
                 </div>
 
                 <!-- Highly Visible Telegram-branded Button (Official Blue, Glowing effect, updated URL and text) -->
-                <div class="pt-4 text-center sm:text-left">
+                <div class="pt-4 text-center">
                     <a href="https://t.me/+rtNbTmu0jmZjNTE6" target="_blank" class="inline-flex items-center justify-center gap-3 bg-[#24A1DE] hover:bg-[#1d84bd] text-white font-bold uppercase tracking-widest text-xs sm:text-sm py-5 px-10 transition-all duration-300 rounded-none shadow-[0_4px_30px_rgba(36,161,222,0.35)] animate-pulse-btn w-full sm:w-auto">
                         <!-- SVG Paper Plane Icon inside the button -->
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -588,7 +584,7 @@
                             <p><strong class="text-white font-medium">Решение:</strong> Объект был принят нашими мастерами на полный цикл отделочных работ под ключ. Мы строго следовали чертежам, исключив строительные дефекты, и провели шеф-монтаж инженерных узлов.</p>
                             <p><strong class="text-white font-medium">Результат:</strong> Идеальное совпадение проекта и готового интерьера для портфолио дизайнера. Выплата партнеру за комплектацию объекта составила 650 000 ₽.</p>
                         </div>
-                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-555 uppercase tracking-wider flex justify-between">
                             <span>120 м² // ЖК «Актёр Гэлакси»</span>
                             <span class="text-amber-500 font-medium">Выплата: 650 000 ₽</span>
                         </div>
