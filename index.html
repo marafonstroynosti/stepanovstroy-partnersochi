@@ -103,7 +103,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 md:h-24 flex items-center justify-between">
             <div class="flex flex-col">
                 <!-- Mobile-friendly compact logo config: prevents any text-wrapping on mobile -->
-                <span class="text-base sm:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P a N O V</span>
+                <span class="text-base sm:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P a N О V</span>
                 <span class="text-[7px] sm:text-[9px] text-neutral-500 tracking-[0.25em] sm:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
             </div>
             <div>
@@ -259,7 +259,7 @@
         </div>
     </section>
 
-    <!-- BLOCK 3: FOUNDER MANIFESTO (With Sticky Portrait and Scroll-Linked Reveal Text) -->
+    <!-- BLOCK 3: FOUNDER MANIFESTO (With Sticky Portrait, Scroll-Linked Reveal Text & Telegram Chat Card) -->
     <section id="founder" class="py-24 lg:py-32 bg-[#080808] thin-border-t overflow-hidden scroll-mt-24">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
@@ -272,37 +272,59 @@
                 </div>
 
                 <!-- Right: Interactive Reveal Text -->
-                <div class="lg:col-span-7 flex flex-col justify-center h-full pt-4">
-                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">FOUNDER'S PHILOSOPHY</span>
-                    
-                    <!-- Scrolling Text Wrapper -->
-                    <div class="space-y-8 lg:space-y-12">
+                <div class="lg:col-span-7 flex flex-col justify-center h-full pt-4 space-y-12">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">FOUNDER'S PHILOSOPHY</span>
                         
-                        <p class="text-neutral-400 text-xs font-light uppercase tracking-[0.2em] mb-4">Манифест Кирилла Степанова</p>
-                        
-                        <!-- Interactive Paragraphs (Dimmed by default, highlighted on scroll) -->
-                        <div class="space-y-10 sm:space-y-12 lg:space-y-16">
-                            <!-- Sentence 1 -->
-                            <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left">
-                                Привет! Я <strong class="text-white font-medium">Кирилл Степанов</strong>, сооснователь «STEPANOV STROY».
+                        <!-- Scrolling Text Wrapper -->
+                        <div class="space-y-8 lg:space-y-12">
+                            
+                            <p class="text-neutral-400 text-xs font-light uppercase tracking-[0.2em] mb-4">Манифест Кирилла Степанова</p>
+                            
+                            <!-- Interactive Paragraphs (Dimmed by default, highlighted on scroll) -->
+                            <div class="space-y-10 sm:space-y-12 lg:space-y-16">
+                                <!-- Sentence 1 -->
+                                <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left">
+                                    Привет! Я <strong class="text-white font-medium">Кирилл Степанов</strong>, сооснователь «STEPANOV STROY».
+                                </div>
+
+                                <!-- Sentence 2 (Modified & Highlighted: Reputational phrase is white/inherits color, payout phrase is yellow) -->
+                                <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left">
+                                    Более 10 лет помогаем нашим <span class="text-amber-500 font-semibold">партнерам монетизировать</span> свои рекомендации <span class="font-semibold text-current">без рисков для репутации</span>.
+                                </div>
+
+                                <!-- Sentence 3 (Manifesto quote, preserved) -->
+                                <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left border-l-2 border-amber-500/50 pl-6 italic">
+                                    <strong class="text-amber-500 font-semibold">Мое главное правило:</strong> вы получаете свой бонус сразу после подписания договора и аванса клиента.
+                                </div>
                             </div>
 
-                            <!-- Sentence 2 (Modified & Highlighted: Reputational phrase is white/inherits color, payout phrase is yellow) -->
-                            <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left">
-                                Более 10 лет помогаем нашим <span class="text-amber-500 font-semibold">партнерам монетизировать</span> свои рекомендации <span class="font-semibold text-current">без рисков для репутации</span>.
-                            </div>
-
-                            <!-- Sentence 3 (Manifesto quote, preserved) -->
-                            <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left border-l-2 border-amber-500/50 pl-6 italic">
-                                <strong class="text-amber-500 font-semibold">Мое главное правило:</strong> вы получаете свой бонус сразу после подписания договора и аванса клиента.
-                            </div>
                         </div>
+                    </div>
 
+                    <!-- NEW: Minimalist and Premium B2B Telegram Partner Chat Banner [1] -->
+                    <div class="p-6 sm:p-8 bg-[#0a0a0a] border border-neutral-850 rounded-none space-y-6">
+                        <div class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                            <!-- Custom Headline based on exact user specification [1] -->
+                            <h4 class="text-xs uppercase tracking-[0.15em] text-white font-semibold">Подписывайся на телеграм-канал партнеров</h4>
+                        </div>
+                        <!-- Custom Body based on exact user specification [1] -->
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                            Всё о деньгах, кейсах партнеров, объектах и качестве наших работ и материалов. [1]
+                        </p>
+                        <!-- High-converting CTA Button with extreme contrast and visual glow/pulse to stand out instantly [1] -->
+                        <div class="pt-2">
+                            <a href="https://t.me/#" target="_blank" class="inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-white text-stone-950 font-bold uppercase tracking-widest text-[10px] sm:text-xs py-4 px-8 transition-all duration-300 rounded-none shadow-[0_4px_25px_rgba(245,158,11,0.35)] animate-pulse-btn w-full sm:w-auto">
+                                <span>Присоединиться к каналу</span> [1]
+                                <span>→</span>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Serious, Architectural Transition Button (Fits exact column width) -->
                     <div class="pt-10 border-t border-neutral-800/40 w-full mt-12 sm:mt-16">
-                        <a href="#standards" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-850 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-neutral-400 hover:text-white">
+                        <a href="#standards" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-855 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-neutral-400 hover:text-white">
                             <span>Смотреть технологии и стандарты реализации</span>
                             <span class="text-amber-500 group-hover:translate-y-1 transition-transform duration-300">↓</span>
                         </a>
@@ -363,7 +385,7 @@
                 <div class="py-2">
                     <button onclick="switchAccordion(2)" id="acc-btn-2" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
                         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
+                            <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
                             <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Топ-100 дизайнеров России</span>
                         </div>
                         <span id="acc-icon-2" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
@@ -384,7 +406,7 @@
                 <div class="py-2">
                     <button onclick="switchAccordion(3)" id="acc-btn-3" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
                         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">03 // ЭКСКЛЮЗИВ</span>
+                            <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">03 // ЭКСКЛЮЗИВ</span>
                             <span class="text-sm font-medium text-white tracking-wide uppercase transition duration-300">Революционные материалы OTTINGER</span>
                         </div>
                         <span id="acc-icon-3" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
@@ -405,7 +427,7 @@
                 <div class="py-2">
                     <button onclick="switchAccordion(4)" id="acc-btn-4" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
                         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">04 // ТЕХНОЛОГИЧНОСТЬ</span>
+                            <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">04 // ТЕХНОЛОГИЧНОСТЬ</span>
                             <span class="text-sm font-medium text-white tracking-wide uppercase transition duration-300">Цифровой контроль 24/7</span>
                         </div>
                         <span id="acc-icon-4" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
