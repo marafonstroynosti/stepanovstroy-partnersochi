@@ -81,11 +81,6 @@
             overflow: hidden !important;
             height: 100vh !important;
         }
-
-        /* Transitions for character scroll typing */
-        .char-reveal-letter {
-            transition: color 0.4s ease, opacity 0.4s ease;
-        }
     </style>
 </head>
 <body class="text-neutral-200 antialiased selection:bg-neutral-800 selection:text-white loading-lock">
@@ -215,7 +210,7 @@
                 <div class="flex flex-col justify-between lg:border-l lg:border-neutral-800/60 lg:pl-8 pt-6 lg:pt-0">
                     <div>
                         <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">Личный кабинет:</h3>
-                        <p class="text-xs text-neutral-505 font-light leading-relaxed mb-4">
+                        <p class="text-xs text-neutral-555 font-light leading-relaxed mb-4">
                             Вы онлайн отслеживаете статус ваших сделок, движение денежных средств и баланс бонуса в реальном времени.
                         </p>
                     </div>
@@ -259,7 +254,7 @@
         </div>
     </section>
 
-    <!-- BLOCK 3: FOUNDER MANIFESTO (With Sticky Portrait and Scroll-Linked Reveal Text) [1] -->
+    <!-- BLOCK 3: FOUNDER MANIFESTO (With Sticky Portrait and Scroll-Linked Reveal Text) -->
     <section id="founder" class="py-24 lg:py-32 bg-[#080808] thin-border-t overflow-hidden scroll-mt-24">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
@@ -281,7 +276,7 @@
                             
                             <p class="text-neutral-400 text-xs font-light uppercase tracking-[0.2em] mb-4">Манифест Кирилла Степанова</p>
                             
-                            <!-- Interactive Scroll Reveal Paragraphs (Now fade dynamically as simple lines) [1] -->
+                            <!-- Interactive Scroll Reveal Paragraphs (Now fade dynamically as simple lines) -->
                             <div class="space-y-10 sm:space-y-12 lg:space-y-16">
                                 <!-- Sentence 1 -->
                                 <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left">
@@ -302,10 +297,10 @@
                         </div>
                     </div>
 
-                    <!-- NEW: Telegram-blue transition button inviting to scroll to the Telegram letter below [1] -->
+                    <!-- NEW: Telegram-blue transition button inviting to scroll to the Telegram letter below -->
                     <div class="pt-10 border-t border-neutral-800/40 w-full mt-12 sm:mt-16">
                         <a href="#telegram-club" class="group flex items-center justify-between w-full px-6 py-5 border border-[#24A1DE]/30 hover:border-[#24A1DE] bg-[#24A1DE]/5 hover:bg-[#24A1DE]/10 transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-[#24A1DE]">
-                            <span>Листать дальше к нашему Telegram-сообществу</span> [1]
+                            <span>Листать дальше к нашему Telegram-сообществу</span>
                             <span class="text-[#24A1DE] group-hover:translate-y-1 transition-transform duration-300">↓</span>
                         </a>
                     </div>
@@ -315,57 +310,57 @@
         </div>
     </section>
 
-    <!-- BLOCK 3.5: TELEGRAM PARTNER CLUB (Centered Spacious Envelope with Scroll-Driven Character-by-Character reveal) [1] -->
+    <!-- BLOCK 3.5: TELEGRAM PARTNER CLUB (Centered Spacious Envelope with Scroll-Driven Real Keyboard Typewriting) -->
     <section id="telegram-club" class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t scroll-mt-24">
         <div class="max-w-4xl mx-auto px-6">
-            <!-- Custom Letter Container [1] -->
+            <!-- Custom Letter Container -->
             <div class="p-8 sm:p-12 md:p-16 bg-[#090909] border border-[#24A1DE]/25 rounded-none relative space-y-8 sm:space-y-10 shadow-2xl">
                 
-                <!-- Telegram Blue Pulsing Status Indicator [1] -->
+                <!-- Telegram Blue Pulsing Status Indicator -->
                 <div class="absolute top-6 right-6 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-[#24A1DE] animate-pulse"></span>
                     <span class="text-[9px] uppercase tracking-widest text-[#24A1DE] font-semibold">t.me/stepanov_partners</span>
                 </div>
 
-                <!-- Elegant Envelope Header [1] -->
+                <!-- Elegant Envelope Header -->
                 <div class="border-b border-neutral-800/80 pb-6 space-y-2">
                     <p class="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium">От кого: <span class="text-white font-semibold">Кирилл Степанов</span></p>
                     <p class="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium">Кому: <span class="text-white font-semibold">Партнерам и коллегам</span></p>
                 </div>
 
-                <!-- Letter Body (This text now dynamically "types out" as user scrolls!) [1] -->
-                <div class="space-y-6 text-sm sm:text-lg md:text-xl text-neutral-200 font-light leading-relaxed italic">
+                <!-- Letter Body (This text dynamically "types out" like a real keyboard on entering viewport!) -->
+                <div id="telegram-letter" class="space-y-6 text-sm sm:text-lg md:text-xl text-neutral-200 font-light leading-relaxed italic min-h-[220px]">
                     <p class="typing-paragraph not-italic font-bold text-white text-lg sm:text-2xl mb-4">Приветствую, дорогие партнеры!</p>
                     <p class="typing-paragraph">Я приглашаю вас подписаться на наш закрытый Telegram-канал для партнеров.</p>
                     <p class="typing-paragraph">Всё о деньгах, кейсах партнеров, объектах и качестве наших работ и материалов.</p>
                     <p class="typing-paragraph">Буду искренне рад видеть вас среди участников нашего сообщества. Присоединяйтесь!</p>
-                    
-                    <!-- Personal Signature with avatar [1] -->
-                    <div class="pt-4 flex items-center gap-4 not-italic">
-                        <div class="w-8 h-8 rounded-full overflow-hidden grayscale border border-neutral-800">
-                            <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover">
-                        </div>
-                        <span class="text-xs sm:text-sm uppercase tracking-wider text-neutral-400 font-medium">— Кирилл Степанов</span>
-                    </div>
                 </div>
 
-                <!-- Highly Visible Telegram-branded Button (Official Blue, Glowing effect) [1] -->
+                <!-- Hand-signed signature below the typing letter -->
+                <div class="pt-4 flex items-center gap-4 not-italic">
+                    <div class="w-8 h-8 rounded-full overflow-hidden grayscale border border-neutral-800">
+                        <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs sm:text-sm uppercase tracking-wider text-neutral-400 font-medium">— Кирилл Степанов</span>
+                </div>
+
+                <!-- Highly Visible Telegram-branded Button (Official Blue, Glowing effect) -->
                 <div class="pt-4 text-center sm:text-left">
                     <a href="https://t.me/#" target="_blank" class="inline-flex items-center justify-center gap-3 bg-[#24A1DE] hover:bg-[#1d84bd] text-white font-bold uppercase tracking-widest text-xs sm:text-sm py-5 px-10 transition-all duration-300 rounded-none shadow-[0_4px_30px_rgba(36,161,222,0.35)] animate-pulse-btn w-full sm:w-auto">
-                        <!-- SVG Paper Plane Icon inside the button [1] -->
+                        <!-- SVG Paper Plane Icon inside the button -->
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 12 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.46 1-.73 1.03-.58.06-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.63.15-.16 2.72-2.5 2.77-2.71.01-.03.01-.13-.01-.15-.02-.02-.08-.01-.13 0-.07.01-1.13.72-3.19 2.13-.3.2-.57.3-.82.3-.27 0-.79-.15-1.18-.28-.48-.15-.86-.23-.83-.49.02-.13.38-.27 1.09-.41 4.26-1.85 7.11-3.07 8.54-3.66 4.07-1.68 4.92-1.97 5.47-1.98.12 0 .39.03.57.17.13.11.17.26.19.37.02.1.03.35.01.53z"/>
                         </svg>
-                        <span>Подписаться на телеграм-канал</span> [1]
+                        <span>Подписаться на телеграм-канал</span>
                     </a>
                 </div>
 
             </div>
 
-            <!-- Transitional button moved here (now under the letter block as requested) [1] -->
+            <!-- Transitional button moved here (now under the letter block as requested) -->
             <div class="mt-12 sm:mt-16 flex justify-center max-w-4xl mx-auto">
                 <a href="#standards" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-850 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-neutral-400 hover:text-white">
-                    <span>Смотреть технологии и стандарты реализации</span> [1]
+                    <span>Смотреть технологии и стандарты реализации</span>
                     <span class="text-amber-500 group-hover:translate-y-1 transition-transform duration-300">↓</span>
                 </a>
             </div>
@@ -380,7 +375,7 @@
             <!-- Section Header (Stacked vertically on left for perfect usability and modern aesthetic) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
                 <div class="lg:col-span-8 flex flex-col items-start">
-                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-505 mb-4 block">OUR STANDARDS</span>
+                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">OUR STANDARDS</span>
                     <!-- Approved Headline -->
                     <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight mb-8">
                         Стандарты качества, <br class="hidden sm:block">которые мы задаем на рынке
@@ -423,10 +418,10 @@
                 <div class="py-2">
                     <button onclick="switchAccordion(2)" id="acc-btn-2" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
                         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
+                            <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">02 // ДИЗАЙУ ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
                             <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Топ-100 дизайнеров России</span>
                         </div>
-                        <span id="acc-icon-2" class="text-xs text-neutral-555 transition-transform duration-300">↓</span>
+                        <span id="acc-icon-2" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
                     </button>
                     <div id="acc-content-2" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
@@ -447,7 +442,7 @@
                             <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">03 // ЭКСКЛЮЗИВ</span>
                             <span class="text-sm font-medium text-white tracking-wide uppercase transition duration-300">Революционные материалы OTTINGER</span>
                         </div>
-                        <span id="acc-icon-3" class="text-xs text-neutral-555 transition-transform duration-300">↓</span>
+                        <span id="acc-icon-3" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
                     </button>
                     <div id="acc-content-3" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
@@ -502,13 +497,13 @@
                 <div class="pt-6 thin-border-t">
                     <span class="text-xs text-neutral-600 font-medium block mb-4">01 // ПЕРЕДАЧА</span>
                     <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Передача контакта</h3>
-                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Вы просто отправляете нам контакт клиента, планирующего ремонт или дизайн недвижимости в Сочи. Всё дальнейшее общение с ним мы берем на себя.</p>
+                    <p class="text-xs text-neutral-505 font-light leading-relaxed">Вы просто отправляете нам контакт клиента, планирующего ремонт или дизайн недвижимости в Сочи. Всё дальнейшее общение с ним мы берем на себя.</p>
                 </div>
                 <!-- Step 2 -->
                 <div class="pt-6 thin-border-t">
                     <span class="text-xs text-neutral-600 font-medium block mb-4">02 // ДОГОВОР</span>
                     <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Договор и первый платеж</h3>
-                    <p class="text-xs text-neutral-500 font-light leading-relaxed">Мы встречаемся с клиентом в офисе, утверждаем проект, подписываем официальный строительный договор, и клиент вносит авансовый платеж за ремонт.</p>
+                    <p class="text-xs text-neutral-505 font-light leading-relaxed">Мы встречаемся с клиентом в офисе, утверждаем проект, подписываем официальный строительный договор, и клиент вносит авансовый платеж за ремонт.</p>
                 </div>
                 <!-- Step 3 -->
                 <div class="pt-6 thin-border-t">
@@ -549,7 +544,6 @@
     <section id="portfolio" class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
-            <!-- Section Header -->
             <div class="mb-20">
                 <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">PORTFOLIO</span>
                 <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Кейсы успешного партнерства STEPANOV STROY</h2>
@@ -620,7 +614,7 @@
                             <p><strong class="text-white font-medium">Решение:</strong> Мы разработали индивидуальный дизайн-проект, составили детальный график работ и выполнили отделку под ключ, строго соблюдая технологические нормы.</p>
                             <p><strong class="text-white font-medium">Результат:</strong> Лояльность покупателя к застройщику укрепилась. Девелопер получил реферальную выплату в размере 900 000 ₽.</p>
                         </div>
-                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-505 uppercase tracking-wider flex justify-between">
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
                             <span>350 м² // Мацеста</span>
                             <span class="text-amber-500 font-medium">Выплата: 900 000 ₽</span>
                         </div>
@@ -823,45 +817,66 @@
             phrases.forEach(phrase => observer.observe(phrase));
         })();
 
-        // CHaracter scroll reveal engine (smooth typing effect linked with scroll depth) [1]
+        // Real Keyboard Typewriter typing effect linked directly with scroll depth inside the envelope [1]
         (function() {
-            const phrases = document.querySelectorAll('.typing-paragraph');
-            if (phrases.length === 0) return;
+            const letterContainer = document.getElementById('telegram-letter');
+            if (!letterContainer) return;
 
-            // Convert phrases into individual spans for character-by-character reveals [1]
-            phrases.forEach(phrase => {
-                const text = phrase.textContent;
-                phrase.innerHTML = Array.from(text).map(char => {
-                    if (char === ' ') return ' ';
-                    return `<span class="char-reveal-letter opacity-20 text-neutral-600 inline-block origin-center transition-all duration-300 ease-out">${char}</span>`;
-                }).join('');
+            const paragraphs = letterContainer.querySelectorAll('.typing-paragraph');
+            const originalTexts = [];
+            paragraphs.forEach(p => {
+                originalTexts.push(p.textContent.trim());
+                p.textContent = ''; // Clear content on initial load so it can be typed [1]
             });
 
-            // Monitor character scroll intersection dynamically [1]
-            const revealLetters = document.querySelectorAll('.char-reveal-letter');
-            
-            const revealObserverOptions = {
-                root: null,
-                rootMargin: '-30% 0px -35% 0px', // Perfect target coordinates at center view height [1]
-                threshold: 0.1
+            let typingStarted = false;
+
+            const startTyping = async () => {
+                if (typingStarted) return;
+                typingStarted = true;
+
+                // Create a real blinking cursor element [1]
+                const cursor = document.createElement('span');
+                cursor.className = 'inline-block w-[2px] h-[1.15em] bg-[#24A1DE] ml-1 align-middle animate-pulse';
+
+                for (let i = 0; i < paragraphs.length; i++) {
+                    const p = paragraphs[i];
+                    const text = originalTexts[i];
+                    p.textContent = '';
+                    p.appendChild(cursor);
+                    
+                    // Type character by character with varied delays mimicking a real keyboard [1]
+                    for (let j = 0; j < text.length; j++) {
+                        cursor.insertAdjacentText('beforebegin', text[j]);
+                        
+                        // Realistic typing delay with a small random human element [1]
+                        const delay = Math.random() * 25 + 15; // 15ms - 40ms per letter [1]
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    }
+                    
+                    // Detach cursor from the finished paragraph before moving to the next line [1]
+                    cursor.remove();
+                    
+                    // Pause slightly between paragraphs [1]
+                    await new Promise(resolve => setTimeout(resolve, 350));
+                }
             };
 
-            const revealObserver = new IntersectionObserver((entries) => {
+            // Monitor when the envelope enters the viewport to trigger typing automatically [1]
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    const isHeading = entry.target.closest('.typing-paragraph').classList.contains('font-bold');
                     if (entry.isIntersecting) {
-                        // Light up characters individually as they scroll across center viewport [1]
-                        entry.target.classList.remove('opacity-20', 'text-neutral-600');
-                        entry.target.classList.add('opacity-100', isHeading ? 'text-white' : 'text-neutral-100');
-                    } else {
-                        // Dim characters down when outside focus area [1]
-                        entry.target.classList.add('opacity-20', 'text-neutral-600');
-                        entry.target.classList.remove('opacity-100', 'text-white', 'text-neutral-100');
+                        startTyping();
+                        observer.unobserve(entry.target); // Run typewriter once
                     }
                 });
-            }, revealObserverOptions);
+            }, {
+                root: null,
+                rootMargin: '0px 0px -15% 0px', // Trigger near middle-lower area [1]
+                threshold: 0.1
+            });
 
-            revealLetters.forEach(letter => revealObserver.observe(letter));
+            observer.observe(letterContainer);
         })();
 
         // INTERACTIVE ACCORDION LOGIC FOR BLOCK 4
