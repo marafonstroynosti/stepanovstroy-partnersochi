@@ -81,6 +81,11 @@
             overflow: hidden !important;
             height: 100vh !important;
         }
+
+        /* Transitions for character scroll typing */
+        .char-reveal-letter {
+            transition: color 0.4s ease, opacity 0.4s ease;
+        }
     </style>
 </head>
 <body class="text-neutral-200 antialiased selection:bg-neutral-800 selection:text-white loading-lock">
@@ -418,10 +423,10 @@
                 <div class="py-2">
                     <button onclick="switchAccordion(2)" id="acc-btn-2" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
                         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">02 // ДИЗАЙУ ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
+                            <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
                             <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Топ-100 дизайнеров России</span>
                         </div>
-                        <span id="acc-icon-2" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
+                        <span id="acc-icon-2" class="text-xs text-neutral-555 transition-transform duration-300">↓</span>
                     </button>
                     <div id="acc-content-2" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
@@ -586,7 +591,7 @@
                             <p><strong class="text-white font-medium">Решение:</strong> Объект был принят нашими мастерами на полный цикл отделочных работ под ключ. Мы строго следовали чертежам, исключив строительные дефекты, и провели шеф-монтаж инженерных узлов.</p>
                             <p><strong class="text-white font-medium">Результат:</strong> Идеальное совпадение проекта и готового интерьера для портфолио дизайнера. Выплата партнеру за комплектацию объекта составила 650 000 ₽.</p>
                         </div>
-                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-505 uppercase tracking-wider flex justify-between">
                             <span>120 м² // ЖК «Актёр Гэлакси»</span>
                             <span class="text-amber-500 font-medium">Выплата: 650 000 ₽</span>
                         </div>
@@ -614,7 +619,7 @@
                             <p><strong class="text-white font-medium">Решение:</strong> Мы разработали индивидуальный дизайн-проект, составили детальный график работ и выполнили отделку под ключ, строго соблюдая технологические нормы.</p>
                             <p><strong class="text-white font-medium">Результат:</strong> Лояльность покупателя к застройщику укрепилась. Девелопер получил реферальную выплату в размере 900 000 ₽.</p>
                         </div>
-                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-505 uppercase tracking-wider flex justify-between">
                             <span>350 м² // Мацеста</span>
                             <span class="text-amber-500 font-medium">Выплата: 900 000 ₽</span>
                         </div>
@@ -667,7 +672,7 @@
                 </div>
             </div>
             <h3 class="text-2xl md:text-3xl font-light text-white mb-4">Давайте заработаем на вашем следующем объекте</h3>
-            <p class="text-neutral-500 text-xs font-light tracking-wide mb-10 max-w-sm mx-auto">Оставьте свой телефон. Мы перезвоним, ответим на вопросы и закрепим за вами условия.</p>
+            <p class="text-neutral-505 text-xs font-light tracking-wide mb-10 max-w-sm mx-auto">Оставьте свой телефон. Мы перезвоним, ответим на вопросы и закрепим за вами условия.</p>
             <form onsubmit="handleFormSubmit(event)" class="max-w-md mx-auto space-y-6">
                 <div>
                     <input type="tel" required placeholder="Введите ваш телефон" class="w-full px-6 py-4 rounded-none bg-[#0a0a0a] border border-neutral-800 focus:border-white focus:outline-none text-white text-center text-xs tracking-[0.2em] uppercase transition duration-300">
@@ -829,17 +834,16 @@
                 p.textContent = ''; // Clear content on initial load so it can be typed [1]
             });
 
-            let typingStarted = false;
+            let currentSessionId = 0;
 
-            const startTyping = async () => {
-                if (typingStarted) return;
-                typingStarted = true;
-
+            const startTyping = async (sessionId) => {
                 // Create a real blinking cursor element [1]
                 const cursor = document.createElement('span');
                 cursor.className = 'inline-block w-[2px] h-[1.15em] bg-[#24A1DE] ml-1 align-middle animate-pulse';
 
                 for (let i = 0; i < paragraphs.length; i++) {
+                    if (sessionId !== currentSessionId) return; // Invalidate if session changed [1]
+
                     const p = paragraphs[i];
                     const text = originalTexts[i];
                     p.textContent = '';
@@ -847,6 +851,7 @@
                     
                     // Type character by character with varied delays mimicking a real keyboard [1]
                     for (let j = 0; j < text.length; j++) {
+                        if (sessionId !== currentSessionId) return; // Invalidate if session changed [1]
                         cursor.insertAdjacentText('beforebegin', text[j]);
                         
                         // Realistic typing delay with a small random human element [1]
@@ -862,12 +867,23 @@
                 }
             };
 
-            // Monitor when the envelope enters the viewport to trigger typing automatically [1]
+            const resetText = () => {
+                paragraphs.forEach(p => {
+                    p.textContent = '';
+                });
+            };
+
+            // Monitor when the envelope enters/leaves the viewport to trigger typing automatically [1]
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        startTyping();
-                        observer.unobserve(entry.target); // Run typewriter once
+                        currentSessionId++; // Invalidate previous typing loop [1]
+                        resetText();
+                        startTyping(currentSessionId); [1]
+                    } else {
+                        // Reset when scrolled away [1]
+                        currentSessionId++; 
+                        resetText();
                     }
                 });
             }, {
