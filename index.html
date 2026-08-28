@@ -205,7 +205,7 @@
                         </div>
                         <div class="flex items-baseline gap-2 mb-4">
                             <span id="areaValue" class="text-4xl font-light text-white font-title font-bold">80</span>
-                            <span class="text-sm font-light text-neutral-505">м²</span>
+                            <span class="text-sm font-light text-neutral-500">м²</span>
                         </div>
                         <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
                         <!-- NEW: Muted slow pulsing guidance text -->
@@ -312,7 +312,7 @@
                     <div class="pt-10 border-t border-neutral-800/40 w-full mt-12 sm:mt-16">
                         <a href="#telegram-club" class="group flex items-center justify-between w-full px-6 py-5 border border-[#24A1DE]/30 hover:border-[#24A1DE] bg-[#24A1DE]/5 hover:bg-[#24A1DE]/10 transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-[#24A1DE]">
                             <span>Присоединиться к нашим партнерам</span>
-                            <span class="text-[#24A1DE] group-hover:translate-x-1 transition-transform duration-300">→</span>
+                            <span class="text-[#24A1DE] group-hover:translate-y-1 transition-transform duration-300">→</span>
                         </a>
                     </div>
                 </div>
@@ -339,20 +339,24 @@
                     <p class="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium">Кому: <span class="text-white font-semibold">Партнерам и коллегам</span></p>
                 </div>
 
-                <!-- Letter Body (Replaced with spacious, highly legible auto-typing single phrase) [1] -->
-                <div id="telegram-letter" class="space-y-6 text-sm sm:text-lg md:text-xl text-neutral-200 font-light leading-relaxed italic min-h-[140px] flex flex-col items-center justify-center text-center">
-                    <p class="typing-paragraph not-italic font-extrabold text-white text-xl sm:text-3xl lg:text-4xl tracking-wide uppercase">
-                        ЗДЕСЬ ВСЕ ЦИФРЫ И ФАКТЫ
-                    </p>
-                    
-                    <!-- Bouncing down arrow directing the eyes directly to the CTA button [1] -->
-                    <div class="text-[#24A1DE] text-3xl sm:text-4xl animate-bounce pt-2">
-                        ↓
+                <!-- Letter Body (This text dynamically "types out" like a real keyboard on entering viewport!) -->
+                <div id="telegram-letter" class="space-y-6 text-sm sm:text-lg md:text-xl text-neutral-200 font-light leading-relaxed italic min-h-[220px]">
+                    <p class="typing-paragraph not-italic font-bold text-white text-lg sm:text-2xl mb-4">Приветствую, дорогие партнеры!</p>
+                    <p class="typing-paragraph">Я приглашаю вас подписаться на наш закрытый Telegram-канал для партнеров.</p>
+                    <p class="typing-paragraph">Всё о деньгах, кейсах партнеров, объектах и качестве наших работ и материалов.</p>
+                    <p class="typing-paragraph">Буду искренне рад видеть вас среди участников нашего сообщества. Присоединяйтесь!</p>
+                </div>
+
+                <!-- Hand-signed signature below the typing letter -->
+                <div class="pt-4 flex items-center gap-4 not-italic">
+                    <div class="w-8 h-8 rounded-full overflow-hidden grayscale border border-neutral-800">
+                        <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover">
                     </div>
+                    <span class="text-xs sm:text-sm uppercase tracking-wider text-neutral-400 font-medium">— Кирилл Степанов</span>
                 </div>
 
                 <!-- Highly Visible Telegram-branded Button (Official Blue, Glowing effect, updated URL and text) -->
-                <div class="pt-4 text-center">
+                <div class="pt-4 text-center sm:text-left">
                     <a href="https://t.me/+rtNbTmu0jmZjNTE6" target="_blank" class="inline-flex items-center justify-center gap-3 bg-[#24A1DE] hover:bg-[#1d84bd] text-white font-bold uppercase tracking-widest text-xs sm:text-sm py-5 px-10 transition-all duration-300 rounded-none shadow-[0_4px_30px_rgba(36,161,222,0.35)] animate-pulse-btn w-full sm:w-auto">
                         <!-- SVG Paper Plane Icon inside the button -->
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -366,7 +370,93 @@
         </div>
     </section>
 
-    <!-- BLOCK 4: STANDARDS OF QUALITY (MINIMAL ACCORDION ON ALL DEVICES) -->
+    <!-- BLOCK 3.6: PORTFOLIO (B2B SUCCESS STORIES CHESS GRID) [Moved up, swapped with Standards block] -->
+    <section id="portfolio" class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="mb-20">
+                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">PORTFOLIO</span>
+                <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Кейсы успешного партнерства STEPANOV STROY</h2>
+                <p class="text-xs text-neutral-500 font-light mt-4 leading-relaxed max-w-2xl">Посмотрите, как мы решаем задачи наших партнеров и сколько они зарабатывают с нами на каждом объекте:</p>
+            </div>
+
+            <!-- CHESS GRID OF CASES -->
+            <div class="space-y-24 lg:space-y-32">
+                
+                <!-- Case 1: Sochi Villa (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
+                            <img src="portfolio-1.jpg" alt="Infinity Villa" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col justify-center">
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 01 // ЧАСТНАЯ РЕЗИДЕНЦИЯ</span>
+                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 1 500 000 ₽ брокеру сразу после аванса клиента</h3>
+                        <div class="text-xs text-neutral-400 space-y-4 font-light leading-relaxed mb-6">
+                            <p><strong class="text-white font-medium">Задача:</strong> Агентство недвижимости закрыло сделку по продаже земельного участка на горном склоне под строительство шале. Заказчику требовался надежный генподрядчик для проведения pre-project аудита, проектирования и капитального строительства виллы площадью 680 м².</p>
+                            <p><strong class="text-white font-medium">Решение:</strong> Инженеры STEPANOV STROY провели геодезический анализ грунта, выполнили расчет нагрузок на склон и взяли объект в генеральный подряд. Всю техническую реализацию и согласования мы вели напрямую с заказчиком.</p>
+                            <p><strong class="text-white font-medium">Результат:</strong> Объект сдан «под ключ» с гарантией 3 года. Партнер получил комиссию в размере 1 500 000 ₽ в соответствии с партнерским соглашением.</p>
+                        </div>
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
+                            <span>680 м² // Красная Поляна</span>
+                            <span class="text-amber-500 font-medium">Выплата: 1 500 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2: Sochi Penthouse (Text Left, Image Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                    <!-- Text Left on Desktop -->
+                    <div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1">
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 02 // АПАРТАМЕНТЫ</span>
+                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 650 000 ₽ сочинскому брокеру за рекомендацию отделки</h3>
+                        <div class="text-xs text-neutral-400 space-y-4 font-light leading-relaxed mb-6">
+                            <p><strong class="text-white font-medium">Задача:</strong> Сочинский дизайнер интерьеров обратился к нам для реализации сложного проекта площадью 120 м² со скрытыми системами кондиционирования и прецизионной малярной отделкой.</p>
+                            <p><strong class="text-white font-medium">Решение:</strong> Объект был принят нашими мастерами на полный цикл отделочных работ под ключ. Мы строго следовали чертежам, исключив строительные дефекты, и провели шеф-монтаж инженерных узлов.</p>
+                            <p><strong class="text-white font-medium">Результат:</strong> Идеальное совпадение проекта и готового интерьера для портфолио дизайнера. Выплата партнеру за комплектацию объекта составила 650 000 ₽.</p>
+                        </div>
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
+                            <span>120 м² // ЖК «Актёр Гэлакси»</span>
+                            <span class="text-amber-500 font-medium">Выплата: 650 000 ₽</span>
+                        </div>
+                    </div>
+                    <!-- Image Right on Desktop -->
+                    <div class="lg:col-span-7 order-1 lg:order-2">
+                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-500 hover:scale-102">
+                            <img src="portfolio-2.jpg" alt="Actor Galaxy" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 5: Private Villa in Matsesta (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-855 grayscale hover:grayscale-0 transition duration-500">
+                            <img src="portfolio-5.jpg" alt="Matsesta Villa" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col justify-center">
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 05 // КУХНЯ В ЧАСТНОМ КОТТЕДЖЕ</span>
+                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 900 000 ₽ сочинскому брокеру за отделку коттеджа под ключ</h3>
+                        <div class="text-xs text-neutral-400 space-y-4 font-light leading-relaxed mb-6">
+                            <p><strong class="text-white font-medium">Задача:</strong> Девелопер загородного поселка в Мацесте передал нам покупателя коттеджа, которому требовалась полная внутренняя отделка здания площадью 350 м² под ключ.</p>
+                            <p><strong class="text-white font-medium">Решение:</strong> Мы разработали индивидуальный дизайн-проект, составили детальный график работ и выполнили отделку под ключ, строго соблюдая технологические нормы.</p>
+                            <p><strong class="text-white font-medium">Результат:</strong> Лояльность покупателя к застройщику укрепилась. Девелопер получил реферальную выплату в размере 900 000 ₽.</p>
+                        </div>
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-505 uppercase tracking-wider flex justify-between">
+                            <span>350 м² // Мацеста</span>
+                            <span class="text-amber-500 font-medium">Выплата: 900 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BLOCK 4: STANDARDS OF QUALITY (MINIMAL ACCORDION ON ALL DEVICES) [Moved down, swapped with Portfolio block] -->
     <section id="standards" class="py-24 lg:py-32 thin-border-t bg-[#080808] scroll-mt-24">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
@@ -480,150 +570,6 @@
         </div>
     </section>
 
-    <!-- WORKFLOW & REWARDS (OPTIMIZED TO 3 COLUMNS) -->
-    <section class="py-24 lg:py-32 thin-border-t">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col">
-            
-            <div class="mb-16 lg:mb-24">
-                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">THE PROCESS</span>
-                <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Как происходит партнерство</h2>
-            </div>
-
-            <!-- Steps Minimalist Table-style layout (CHANGED TO 3 COLUMNS) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
-                <!-- Step 1 -->
-                <div class="pt-6 thin-border-t">
-                    <span class="text-xs text-neutral-600 font-medium block mb-4">01 // ПЕРЕДАЧА</span>
-                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Передача контакта</h3>
-                    <p class="text-xs text-neutral-555 font-light leading-relaxed">Вы просто отправляете нам контакт клиента, планирующего ремонт или дизайн недвижимости в Сочи. Всё дальнейшее общение с ним мы берем на себя.</p>
-                </div>
-                <!-- Step 2 -->
-                <div class="pt-6 thin-border-t">
-                    <span class="text-xs text-neutral-600 font-medium block mb-4">02 // ДОГОВОР</span>
-                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Договор и первый платеж</h3>
-                    <p class="text-xs text-neutral-555 font-light leading-relaxed">Мы встречаемся с клиентом в офисе, утверждаем проект, подписываем официальный строительный договор, и клиент вносит авансовый платеж за ремонт.</p>
-                </div>
-                <!-- Step 3 -->
-                <div class="pt-6 thin-border-t">
-                    <span class="text-xs text-neutral-600 font-medium block mb-4">03 // ВЫПЛАТА</span>
-                    <h3 class="text-xs uppercase tracking-[0.15em] text-white font-semibold mb-2">Выплата вашего бонуса</h3>
-                    <p class="text-xs text-neutral-555 font-light leading-relaxed">После получения платежа он фиксируется в вашем личном кабинете, доступный для вывода любым удобным способом.</p>
-                </div>
-            </div>
-
-            <!-- Rates (Strict Minimal Grid) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto pt-12 thin-border-t w-full">
-                <div class="flex flex-col justify-between py-4">
-                    <div>
-                        <span class="text-[10px] uppercase tracking-[0.2em] text-neutral-500">ОБЪЕКТЫ ДО 60 КВ. М</span>
-                        <h3 class="text-xl font-light text-white mt-2 mb-4">Компактные квартиры и студии</h3>
-                    </div>
-                    <div class="mt-8">
-                        <span class="text-[9px] text-neutral-500 uppercase tracking-widest block">выплата</span>
-                        <span class="text-3xl lg:text-5xl font-light text-white">от 250 000 ₽</span>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-between py-4 md:border-l md:border-neutral-800 md:pl-12">
-                    <div>
-                        <span class="text-[10px] uppercase tracking-[0.2em] text-neutral-500">ОБЪЕКТЫ СВЫШЕ 60 КВ. М</span>
-                        <h3 class="text-xl font-light text-white mt-2 mb-4">Семейные апартаменты и виллы</h3>
-                    </div>
-                    <div class="mt-8">
-                        <span class="text-[9px] text-neutral-500 uppercase tracking-widest block">выплата</span>
-                        <span class="text-3xl lg:text-5xl font-light text-white">от 500 000 ₽</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- PORTFOLIO (B2B SUCCESS STORIES CHESS GRID) -->
-    <section id="portfolio" class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            
-            <div class="mb-20">
-                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">PORTFOLIO</span>
-                <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Кейсы успешного партнерства STEPANOV STROY</h2>
-                <p class="text-xs text-neutral-500 font-light mt-4 leading-relaxed max-w-2xl">Посмотрите, как мы решаем задачи наших партнеров и сколько они зарабатывают с нами на каждом объекте:</p>
-            </div>
-
-            <!-- CHESS GRID OF CASES -->
-            <div class="space-y-24 lg:space-y-32">
-                
-                <!-- Case 1: Sochi Villa (Image Left, Text Right) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-                    <div class="lg:col-span-7">
-                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
-                            <img src="portfolio-1.jpg" alt="Infinity Villa" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <div class="lg:col-span-5 flex flex-col justify-center">
-                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 01 // ЧАСТНАЯ РЕЗИДЕНЦИЯ</span>
-                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 1 500 000 ₽ брокеру сразу после аванса клиента</h3>
-                        <div class="text-xs text-neutral-400 space-y-4 font-light leading-relaxed mb-6">
-                            <p><strong class="text-white font-medium">Задача:</strong> Агентство недвижимости закрыло сделку по продаже земельного участка на горном склоне под строительство шале. Заказчику требовался надежный генподрядчик для проведения pre-project аудита, проектирования и капитального строительства виллы площадью 680 м².</p>
-                            <p><strong class="text-white font-medium">Решение:</strong> Инженеры STEPANOV STROY провели геодезический анализ грунта, выполнили расчет нагрузок на склон и взяли объект в генеральный подряд. Всю техническую реализацию и согласования мы вели напрямую с заказчиком.</p>
-                            <p><strong class="text-white font-medium">Результат:</strong> Объект сдан «под ключ» с гарантией 3 года. Партнер получил комиссию в размере 1 500 000 ₽ в соответствии с партнерским соглашением.</p>
-                        </div>
-                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
-                            <span>680 м² // Красная Поляна</span>
-                            <span class="text-amber-500 font-medium">Выплата: 1 500 000 ₽</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case 2: Sochi Penthouse (Text Left, Image Right) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-                    <!-- Text Left on Desktop -->
-                    <div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1">
-                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 02 // АПАРТАМЕНТЫ</span>
-                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 650 000 ₽ сочинскому брокеру за рекомендацию отделки</h3>
-                        <div class="text-xs text-neutral-400 space-y-4 font-light leading-relaxed mb-6">
-                            <p><strong class="text-white font-medium">Задача:</strong> Сочинский дизайнер интерьеров обратился к нам для реализации сложного проекта площадью 120 м² со скрытыми системами кондиционирования и прецизионной малярной отделкой.</p>
-                            <p><strong class="text-white font-medium">Решение:</strong> Объект был принят нашими мастерами на полный цикл отделочных работ под ключ. Мы строго следовали чертежам, исключив строительные дефекты, и провели шеф-монтаж инженерных узлов.</p>
-                            <p><strong class="text-white font-medium">Результат:</strong> Идеальное совпадение проекта и готового интерьера для портфолио дизайнера. Выплата партнеру за комплектацию объекта составила 650 000 ₽.</p>
-                        </div>
-                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-555 uppercase tracking-wider flex justify-between">
-                            <span>120 м² // ЖК «Актёр Гэлакси»</span>
-                            <span class="text-amber-500 font-medium">Выплата: 650 000 ₽</span>
-                        </div>
-                    </div>
-                    <!-- Image Right on Desktop -->
-                    <div class="lg:col-span-7 order-1 lg:order-2">
-                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-500 hover:scale-102">
-                            <img src="portfolio-2.jpg" alt="Actor Galaxy" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case 5: Private Villa in Matsesta (Image Left, Text Right) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-                    <div class="lg:col-span-7">
-                        <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-855 grayscale hover:grayscale-0 transition duration-500">
-                            <img src="portfolio-5.jpg" alt="Matsesta Villa" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <div class="lg:col-span-5 flex flex-col justify-center">
-                        <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 05 // КУХНЯ В ЧАСТНОМ КОТТЕДЖЕ</span>
-                        <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 900 000 ₽ сочинскому брокеру за отделку коттеджа под ключ</h3>
-                        <div class="text-xs text-neutral-400 space-y-4 font-light leading-relaxed mb-6">
-                            <p><strong class="text-white font-medium">Задача:</strong> Девелопер загородного поселка в Мацесте передал нам покупателя коттеджа, которому требовалась полная внутренняя отделка здания площадью 350 м² под ключ.</p>
-                            <p><strong class="text-white font-medium">Решение:</strong> Мы разработали индивидуальный дизайн-проект, составили детальный график работ и выполнили отделку под ключ, строго соблюдая технологические нормы.</p>
-                            <p><strong class="text-white font-medium">Результат:</strong> Лояльность покупателя к застройщику укрепилась. Девелопер получил реферальную выплату в размере 900 000 ₽.</p>
-                        </div>
-                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-505 uppercase tracking-wider flex justify-between">
-                            <span>350 м² // Мацеста</span>
-                            <span class="text-amber-500 font-medium">Выплата: 900 000 ₽</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
     <!-- OFFICE EVENTS -->
     <section class="py-24 lg:py-32 thin-border-t">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
@@ -657,7 +603,7 @@
                 </div>
                 <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-500 block">ПЕРСОНАЛЬНЫЙ КУРАТОР</span>
                 <h4 class="text-lg font-light text-white mt-2">Кирилл Степанов</h4>
-                <p class="text-neutral-505 text-xs italic mt-3 max-w-md leading-relaxed font-light">«Я лично гарантирую, что ваши люди получат дизайн и ремонт высочайшего уровня, а вы — свой бонус точно в срок».</p>
+                <p class="text-neutral-555 text-xs italic mt-3 max-w-md leading-relaxed font-light">«Я лично гарантирую, что ваши люди получат дизайн и ремонт высочайшего уровня, а вы — свой бонус точно в срок».</p>
                 <div class="flex gap-6 mt-6 text-[10px] tracking-widest uppercase font-light">
                     <a href="https://wa.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">WhatsApp</a>
                     <span class="text-neutral-800">|</span>
