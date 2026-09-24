@@ -81,6 +81,11 @@
             overflow: hidden !important;
             height: 100vh !important;
         }
+
+        /* Transitions for character scroll typing */
+        .char-reveal-letter {
+            transition: color 0.4s ease, opacity 0.4s ease;
+        }
     </style>
 </head>
 <body class="text-neutral-200 antialiased selection:bg-neutral-800 selection:text-white loading-lock">
@@ -97,10 +102,12 @@
     <header class="fixed top-0 left-0 w-full bg-[#080808]/90 backdrop-blur-md z-50 thin-border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 md:h-24 flex items-center justify-between">
             <div class="flex flex-col">
+                <!-- Mobile-friendly compact logo config: prevents any text-wrapping on mobile -->
                 <span class="text-base sm:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P a N O V</span>
                 <span class="text-[7px] sm:text-[9px] text-neutral-500 tracking-[0.25em] sm:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
             </div>
             <div>
+                <!-- Compact button on mobile (no overlap), premium on desktop -->
                 <a href="#callback" class="text-[8px] sm:text-[10px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.2em] text-white border border-neutral-700/60 md:border md:border-neutral-700 px-2 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 hover:border-white transition-all duration-500 rounded-none">
                     Стать партнером
                 </a>
@@ -108,57 +115,57 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Full-Screen Immersive Layout: No Empty Space, Fully Balanced) -->
-    <section class="h-screen min-h-[100dvh] relative flex flex-col justify-between items-center px-4 sm:px-8 lg:px-16 pt-20 sm:pt-24 pb-8 sm:pb-12 overflow-hidden bg-[#080808]">
+    <!-- HERO SECTION (Zero Empty Space, Giant Bold Typography) -->
+    <section class="h-screen min-h-[600px] relative flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-16 md:pt-20 pb-4 overflow-hidden bg-[#080808]">
         
         <!-- Background elements stretching over the entire block -->
         <div class="absolute inset-0 z-0">
+            <!-- Full-bleed grayscale photo with increased opacity for better detail visibility -->
             <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-80">
+            <!-- Lighter dark overlay to make characters in B&W clearer, while maintaining typography contrast -->
             <div class="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <!-- Content wrapper: perfectly fills vertical space without top/bottom dead zones -->
-        <div class="relative z-10 max-w-5xl w-full mx-auto flex flex-col justify-between items-center text-center h-full max-h-[820px] my-auto py-2 sm:py-6">
+        <!-- Content wrapper: tight vertical spacing, centered -->
+        <div class="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center justify-center text-center space-y-5 sm:space-y-6 lg:space-y-8">
             
-            <!-- Giant, Prominent Heading at upper section -->
-            <div class="w-full">
-                <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-[4.25rem] xl:text-[4.75rem] font-extrabold text-white tracking-tight uppercase leading-[1.1] max-w-5xl mx-auto drop-shadow-2xl">
-                    <span class="inline-block sm:whitespace-nowrap">Платим партнерам <span class="text-amber-500">сразу</span></span><br>
-                    <span class="text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)] inline-block sm:whitespace-nowrap">от 250 000 руб</span> <br>
-                    <span class="inline-block">за ремонт</span>
-                </h1>
-            </div>
+            <!-- Giant, Prominent Heading -->
+            <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] font-extrabold text-white tracking-tight uppercase leading-[1.05] max-w-5xl mx-auto drop-shadow-lg">
+                <span class="inline-block sm:whitespace-nowrap">Платим партнерам <span class="text-amber-500">сразу</span></span><br>
+                <span class="text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)] inline-block sm:whitespace-nowrap">от 250 000 руб</span> <br>
+                <span class="inline-block">за ремонт</span>
+            </h1>
 
-            <!-- Grid-based stats block across the center -->
-            <div class="grid grid-cols-3 gap-2 sm:gap-8 lg:gap-12 w-full max-w-4xl mx-auto my-auto py-4">
+            <!-- Grid-based stats block (Large numbers, tight vertical bounds) -->
+            <div class="grid grid-cols-3 gap-2 sm:gap-8 lg:gap-12 w-full max-w-4xl mx-auto">
                 <!-- Fact 1: 10+ -->
-                <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
+                <div class="flex flex-col items-center text-center space-y-1">
                     <span class="text-amber-500 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="10">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-tight sm:leading-snug max-w-[115px] sm:max-w-none">лет опыта в ремонте</span>
+                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-snug">лет опыта в ремонте</span>
                 </div>
                 
                 <!-- Fact 2: 250+ -->
-                <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
+                <div class="flex flex-col items-center text-center space-y-1">
                     <span class="text-amber-500 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="250">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-tight sm:leading-snug max-w-[115px] sm:max-w-none">партнеров с нами зарабатывают</span>
+                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-snug">партнеров с нами зарабатывают</span>
                 </div>
                 
                 <!-- Fact 3: 300+ -->
-                <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
+                <div class="flex flex-col items-center text-center space-y-1">
                     <span class="text-amber-500 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="300">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-tight sm:leading-snug max-w-[115px] sm:max-w-none">реализованных объектов</span>
+                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-snug">реализованных объектов</span>
                 </div>
             </div>
 
-            <!-- CTA Button at bottom of screen -->
-            <div class="w-full sm:w-auto pt-2">
-                <a href="#calculator" class="inline-block bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.2em] text-xs sm:text-sm py-4 sm:py-5 px-8 sm:px-12 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn w-full sm:w-auto">
+            <!-- CTA Button positioned cleanly in the center -->
+            <div class="text-center pt-2">
+                <a href="#calculator" class="inline-block bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.2em] text-xs sm:text-sm py-4 sm:py-5 px-10 sm:px-12 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn w-full sm:w-auto">
                     рассчитать мою комиссию
                 </a>
             </div>
@@ -166,15 +173,16 @@
         </div>
     </section>
 
-    <!-- BLOCK 2: INTERACTIVE CALCULATOR -->
+    <!-- BLOCK 2: INTERACTIVE CALCULATOR (Placed at the top of secondary sections) -->
     <section id="calculator" class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t scroll-mt-24">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
+            <!-- Sleek minimal indicator -->
             <div class="mb-12 text-center">
                 <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 block">INCOME CALCULATOR</span>
             </div>
 
-            <!-- INTERACTIVE LIVE PARTNER CABINET -->
+            <!-- INTERACTIVE LIVE PARTNER CABINET (Spacious Full Width Grid) -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-[#0f0f0f] p-6 sm:p-12 thin-border rounded-none max-w-5xl mx-auto shadow-2xl">
                 
                 <!-- Left Column: Range Slider Calculator with Interactive Hint -->
@@ -187,13 +195,14 @@
                         </div>
                         <div class="flex items-baseline gap-2 mb-4">
                             <span id="areaValue" class="text-4xl font-light text-white font-title font-bold">80</span>
-                            <span class="text-sm font-light text-neutral-500">м²</span>
+                            <span class="text-sm font-light text-neutral-505">м²</span>
                         </div>
                         <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
+                        <!-- NEW: Muted slow pulsing guidance text -->
                         <span class="text-[9px] text-amber-500/80 uppercase tracking-widest block mt-4 animate-pulse">← Двигайте ползунок медленно для расчета →</span>
                     </div>
                     <div class="pt-6 border-t border-neutral-800/60 mt-6">
-                        <span class="text-[10px] text-neutral-500 uppercase tracking-widest block mb-2">Ваш бонус:</span>
+                        <span class="text-[10px] text-neutral-505 uppercase tracking-widest block mb-2">Ваш бонус:</span>
                         <span id="bonusValue" class="text-3xl font-light text-amber-500 tracking-tight block transition-all duration-300">560 000 ₽</span>
                     </div>
                 </div>
@@ -202,10 +211,11 @@
                 <div class="flex flex-col justify-between lg:border-l lg:border-neutral-800/60 lg:pl-8 pt-6 lg:pt-0">
                     <div>
                         <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">Личный кабинет:</h3>
-                        <p class="text-xs text-neutral-500 font-light leading-relaxed mb-4">
+                        <p class="text-xs text-neutral-555 font-light leading-relaxed mb-4">
                             Вы онлайн отслеживаете статус ваших сделок, движение денежных средств и баланс бонуса в реальном времени.
                         </p>
                     </div>
+                    <!-- Flat 2D mockup preview -->
                     <div class="w-full h-full bg-[#0d0d0d] overflow-hidden border border-neutral-800/80">
                         <div class="p-4 flex flex-col justify-between h-full bg-[#080808]">
                             <div class="flex items-center justify-between border-b border-neutral-800 pb-2">
@@ -213,6 +223,7 @@
                                 <span class="text-[8px] text-neutral-500 font-medium">ОНЛАЙН</span>
                             </div>
                             
+                            <!-- Dynamic row -->
                             <div class="flex justify-between items-center my-3">
                                 <div>
                                     <span class="text-[10px] text-white font-semibold uppercase block">ЖК «Сокол»</span>
@@ -221,6 +232,7 @@
                                 <span id="cabinetBonus" class="text-[10px] text-amber-500 font-medium">560 000 ₽</span>
                             </div>
 
+                            <!-- NEW: High-converting Action Button inside the mockup -->
                             <div class="border-t border-neutral-800 pt-3 flex justify-center">
                                 <a href="#callback" class="w-full text-center bg-amber-500 hover:bg-white text-stone-950 hover:text-stone-950 font-bold uppercase tracking-widest text-[9px] py-2 transition duration-300">
                                     Получить выплату
@@ -232,9 +244,9 @@
 
             </div>
 
-            <!-- Interactive transition button -->
+            <!-- NEW: Interactive transition button (Whole button and text highlighted in Orange/Amber) -->
             <div class="mt-12 sm:mt-16 flex justify-center max-w-5xl mx-auto shadow-sm">
-                <a href="#founder" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-850 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-amber-500 hover:text-white">
+                <a href="#founder" class="group flex items-center justify-between w-full px-6 py-5 border border-neutral-855 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-amber-500 hover:text-white">
                     <span>Узнать, кто мы — философия и правила партнерства</span>
                     <span class="text-amber-500 group-hover:translate-y-1 transition-transform duration-300">↓</span>
                 </a>
@@ -243,12 +255,12 @@
         </div>
     </section>
 
-    <!-- BLOCK 3: FOUNDER MANIFESTO -->
+    <!-- BLOCK 3: FOUNDER MANIFESTO (With Sticky Portrait and Scroll-Linked Reveal Text) -->
     <section id="founder" class="py-24 lg:py-32 bg-[#080808] thin-border-t overflow-hidden scroll-mt-24">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
                 
-                <!-- Left: Sticky Founder Portrait -->
+                <!-- Left: Sticky Founder Portrait (Only sticky on desktop lg: screens) -->
                 <div class="lg:col-span-5 lg:sticky lg:top-32 z-20">
                     <div class="bg-neutral-900 overflow-hidden border border-neutral-850 aspect-[3/4] max-w-sm mx-auto lg:mx-0 shadow-2xl">
                         <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover filter grayscale">
@@ -260,25 +272,33 @@
                     <div>
                         <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">FOUNDER'S PHILOSOPHY</span>
                         
+                        <!-- Scrolling Text Wrapper -->
                         <div class="space-y-8 lg:space-y-12">
+                            
                             <p class="text-neutral-400 text-xs font-light uppercase tracking-[0.2em] mb-4">Манифест Кирилла Степанова</p>
                             
+                            <!-- Interactive Scroll Reveal Paragraphs (Now fade dynamically as simple lines) -->
                             <div class="space-y-10 sm:space-y-12 lg:space-y-16">
+                                <!-- Sentence 1 -->
                                 <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left">
                                     Привет! Я <strong class="text-white font-medium">Кирилл Степанов</strong>, сооснователь «STEPANOV STROY».
                                 </div>
 
+                                <!-- Sentence 2 -->
                                 <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left">
                                     Более 10 лет помогаем нашим <span class="text-amber-500 font-semibold">партнерам монетизировать</span> свои рекомендации <span class="font-semibold text-current">без рисков для репутации</span>.
                                 </div>
 
+                                <!-- Sentence 3 (Manifesto quote) -->
                                 <div class="reveal-phrase transition-all duration-500 ease-out text-neutral-600 opacity-40 text-lg sm:text-2xl lg:text-3xl font-light leading-relaxed origin-left border-l-2 border-amber-500/50 pl-6 italic">
                                     <strong class="text-amber-500 font-semibold">Мое главное правило:</strong> вы получаете свой бонус сразу после подписания договора и аванса клиента.
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
+                    <!-- NEW: Telegram-blue transition button inviting to scroll down to the Telegram letter block -->
                     <div class="pt-10 border-t border-neutral-800/40 w-full mt-12 sm:mt-16">
                         <a href="#telegram-club" class="group flex items-center justify-between w-full px-6 py-5 border border-[#24A1DE]/30 hover:border-[#24A1DE] bg-[#24A1DE]/5 hover:bg-[#24A1DE]/10 transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-[#24A1DE]">
                             <span>Присоединиться к нашим партнерам</span>
@@ -291,33 +311,40 @@
         </div>
     </section>
 
-    <!-- BLOCK 3.5: TELEGRAM PARTNER CLUB (Auto-Typewriter Effect) -->
+    <!-- BLOCK 3.5: TELEGRAM PARTNER CLUB (Centered Spacious Envelope with Scroll-Driven Real Keyboard Typewriting) -->
     <section id="telegram-club" class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t scroll-mt-24">
         <div class="max-w-4xl mx-auto px-6">
+            <!-- Custom Letter Container -->
             <div class="p-8 sm:p-12 md:p-16 bg-[#090909] border border-[#24A1DE]/25 rounded-none relative space-y-8 sm:space-y-10 shadow-2xl">
                 
+                <!-- Telegram Blue Pulsing Status Indicator -->
                 <div class="absolute top-6 right-6 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-[#24A1DE] animate-pulse"></span>
                     <span class="text-[9px] uppercase tracking-widest text-[#24A1DE] font-semibold">t.me/stepanov_partners</span>
                 </div>
 
+                <!-- Elegant Envelope Header -->
                 <div class="border-b border-neutral-800/80 pb-6 space-y-2">
                     <p class="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium">От кого: <span class="text-white font-semibold">Кирилл Степанов</span></p>
                     <p class="text-xs uppercase tracking-[0.2em] text-neutral-500 font-medium">Кому: <span class="text-white font-semibold">Партнерам и коллегам</span></p>
                 </div>
 
+                <!-- Letter Body (Replaced with spacious, highly legible auto-typing single phrase) -->
                 <div id="telegram-letter" class="space-y-6 text-center flex flex-col items-center justify-center min-h-[140px]">
                     <p class="typing-paragraph not-italic font-extrabold text-white text-xl sm:text-3xl lg:text-4xl tracking-wide uppercase">
                         ЗДЕСЬ ВСЕ ЦИФРЫ И ФАКТЫ
                     </p>
                     
+                    <!-- Bouncing down arrow directing the eyes directly to the CTA button -->
                     <div class="text-[#24A1DE] text-3xl sm:text-4xl animate-bounce pt-2">
                         ↓
                     </div>
                 </div>
 
+                <!-- Highly Visible Telegram-branded Button (Official Blue, Glowing effect, updated URL and text) -->
                 <div class="pt-4 text-center">
                     <a href="https://t.me/+rtNbTmu0jmZjNTE6" target="_blank" class="inline-flex items-center justify-center gap-3 bg-[#24A1DE] hover:bg-[#1d84bd] text-white font-bold uppercase tracking-widest text-xs sm:text-sm py-5 px-10 transition-all duration-300 rounded-none shadow-[0_4px_30px_rgba(36,161,222,0.35)] animate-pulse-btn w-full sm:w-auto">
+                        <!-- SVG Paper Plane Icon inside the button -->
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 12 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.46 1-.73 1.03-.58.06-1.02-.37-1.58-.74-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.63.15-.16 2.72-2.5 2.77-2.71.01-.03.01-.13-.01-.15-.02-.02-.08-.01-.13 0-.07.01-1.13.72-3.19 2.13-.3.2-.57.3-.82.3-.27 0-.79-.15-1.18-.28-.48-.15-.86-.23-.83-.49.02-.13.38-.27 1.09-.41 4.26-1.85 7.11-3.07 8.54-3.66 4.07-1.68 4.92-1.97 5.47-1.98.12 0 .39.03.57.17.13.11.17.26.19.37.02.1.03.35.01.53z"/>
                         </svg>
@@ -329,7 +356,7 @@
         </div>
     </section>
 
-    <!-- BLOCK 3.6: PORTFOLIO (Cases moved up) -->
+    <!-- BLOCK 3.6: PORTFOLIO (B2B SUCCESS STORIES CHESS GRID) [Moved up, swapped with Standards block] -->
     <section id="portfolio" class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
@@ -342,7 +369,7 @@
             <!-- CHESS GRID OF CASES -->
             <div class="space-y-24 lg:space-y-32">
                 
-                <!-- Case 1: Sochi Villa -->
+                <!-- Case 1: Sochi Villa (Image Left, Text Right) -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                     <div class="lg:col-span-7">
                         <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
@@ -364,8 +391,9 @@
                     </div>
                 </div>
 
-                <!-- Case 2: Sochi Penthouse -->
+                <!-- Case 2: Sochi Penthouse (Text Left, Image Right) -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                    <!-- Text Left on Desktop -->
                     <div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1">
                         <span class="text-[9px] uppercase tracking-[0.2em] text-neutral-500 mb-3">КЕЙС 02 // АПАРТАМЕНТЫ</span>
                         <h3 class="text-2xl font-light text-white tracking-tight leading-tight mb-6">Выплата 650 000 ₽ сочинскому брокеру за рекомендацию отделки</h3>
@@ -374,11 +402,12 @@
                             <p><strong class="text-white font-medium">Решение:</strong> Объект был принят нашими мастерами на полный цикл отделочных работ под ключ. Мы строго следовали чертежам, исключив строительные дефекты, и провели шеф-монтаж инженерных узлов.</p>
                             <p><strong class="text-white font-medium">Результат:</strong> Идеальное совпадение проекта и готового интерьера для портфолио дизайнера. Выплата партнеру за комплектацию объекта составила 650 000 ₽.</p>
                         </div>
-                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-505 uppercase tracking-wider flex justify-between">
                             <span>120 м² // ЖК «Актёр Гэлакси»</span>
                             <span class="text-amber-500 font-medium">Выплата: 650 000 ₽</span>
                         </div>
                     </div>
+                    <!-- Image Right on Desktop -->
                     <div class="lg:col-span-7 order-1 lg:order-2">
                         <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-850 grayscale hover:grayscale-0 transition duration-500 hover:scale-102">
                             <img src="portfolio-2.jpg" alt="Actor Galaxy" class="w-full h-full object-cover">
@@ -386,7 +415,7 @@
                     </div>
                 </div>
 
-                <!-- Case 5: Private Villa in Matsesta -->
+                <!-- Case 5: Private Villa in Matsesta (Image Left, Text Right) -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                     <div class="lg:col-span-7">
                         <div class="aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-855 grayscale hover:grayscale-0 transition duration-500">
@@ -401,7 +430,7 @@
                             <p><strong class="text-white font-medium">Решение:</strong> Мы разработали индивидуальный дизайн-проект, составили детальный график работ и выполнили отделку под ключ, строго соблюдая технологические нормы.</p>
                             <p><strong class="text-white font-medium">Результат:</strong> Лояльность покупателя к застройщику укрепилась. Девелопер получил реферальную выплату в размере 900 000 ₽.</p>
                         </div>
-                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-500 uppercase tracking-wider flex justify-between">
+                        <div class="pt-4 border-t border-neutral-800/60 text-[10px] text-neutral-505 uppercase tracking-wider flex justify-between">
                             <span>350 м² // Мацеста</span>
                             <span class="text-amber-500 font-medium">Выплата: 900 000 ₽</span>
                         </div>
@@ -413,24 +442,28 @@
         </div>
     </section>
 
-    <!-- BLOCK 4: STANDARDS OF QUALITY -->
+    <!-- BLOCK 4: STANDARDS OF QUALITY (MINIMAL ACCORDION ON ALL DEVICES) [Moved down, swapped with Portfolio block] -->
     <section id="standards" class="py-24 lg:py-32 thin-border-t bg-[#080808] scroll-mt-24">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
+            <!-- Section Header (Stacked vertically on left for perfect usability and modern aesthetic) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
                 <div class="lg:col-span-8 flex flex-col items-start">
                     <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 block">OUR STANDARDS</span>
+                    <!-- Approved Headline -->
                     <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight mb-8">
                         Стандарты качества, <br class="hidden sm:block">которые мы задаем на рынке
                     </h2>
+                    <!-- Approved Subheadline (Stacked below the title for perfect flow) -->
                     <p class="border-l-2 border-amber-500/50 pl-6 italic text-neutral-400 text-sm md:text-base leading-relaxed font-light max-w-3xl">
                         «Качественный ремонт — это не случайность, а система. Мы полностью исключили человеческий фактор и создали четыре золотых стандарта реализации объектов любой сложности:»
                     </p>
                 </div>
+                <!-- Right columns kept empty for luxurious breathing room -->
                 <div class="lg:col-span-4 hidden lg:block"></div>
             </div>
 
-            <!-- INTERACTIVE ARCHITECTURAL ACCORDION -->
+            <!-- INTERACTIVE ARCHITECTURAL ACCORDION (100% MOBILE & DESKTOP COMPLIANT) -->
             <div class="mt-12 thin-border-t divide-y divide-neutral-800/60">
                 
                 <!-- ACCORDION ITEM 1 -->
@@ -442,6 +475,7 @@
                         </div>
                         <span id="acc-icon-1" class="text-xs text-amber-500 transition-transform duration-300">↑</span>
                     </button>
+                    <!-- Content inside the accordion (Text on Top, Image on Bottom) -->
                     <div id="acc-content-1" class="transition-all duration-500 ease-in-out overflow-hidden max-h-[1000px] opacity-100">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
                             <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
@@ -458,10 +492,10 @@
                 <div class="py-2">
                     <button onclick="switchAccordion(2)" id="acc-btn-2" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
                         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
+                            <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
                             <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Топ-100 дизайнеров России</span>
                         </div>
-                        <span id="acc-icon-2" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
+                        <span id="acc-icon-2" class="text-xs text-neutral-555 transition-transform duration-300">↓</span>
                     </button>
                     <div id="acc-content-2" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
@@ -479,12 +513,12 @@
                 <div class="py-2">
                     <button onclick="switchAccordion(3)" id="acc-btn-3" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
                         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">03 // ЭКСКЛЮЗИВ</span>
+                            <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">03 // ЭКСКЛЮЗИВ</span>
                             <span class="text-sm font-medium text-white tracking-wide uppercase transition duration-300">Революционные материалы OTTINGER</span>
                         </div>
                         <span id="acc-icon-3" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
                     </button>
-                    <div id="acc-content-3" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
+                    <div id="acc-content-2" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
                             <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
                                 В финишной отделке мы используем собственные инновационные материалы OTTINGER, которые стали технологической революцией на рынке Сочи. Это гарантирует вечный ресурс ремонта и на 100% исключает появление микротрещин или деформаций со временем.
@@ -500,10 +534,10 @@
                 <div class="py-2">
                     <button onclick="switchAccordion(4)" id="acc-btn-4" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
                         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">04 // ТЕХНОЛОГИЧНОСТЬ</span>
-                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Цифровой контроль 24/7</span>
+                            <span class="text-[10px] text-neutral-505 tracking-wider font-semibold block transition duration-300">04 // ТЕХНОЛОГИЧНОСТЬ</span>
+                            <span class="text-sm font-medium text-white tracking-wide uppercase transition duration-300">Цифровой контроль 24/7</span>
                         </div>
-                        <span id="acc-icon-4" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
+                        <span id="acc-icon-4" class="text-xs text-neutral-555 transition-transform duration-300">↓</span>
                     </button>
                     <div id="acc-content-4" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
@@ -555,7 +589,7 @@
                 </div>
                 <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-500 block">ПЕРСОНАЛЬНЫЙ КУРАТОР</span>
                 <h4 class="text-lg font-light text-white mt-2">Кирилл Степанов</h4>
-                <p class="text-neutral-500 text-xs italic mt-3 max-w-md leading-relaxed font-light">«Я лично гарантирую, что ваши люди получат дизайн и ремонт высочайшего уровня, а вы — свой бонус точно в срок».</p>
+                <p class="text-neutral-505 text-xs italic mt-3 max-w-md leading-relaxed font-light">«Я лично гарантирую, что ваши люди получат дизайн и ремонт высочайшего уровня, а вы — свой бонус точно в срок».</p>
                 <div class="flex gap-6 mt-6 text-[10px] tracking-widest uppercase font-light">
                     <a href="https://wa.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">WhatsApp</a>
                     <span class="text-neutral-800">|</span>
@@ -583,7 +617,7 @@
 
     <!-- Handler logic & Preloader + Calculator logic -->
     <script>
-        // PRELOADER ENGINE
+        // PRELOADER ENGINE (Smoothly counts to 100% based on actual window load state)
         (function() {
             let count = 0;
             const percentEl = document.getElementById('loadPercent');
@@ -591,14 +625,16 @@
             
             if (!percentEl || !preloader) return;
 
+            // Smooth increment interval
             const timer = setInterval(() => {
                 if (count < 100) {
                     count += Math.floor(Math.random() * 3) + 1;
-                    if (count > 99) count = 99;
+                    if (count > 99) count = 99; // Hold at 99% until fully loaded
                     percentEl.textContent = count;
                 }
             }, 50);
 
+            // Guarantee 100% and slide up on full window load
             const removePreloader = () => {
                 clearInterval(timer);
                 percentEl.textContent = "100";
@@ -607,9 +643,10 @@
                     document.body.classList.remove('loading-lock');
                     setTimeout(() => {
                         preloader.style.display = 'none';
+                        // Trigger count-up animation on preloader close
                         startCountUpAnimations();
                     }, 1000);
-                }, 300);
+                }, 300); // Elegant small pause at 100%
             };
 
             if (document.readyState === 'complete') {
@@ -625,8 +662,10 @@
             
             counters.forEach(counter => {
                 const target = parseInt(counter.getAttribute('data-target'), 10);
-                const duration = 1400;
+                const duration = 1400; // Animation duration in ms
                 const startTime = performance.now();
+                
+                // Ease-out easing calculation
                 const easeOutQuad = (t) => t * (2 - t);
                 
                 function updateCount(currentTime) {
@@ -640,7 +679,7 @@
                     if (progress < 1) {
                         requestAnimationFrame(updateCount);
                     } else {
-                        counter.textContent = target;
+                        counter.textContent = target; // Ensure exact final value is set
                     }
                 }
                 
@@ -657,7 +696,7 @@
             }
         }
 
-        // RANGE SLIDER CALCULATOR LOGIC
+        // RANGE SLIDER CALCULATOR LOGIC + LIVE MOCKUP CABINET SYNERGY
         const slider = document.getElementById('areaSlider');
         const areaVal = document.getElementById('areaValue');
         const rateVal = document.getElementById('rateValue');
@@ -674,19 +713,23 @@
             const bonus = area * rate;
             const formattedBonus = bonus.toLocaleString('ru-RU') + ' ₽';
 
+            // Update Slider DOM
             areaVal.textContent = area;
             rateVal.textContent = rate.toLocaleString('ru-RU');
             bonusVal.textContent = formattedBonus;
 
+            // Update Live Personal Cabinet DOM
             if (cabinetArea && cabinetBonus) {
                 cabinetArea.textContent = area;
                 cabinetBonus.textContent = formattedBonus;
             }
         }
 
+        // Add event listener to slider & run wiggle animation on load (triggered by IntersectionObserver)
         if (slider) {
             slider.addEventListener('input', updateCalculator);
             
+            // INTERSECTION OBSERVER FOR LIVE SCROLL-TRIGGERED WIGGLE (SMOOTH & ENGAGING)
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -703,7 +746,7 @@
                             currentStep++;
                         }, 80);
                         
-                        observer.unobserve(entry.target);
+                        observer.unobserve(entry.target); // Trigger only once
                     }
                 });
             }, { threshold: 0.3 });
@@ -711,14 +754,14 @@
             observer.observe(slider);
         }
 
-        // SCROLL-LINKED REVEAL ENGINE FOR MANIFESTO
+        // SCROLL-LINKED REVEAL ENGINE FOR THE MANIFESTO BLOCK (100% Mobile & Desktop safe)
         (function() {
             const phrases = document.querySelectorAll('.reveal-phrase');
             if (phrases.length === 0) return;
 
             const observerOptions = {
                 root: null,
-                rootMargin: '-25% 0px -30% 0px',
+                rootMargin: '-25% 0px -30% 0px', // Sweet spot targeted precisely near the viewport center
                 threshold: 0.1
             };
 
@@ -737,7 +780,7 @@
             phrases.forEach(phrase => observer.observe(phrase));
         })();
 
-        // Real Keyboard Typewriter typing effect
+        // Real Keyboard Typewriter typing effect linked directly with scroll depth inside the envelope
         (function() {
             const letterContainer = document.getElementById('telegram-letter');
             if (!letterContainer) return;
@@ -746,32 +789,38 @@
             const originalTexts = [];
             paragraphs.forEach(p => {
                 originalTexts.push(p.textContent.trim());
-                p.textContent = '';
+                p.textContent = ''; // Clear content on initial load so it can be typed
             });
 
             let currentSessionId = 0;
 
             const startTyping = async (sessionId) => {
+                // Create a real blinking cursor element
                 const cursor = document.createElement('span');
                 cursor.className = 'inline-block w-[2px] h-[1.15em] bg-[#24A1DE] ml-1 align-middle animate-pulse';
 
                 for (let i = 0; i < paragraphs.length; i++) {
-                    if (sessionId !== currentSessionId) return;
+                    if (sessionId !== currentSessionId) return; // Invalidate if session changed
 
                     const p = paragraphs[i];
                     const text = originalTexts[i];
                     p.textContent = '';
                     p.appendChild(cursor);
                     
+                    // Type character by character with varied delays mimicking a real keyboard
                     for (let j = 0; j < text.length; j++) {
-                        if (sessionId !== currentSessionId) return;
+                        if (sessionId !== currentSessionId) return; // Invalidate if session changed
                         cursor.insertAdjacentText('beforebegin', text[j]);
                         
-                        const delay = Math.random() * 25 + 15;
+                        // Realistic typing delay with a small random human element
+                        const delay = Math.random() * 25 + 15; // 15ms - 40ms per letter
                         await new Promise(resolve => setTimeout(resolve, delay));
                     }
                     
+                    // Detach cursor from the finished paragraph before moving to the next line
                     cursor.remove();
+                    
+                    // Pause slightly between paragraphs
                     await new Promise(resolve => setTimeout(resolve, 350));
                 }
             };
@@ -782,20 +831,22 @@
                 });
             };
 
+            // Monitor when the envelope enters/leaves the viewport to trigger typing automatically
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        currentSessionId++;
+                        currentSessionId++; // Invalidate previous typing loop
                         resetText();
                         startTyping(currentSessionId);
                     } else {
+                        // Reset when scrolled away
                         currentSessionId++; 
                         resetText();
                     }
                 });
             }, {
                 root: null,
-                rootMargin: '0px 0px -15% 0px',
+                rootMargin: '0px 0px -15% 0px', // Trigger near middle-lower area
                 threshold: 0.1
             });
 
@@ -814,6 +865,7 @@
                 const spanText = btn.querySelector('span:last-child');
 
                 if (i === activeNum) {
+                    // Expand with smooth CSS transitions
                     content.style.maxHeight = "1200px";
                     content.style.opacity = "1";
                     icon.textContent = "↑";
@@ -832,6 +884,7 @@
                         spanText.classList.remove('text-neutral-400');
                     }
                 } else {
+                    // Collapse smoothly
                     content.style.maxHeight = "0px";
                     content.style.opacity = "0";
                     icon.textContent = "↓";
@@ -853,6 +906,7 @@
             }
         }
 
+        // Initialize active accordion on load
         window.addEventListener('DOMContentLoaded', () => {
             switchAccordion(1);
         });
