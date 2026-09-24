@@ -98,20 +98,76 @@
         </div>
     </div>
 
-    <!-- HEADER -->
+    <!-- HEADER (ФИКСИРОВАННАЯ ШАПКА С БУРГЕР-КНОПКОЙ СПРАВА) -->
     <header class="fixed top-0 left-0 w-full bg-[#080808]/90 backdrop-blur-md z-50 thin-border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 md:h-20 flex items-center justify-between">
             <div class="flex flex-col">
                 <span class="text-base sm:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P a N O V</span>
                 <span class="text-[7px] sm:text-[9px] text-neutral-500 tracking-[0.25em] sm:tracking-[0.4em] uppercase mt-1">S T R O Y — S O C H I</span>
             </div>
+            
+            <!-- БУРГЕР-КНОПКА -->
             <div>
-                <a href="#callback" class="text-[8px] sm:text-[10px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.2em] text-white border border-neutral-700/60 md:border md:border-neutral-700 px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 hover:border-white transition-all duration-500 rounded-none">
-                    Стать партнером
-                </a>
+                <button onclick="toggleMenu()" aria-label="Меню навигации" class="flex flex-col items-end justify-center w-11 h-11 space-y-1.5 p-2.5 border border-neutral-800 hover:border-amber-500 transition duration-300 group focus:outline-none bg-[#0c0c0c]">
+                    <span class="w-6 h-[2px] bg-white group-hover:bg-amber-500 transition-all duration-300"></span>
+                    <span class="w-4 h-[2px] bg-amber-500 group-hover:w-6 transition-all duration-300"></span>
+                    <span class="w-5 h-[2px] bg-white group-hover:bg-amber-500 transition-all duration-300"></span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- ВСПЛЫВАЮЩЕЕ МЕНЮ НАВИГАЦИИ (FULLSCREEN DRAWER) -->
+    <div id="sideMenu" class="fixed inset-0 bg-[#080808]/95 backdrop-blur-2xl z-[999] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-6 sm:p-12">
+        <!-- Шапка меню -->
+        <div class="flex items-center justify-between border-b border-neutral-800/80 pb-6 max-w-4xl w-full mx-auto">
+            <div class="flex flex-col">
+                <span class="text-base sm:text-lg font-bold tracking-normal text-white uppercase font-title">S T E P a N O V</span>
+                <span class="text-[8px] sm:text-[9px] text-neutral-500 tracking-[0.3em] uppercase mt-0.5">НАВИГАЦИЯ ПО САЙТУ</span>
+            </div>
+            <button onclick="toggleMenu()" aria-label="Закрыть меню" class="w-10 h-10 flex items-center justify-center border border-neutral-800 text-neutral-400 hover:text-white hover:border-white transition duration-300 focus:outline-none text-xl">
+                ✕
+            </button>
+        </div>
+
+        <!-- Ссылки навигации -->
+        <nav class="flex flex-col space-y-4 sm:space-y-6 my-auto py-6 max-w-4xl w-full mx-auto">
+            <a href="#calculator" onclick="toggleMenu()" class="text-lg sm:text-3xl font-title uppercase tracking-wider text-neutral-300 hover:text-amber-500 transition duration-300 flex items-center justify-between border-b border-neutral-900 pb-3 group">
+                <span>01 // Калькулятор дохода</span>
+                <span class="text-xs text-neutral-600 group-hover:text-amber-500 group-hover:translate-x-1 transition-all">→</span>
+            </a>
+            <a href="#founder" onclick="toggleMenu()" class="text-lg sm:text-3xl font-title uppercase tracking-wider text-neutral-300 hover:text-amber-500 transition duration-300 flex items-center justify-between border-b border-neutral-900 pb-3 group">
+                <span>02 // О нас и манифест</span>
+                <span class="text-xs text-neutral-600 group-hover:text-amber-500 group-hover:translate-x-1 transition-all">→</span>
+            </a>
+            <a href="#telegram-club" onclick="toggleMenu()" class="text-lg sm:text-3xl font-title uppercase tracking-wider text-neutral-300 hover:text-[#24A1DE] transition duration-300 flex items-center justify-between border-b border-neutral-900 pb-3 group">
+                <span>03 // Telegram Клуб</span>
+                <span class="text-xs text-neutral-600 group-hover:text-[#24A1DE] group-hover:translate-x-1 transition-all">→</span>
+            </a>
+            <a href="#portfolio" onclick="toggleMenu()" class="text-lg sm:text-3xl font-title uppercase tracking-wider text-neutral-300 hover:text-amber-500 transition duration-300 flex items-center justify-between border-b border-neutral-900 pb-3 group">
+                <span>04 // Кейсы и выплаты</span>
+                <span class="text-xs text-neutral-600 group-hover:text-amber-500 group-hover:translate-x-1 transition-all">→</span>
+            </a>
+            <a href="#standards" onclick="toggleMenu()" class="text-lg sm:text-3xl font-title uppercase tracking-wider text-neutral-300 hover:text-amber-500 transition duration-300 flex items-center justify-between border-b border-neutral-900 pb-3 group">
+                <span>05 // Стандарты качества</span>
+                <span class="text-xs text-neutral-600 group-hover:text-amber-500 group-hover:translate-x-1 transition-all">→</span>
+            </a>
+            <a href="#callback" onclick="toggleMenu()" class="text-lg sm:text-3xl font-title uppercase tracking-wider text-amber-500 hover:text-white transition duration-300 flex items-center justify-between border-b border-neutral-900 pb-3 group">
+                <span>06 // Стать партнером</span>
+                <span class="text-xs text-amber-500 group-hover:text-white group-hover:translate-x-1 transition-all">→</span>
+            </a>
+        </nav>
+
+        <!-- Подвал меню -->
+        <div class="pt-6 border-t border-neutral-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[10px] text-neutral-500 uppercase tracking-widest max-w-4xl w-full mx-auto">
+            <span>Сочи, Приморская ул., офис 12</span>
+            <div class="flex gap-4">
+                <a href="https://wa.me/#" target="_blank" class="hover:text-white transition duration-300">WhatsApp</a>
+                <span>|</span>
+                <a href="https://t.me/+rtNbTmu0jmZjNTE6" target="_blank" class="hover:text-white transition duration-300">Telegram</a>
+            </div>
+        </div>
+    </div>
 
     <!-- HERO SECTION (Крупный заголовок, белые цифры, кнопка прямо под цифрами, ровно 100% высоты экрана) -->
     <section class="relative h-[100svh] min-h-[100svh] sm:h-screen w-full flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-16 md:pt-20 pb-4 overflow-hidden bg-[#080808]">
@@ -142,10 +198,10 @@
                     <span class="text-[9px] sm:text-xs text-neutral-300 font-semibold uppercase tracking-wider leading-snug">лет опыта в ремонте</span>
                 </div>
                 
-                <!-- Fact 2: 250+ -->
+                <!-- Fact 2: 68+ -->
                 <div class="flex flex-col items-center text-center space-y-1">
                     <span class="text-white text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black font-title leading-none drop-shadow-md">
-                        <span class="count-up" data-target="250">1</span>+
+                        <span class="count-up" data-target="68">1</span>+
                     </span>
                     <span class="text-[9px] sm:text-xs text-neutral-300 font-semibold uppercase tracking-wider leading-snug">партнеров с нами</span>
                 </div>
@@ -584,6 +640,21 @@
 
     <!-- Handler logic & Preloader + Calculator logic -->
     <script>
+        // TOGGLE SIDE MENU LOGIC
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            if (!sideMenu) return;
+            if (sideMenu.classList.contains('translate-x-full')) {
+                sideMenu.classList.remove('translate-x-full');
+                sideMenu.classList.add('translate-x-0');
+                document.body.classList.add('overflow-hidden');
+            } else {
+                sideMenu.classList.remove('translate-x-0');
+                sideMenu.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+
         // PRELOADER ENGINE
         (function() {
             let count = 0;
