@@ -37,7 +37,7 @@
         /* PREMIUM CUSTOM PULSE ANIMATIONS */
         @keyframes pulse-btn {
             0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(36, 161, 222, 0.4); }
-            50% { transform: scale(1.03); box-shadow: 0 0 20px 4px rgba(36, 161, 222, 0.25); }
+            50% { transform: scale(1.02); box-shadow: 0 0 20px 4px rgba(36, 161, 222, 0.25); }
         }
         .animate-pulse-btn {
             animation: pulse-btn 3s infinite ease-in-out;
@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <!-- HEADER (COMPACT, NON-OVERLAPPING ON MOBILE) -->
+    <!-- HEADER -->
     <header class="fixed top-0 left-0 w-full bg-[#080808]/90 backdrop-blur-md z-50 thin-border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 md:h-20 flex items-center justify-between">
             <div class="flex flex-col">
@@ -113,55 +113,57 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Компактный, с минимальными отступами сверху и снизу) -->
-    <section class="relative flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-20 pb-8 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16 overflow-hidden bg-[#080808]">
+    <!-- HERO SECTION (Ровно на 100% экрана, сбалансированное наполнение) -->
+    <section class="relative h-[100dvh] min-h-[100dvh] w-full flex flex-col justify-between items-center px-4 sm:px-8 lg:px-16 pt-16 sm:pt-20 pb-6 sm:pb-8 overflow-hidden bg-[#080808]">
         
-        <!-- Background elements stretching over the entire block -->
+        <!-- Background elements -->
         <div class="absolute inset-0 z-0">
-            <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-80">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-75">
+            <div class="absolute inset-0 bg-black/65"></div>
         </div>
 
-        <!-- Content wrapper: сжатые отступы, строгий фокус на контенте -->
-        <div class="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center justify-center text-center space-y-4 sm:space-y-6">
+        <!-- Content wrapper: равномерно заполняет высоту экрана без дыр -->
+        <div class="relative z-10 max-w-4xl w-full mx-auto flex-1 flex flex-col justify-around items-center text-center py-2 sm:py-4">
             
             <!-- Заголовок -->
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.2rem] font-extrabold text-white tracking-tight uppercase leading-[1.1] max-w-4xl mx-auto drop-shadow-lg">
-                <span class="inline-block sm:whitespace-nowrap">Платим партнерам <span class="text-amber-500">сразу</span></span><br>
-                <span class="text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)] inline-block sm:whitespace-nowrap">от 250 000 руб</span> <br>
-                <span class="inline-block">за ремонт</span>
-            </h1>
+            <div class="space-y-1">
+                <h1 class="text-[1.65rem] xs:text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight uppercase leading-[1.12] drop-shadow-lg">
+                    <span>Платим партнерам <span class="text-amber-500">сразу</span></span><br>
+                    <span class="text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)]">от 250 000 руб</span> <br>
+                    <span>за ремонт</span>
+                </h1>
+            </div>
 
             <!-- Цифры / Факты -->
-            <div class="grid grid-cols-3 gap-2 sm:gap-6 lg:gap-10 w-full max-w-3xl mx-auto pt-1">
+            <div class="grid grid-cols-3 gap-2 sm:gap-6 w-full max-w-md sm:max-w-2xl mx-auto py-1">
                 <!-- Fact 1: 10+ -->
                 <div class="flex flex-col items-center text-center space-y-1">
-                    <span class="text-amber-500 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black font-title leading-none drop-shadow-md">
+                    <span class="text-amber-500 text-3xl sm:text-5xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="10">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs text-neutral-200 font-semibold uppercase tracking-widest leading-snug">лет опыта в ремонте</span>
+                    <span class="text-[9px] sm:text-xs text-neutral-200 font-semibold uppercase tracking-wider leading-snug">лет опыта в ремонте</span>
                 </div>
                 
                 <!-- Fact 2: 250+ -->
                 <div class="flex flex-col items-center text-center space-y-1">
-                    <span class="text-amber-500 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black font-title leading-none drop-shadow-md">
+                    <span class="text-amber-500 text-3xl sm:text-5xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="250">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs text-neutral-200 font-semibold uppercase tracking-widest leading-snug">партнеров с нами</span>
+                    <span class="text-[9px] sm:text-xs text-neutral-200 font-semibold uppercase tracking-wider leading-snug">партнеров с нами</span>
                 </div>
                 
                 <!-- Fact 3: 300+ -->
                 <div class="flex flex-col items-center text-center space-y-1">
-                    <span class="text-amber-500 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black font-title leading-none drop-shadow-md">
+                    <span class="text-amber-500 text-3xl sm:text-5xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="300">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs text-neutral-200 font-semibold uppercase tracking-widest leading-snug">готовых объектов</span>
+                    <span class="text-[9px] sm:text-xs text-neutral-200 font-semibold uppercase tracking-wider leading-snug">готовых объектов</span>
                 </div>
             </div>
 
             <!-- CTA Кнопка -->
-            <div class="text-center pt-2 w-full sm:w-auto">
-                <a href="#calculator" class="inline-block bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.2em] text-xs sm:text-sm py-4 px-8 sm:px-12 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn w-full sm:w-auto">
+            <div class="w-full max-w-xs sm:max-w-sm mx-auto">
+                <a href="#calculator" class="block w-full bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.15em] text-xs sm:text-sm py-4 sm:py-5 px-6 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn">
                     рассчитать мою комиссию
                 </a>
             </div>
@@ -170,7 +172,7 @@
     </section>
 
     <!-- BLOCK 2: INTERACTIVE CALCULATOR -->
-    <section id="calculator" class="py-16 sm:py-24 lg:py-32 bg-[#0a0a0a] thin-border-t scroll-mt-20">
+    <section id="calculator" class="py-20 sm:py-24 lg:py-32 bg-[#0a0a0a] thin-border-t scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
             <div class="mb-12 text-center">
