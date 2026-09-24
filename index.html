@@ -98,20 +98,18 @@
         </div>
     </div>
 
-    <!-- HEADER (ЛАКОНИЧНЫЙ ЛОГОТИП С ТОЧНОЙ РАСТЯЖКОЙ БУКВ + БУРГЕР) -->
+    <!-- HEADER (СИММЕТРИЧНЫЙ ПРЕМИАЛЬНЫЙ ЛОГОТИП + БУРГЕР) -->
     <header class="fixed top-0 left-0 w-full bg-[#080808]/95 backdrop-blur-md z-50 thin-border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-20 sm:h-24 flex items-center justify-between">
             
-            <!-- ЛОГОТИП (STEPANOV СВЕРХУ, БУКВЫ И ТИРЕ STROY — SOCHI РАСТЯНУТЫ ПО ДЛИНЕ СНИЗУ) -->
-            <a href="#" class="inline-flex flex-col justify-center group select-none">
+            <!-- ЛОГОТИП (СТРОГО ОРГАНИЧНАЯ И СИММЕТРИЧНАЯ ГЕОМЕТРИЯ) -->
+            <a href="#" class="inline-flex flex-col justify-center items-center group select-none">
                 <span class="text-sm sm:text-base md:text-lg font-light tracking-[0.22em] sm:tracking-[0.26em] text-white uppercase font-title leading-none group-hover:text-amber-400 transition duration-300">
                     STEPANOV
                 </span>
-                <div class="flex justify-between w-full text-[6.5px] sm:text-[7.5px] md:text-[8px] text-neutral-400 group-hover:text-amber-400/90 uppercase font-light mt-1 sm:mt-1.5 transition duration-300 select-none">
-                    <span>S</span><span>T</span><span>R</span><span>O</span><span>Y</span>
-                    <span class="text-neutral-500 font-normal">—</span>
-                    <span>S</span><span>O</span><span>C</span><span>H</span><span>I</span>
-                </div>
+                <span class="text-[6.5px] sm:text-[7.5px] md:text-[8px] text-neutral-400 group-hover:text-amber-400/90 uppercase font-light tracking-[0.22em] sm:tracking-[0.26em] text-center w-full mt-1.5 transition duration-300 pl-[0.22em] sm:pl-[0.26em]">
+                    STROY — SOCHI
+                </span>
             </a>
             
             <!-- БУРГЕР-КНОПКА -->
@@ -129,15 +127,13 @@
     <div id="sideMenu" class="fixed inset-0 bg-[#080808]/95 backdrop-blur-2xl z-[999] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-6 sm:p-12">
         <!-- Шапка меню -->
         <div class="flex items-center justify-between border-b border-neutral-800/80 pb-6 max-w-4xl w-full mx-auto">
-            <div class="inline-flex flex-col">
+            <div class="inline-flex flex-col items-center">
                 <span class="text-base sm:text-lg font-light tracking-[0.22em] text-white uppercase font-title leading-none">
                     STEPANOV
                 </span>
-                <div class="flex justify-between w-full text-[7px] sm:text-[8px] text-neutral-400 uppercase font-light mt-1.5 select-none">
-                    <span>S</span><span>T</span><span>R</span><span>O</span><span>Y</span>
-                    <span class="text-neutral-500 font-normal">—</span>
-                    <span>S</span><span>O</span><span>C</span><span>H</span><span>I</span>
-                </div>
+                <span class="text-[7px] sm:text-[8px] text-neutral-400 uppercase font-light tracking-[0.22em] text-center w-full mt-1.5 pl-[0.22em]">
+                    STROY — SOCHI
+                </span>
             </div>
             <button onclick="toggleMenu()" aria-label="Закрыть меню" class="w-11 h-11 flex items-center justify-center border border-neutral-800 text-neutral-400 hover:text-white hover:border-white transition duration-300 focus:outline-none text-xl">
                 ✕
@@ -183,7 +179,7 @@
         </div>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (100% ВЫСОТА, 100+ ГОТОВЫХ ОБЪЕКТОВ) -->
     <section class="relative h-[100svh] min-h-[100svh] sm:h-screen w-full flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-24 sm:pt-28 pb-4 overflow-hidden bg-[#080808]">
         
         <!-- Background elements -->
@@ -202,7 +198,7 @@
                 <span class="block">за ремонт</span>
             </h1>
 
-            <!-- Цифры / Факты (Белые крупные цифры) -->
+            <!-- Цифры / Факты (10+ лет, 68+ партнеров, 100+ объектов) -->
             <div class="grid grid-cols-3 gap-2 sm:gap-6 lg:gap-10 w-full max-w-sm sm:max-w-3xl mx-auto pt-1">
                 <!-- Fact 1: 10+ -->
                 <div class="flex flex-col items-center text-center space-y-1">
@@ -220,10 +216,10 @@
                     <span class="text-[9px] sm:text-xs text-neutral-300 font-semibold uppercase tracking-wider leading-snug">партнеров с нами</span>
                 </div>
                 
-                <!-- Fact 3: 300+ -->
+                <!-- Fact 3: 100+ -->
                 <div class="flex flex-col items-center text-center space-y-1">
                     <span class="text-white text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black font-title leading-none drop-shadow-md">
-                        <span class="count-up" data-target="300">1</span>+
+                        <span class="count-up" data-target="100">1</span>+
                     </span>
                     <span class="text-[9px] sm:text-xs text-neutral-300 font-semibold uppercase tracking-wider leading-snug">готовых объектов</span>
                 </div>
@@ -919,30 +915,4 @@
                         spanText.classList.remove('text-neutral-400');
                     }
                 } else {
-                    content.style.maxHeight = "0px";
-                    content.style.opacity = "0";
-                    icon.textContent = "↓";
-                    icon.classList.remove('text-amber-500');
-                    icon.classList.add('text-neutral-500');
-                    
-                    btn.classList.remove('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
-                    btn.classList.add('bg-transparent');
-                    
-                    if (spanNum) {
-                        spanNum.classList.remove('text-amber-500');
-                        spanNum.classList.add('text-neutral-500');
-                    }
-                    if (spanText) {
-                        spanText.classList.remove('text-white');
-                        spanText.classList.add('text-neutral-400');
-                    }
-                }
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            switchAccordion(1);
-        });
-    </script>
-</body>
-</html>
+                    content.style.maxHeight = "0px"
