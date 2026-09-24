@@ -34,7 +34,7 @@
             box-shadow: none !important;
         }
 
-        /* PREMIUM CUSTOM PULSE ANIMATIONS (Quiet Luxury Style) */
+        /* PREMIUM CUSTOM PULSE ANIMATIONS */
         @keyframes pulse-btn {
             0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(36, 161, 222, 0.4); }
             50% { transform: scale(1.03); box-shadow: 0 0 20px 4px rgba(36, 161, 222, 0.25); }
@@ -48,7 +48,7 @@
             50% { filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.8)); }
         }
 
-        /* Custom range slider styling with pulsing thumb glow */
+        /* Custom range slider styling */
         input[type=range]::-webkit-slider-runnable-track {
             background: #262626;
             height: 2px;
@@ -113,8 +113,8 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Компактный, сбалансированный без пустых полей) -->
-    <section class="relative flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-24 pb-14 md:pt-28 md:pb-16 lg:py-20 min-h-[85vh] lg:min-h-[680px] overflow-hidden bg-[#080808]">
+    <!-- HERO SECTION (Ровно на весь экран 100dvh — без просвечивания нижнего блока) -->
+    <section class="relative h-[100dvh] min-h-[600px] w-full flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-16 pb-6 overflow-hidden bg-[#080808]">
         
         <!-- Background elements stretching over the entire block -->
         <div class="absolute inset-0 z-0">
@@ -122,17 +122,17 @@
             <div class="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <!-- Content wrapper: tight vertical spacing, centered -->
+        <!-- Content wrapper: идеально центрирован по вертикали -->
         <div class="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center justify-center text-center space-y-6 sm:space-y-8 my-auto">
             
-            <!-- Giant, Prominent Heading -->
+            <!-- Заголовок -->
             <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.2rem] font-extrabold text-white tracking-tight uppercase leading-[1.1] max-w-4xl mx-auto drop-shadow-lg">
                 <span class="inline-block sm:whitespace-nowrap">Платим партнерам <span class="text-amber-500">сразу</span></span><br>
                 <span class="text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)] inline-block sm:whitespace-nowrap">от 250 000 руб</span> <br>
                 <span class="inline-block">за ремонт</span>
             </h1>
 
-            <!-- Grid-based stats block -->
+            <!-- Цифры / Факты -->
             <div class="grid grid-cols-3 gap-2 sm:gap-6 lg:gap-10 w-full max-w-3xl mx-auto pt-1">
                 <!-- Fact 1: 10+ -->
                 <div class="flex flex-col items-center text-center space-y-1">
@@ -159,7 +159,7 @@
                 </div>
             </div>
 
-            <!-- CTA Button -->
+            <!-- CTA Кнопка -->
             <div class="text-center pt-2 w-full sm:w-auto">
                 <a href="#calculator" class="inline-block bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.2em] text-xs sm:text-sm py-4 px-8 sm:px-12 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn w-full sm:w-auto">
                     рассчитать мою комиссию
@@ -170,7 +170,7 @@
     </section>
 
     <!-- BLOCK 2: INTERACTIVE CALCULATOR -->
-    <section id="calculator" class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t scroll-mt-24">
+    <section id="calculator" class="py-24 lg:py-32 bg-[#0a0a0a] thin-border-t scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
             <div class="mb-12 text-center">
