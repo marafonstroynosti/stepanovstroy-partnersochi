@@ -36,8 +36,8 @@
 
         /* PREMIUM CUSTOM PULSE ANIMATIONS */
         @keyframes pulse-btn {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(36, 161, 222, 0.4); }
-            50% { transform: scale(1.02); box-shadow: 0 0 20px 4px rgba(36, 161, 222, 0.25); }
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+            50% { transform: scale(1.03); box-shadow: 0 0 24px 6px rgba(245, 158, 11, 0.35); }
         }
         .animate-pulse-btn {
             animation: pulse-btn 3s infinite ease-in-out;
@@ -113,59 +113,59 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Точное соответствие макету: Заголовок + цифры по центру, кнопка внизу, 100% высота экрана) -->
-    <section class="relative h-[100svh] min-h-[100svh] sm:h-screen w-full flex flex-col justify-between items-center px-4 sm:px-8 lg:px-16 pt-20 pb-8 sm:pb-12 overflow-hidden bg-[#080808]">
+    <!-- HERO SECTION (Крупный заголовок, белые цифры, кнопка прямо под цифрами, ровно 100% высоты экрана) -->
+    <section class="relative h-[100svh] min-h-[100svh] sm:h-screen w-full flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-16 md:pt-20 pb-4 overflow-hidden bg-[#080808]">
         
         <!-- Background elements -->
         <div class="absolute inset-0 z-0 pointer-events-none">
             <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-75">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/85 via-black/65 to-black/90"></div>
         </div>
 
-        <!-- Центральный информационный блок (Заголовок + Цифры) -->
-        <div class="relative z-10 max-w-4xl w-full mx-auto my-auto flex flex-col items-center justify-center text-center space-y-6 sm:space-y-8">
+        <!-- Центральный сплошной блок контента -->
+        <div class="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center justify-center text-center space-y-6 sm:space-y-8 my-auto">
             
-            <!-- Заголовок -->
-            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase leading-[1.18] drop-shadow-lg">
+            <!-- Крупный заголовок -->
+            <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight uppercase leading-[1.1] max-w-4xl mx-auto drop-shadow-lg">
                 <span class="block">Платим партнерам <span class="text-amber-500">сразу</span></span>
                 <span class="block text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)]">от 250 000 руб</span>
                 <span class="block">за ремонт</span>
             </h1>
 
-            <!-- Цифры / Факты -->
-            <div class="grid grid-cols-3 gap-2 sm:gap-6 w-full max-w-sm sm:max-w-2xl mx-auto pt-2">
+            <!-- Цифры / Факты (Белые крупные цифры) -->
+            <div class="grid grid-cols-3 gap-2 sm:gap-6 lg:gap-10 w-full max-w-sm sm:max-w-3xl mx-auto pt-1">
                 <!-- Fact 1: 10+ -->
                 <div class="flex flex-col items-center text-center space-y-1">
-                    <span class="text-amber-500 text-3xl sm:text-5xl lg:text-6xl font-black font-title leading-none drop-shadow-md">
+                    <span class="text-white text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="10">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs text-neutral-200 font-semibold uppercase tracking-wider leading-snug">лет опыта в ремонте</span>
+                    <span class="text-[9px] sm:text-xs text-neutral-300 font-semibold uppercase tracking-wider leading-snug">лет опыта в ремонте</span>
                 </div>
                 
                 <!-- Fact 2: 250+ -->
                 <div class="flex flex-col items-center text-center space-y-1">
-                    <span class="text-amber-500 text-3xl sm:text-5xl lg:text-6xl font-black font-title leading-none drop-shadow-md">
+                    <span class="text-white text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="250">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs text-neutral-200 font-semibold uppercase tracking-wider leading-snug">партнеров с нами</span>
+                    <span class="text-[9px] sm:text-xs text-neutral-300 font-semibold uppercase tracking-wider leading-snug">партнеров с нами</span>
                 </div>
                 
                 <!-- Fact 3: 300+ -->
                 <div class="flex flex-col items-center text-center space-y-1">
-                    <span class="text-amber-500 text-3xl sm:text-5xl lg:text-6xl font-black font-title leading-none drop-shadow-md">
+                    <span class="text-white text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="300">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs text-neutral-200 font-semibold uppercase tracking-wider leading-snug">готовых объектов</span>
+                    <span class="text-[9px] sm:text-xs text-neutral-300 font-semibold uppercase tracking-wider leading-snug">готовых объектов</span>
                 </div>
             </div>
 
-        </div>
+            <!-- CTA Кнопка (Сразу под блоком с цифрами) -->
+            <div class="w-full max-w-xs sm:max-w-md mx-auto pt-2">
+                <a href="#calculator" class="block w-full bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.15em] text-xs sm:text-sm py-4 sm:py-5 px-6 sm:px-10 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn">
+                    рассчитать мою комиссию
+                </a>
+            </div>
 
-        <!-- Нижний блок с кнопкой -->
-        <div class="relative z-10 w-full max-w-xs sm:max-w-sm mx-auto pb-2">
-            <a href="#calculator" class="block w-full bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.15em] text-xs sm:text-sm py-4 sm:py-5 px-6 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn">
-                рассчитать мою комиссию
-            </a>
         </div>
 
     </section>
