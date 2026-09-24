@@ -115,8 +115,8 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Tightly Centered Layout, No Empty Space, Giant Typography) -->
-    <section class="min-h-screen relative flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-16 pb-6 lg:py-0 overflow-hidden bg-[#080808]">
+    <!-- HERO SECTION (Zero Empty Space, Giant Bold Typography) -->
+    <section class="h-screen min-h-[600px] relative flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-16 md:pt-20 pb-4 overflow-hidden bg-[#080808]">
         
         <!-- Background elements stretching over the entire block -->
         <div class="absolute inset-0 z-0">
@@ -126,51 +126,46 @@
             <div class="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <!-- Content wrapper: perfectly centered vertically without dead space -->
-        <div class="relative z-10 max-w-6xl w-full mx-auto flex flex-col items-center justify-center text-center space-y-6 sm:space-y-8 lg:space-y-10 my-auto">
+        <!-- Content wrapper: tight vertical spacing, centered -->
+        <div class="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center justify-center text-center space-y-5 sm:space-y-6 lg:space-y-8">
             
-            <!-- Mobile-Only label (Hidden on Desktop) -->
-            <div class="text-center lg:hidden">
-                <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-neutral-400 block mb-1">PARTNERSHIP / SOCHI</span>
-            </div>
-
             <!-- Giant, Prominent Heading -->
-            <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.25rem] font-extrabold text-white tracking-tight uppercase leading-[1.08] max-w-6xl mx-auto drop-shadow-lg">
+            <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] font-extrabold text-white tracking-tight uppercase leading-[1.05] max-w-5xl mx-auto drop-shadow-lg">
                 <span class="inline-block sm:whitespace-nowrap">Платим партнерам <span class="text-amber-500">сразу</span></span><br>
                 <span class="text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)] inline-block sm:whitespace-nowrap">от 250 000 руб</span> <br>
                 <span class="inline-block">за ремонт</span>
             </h1>
 
-            <!-- Grid-based stats block (Numbers enlarged significantly) -->
-            <div class="grid grid-cols-3 gap-3 sm:gap-10 lg:gap-16 w-full max-w-5xl mx-auto py-2 sm:py-4">
+            <!-- Grid-based stats block (Large numbers, tight vertical bounds) -->
+            <div class="grid grid-cols-3 gap-2 sm:gap-8 lg:gap-12 w-full max-w-4xl mx-auto">
                 <!-- Fact 1: 10+ -->
-                <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
+                <div class="flex flex-col items-center text-center space-y-1">
                     <span class="text-amber-500 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="10">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-snug max-w-[160px] sm:max-w-none">лет опыта в ремонте</span>
+                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-snug">лет опыта в ремонте</span>
                 </div>
                 
                 <!-- Fact 2: 250+ -->
-                <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
+                <div class="flex flex-col items-center text-center space-y-1">
                     <span class="text-amber-500 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="250">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-snug max-w-[160px] sm:max-w-none">партнеров с нами зарабатывают</span>
+                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-snug">партнеров с нами зарабатывают</span>
                 </div>
                 
                 <!-- Fact 3: 300+ -->
-                <div class="flex flex-col items-center text-center space-y-1 sm:space-y-2">
+                <div class="flex flex-col items-center text-center space-y-1">
                     <span class="text-amber-500 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-title leading-none drop-shadow-md">
                         <span class="count-up" data-target="300">1</span>+
                     </span>
-                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-snug max-w-[160px] sm:max-w-none">реализованных объектов</span>
+                    <span class="text-[9px] sm:text-xs md:text-sm text-neutral-200 font-semibold uppercase tracking-widest leading-snug">реализованных объектов</span>
                 </div>
             </div>
 
             <!-- CTA Button positioned cleanly in the center -->
-            <div class="text-center pt-2 sm:pt-4">
-                <a href="#calculator" class="inline-block bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.2em] text-xs sm:text-sm py-5 px-12 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn w-full sm:w-auto">
+            <div class="text-center pt-2">
+                <a href="#calculator" class="inline-block bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.2em] text-xs sm:text-sm py-4 sm:py-5 px-10 sm:px-12 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn w-full sm:w-auto">
                     рассчитать мою комиссию
                 </a>
             </div>
@@ -200,14 +195,14 @@
                         </div>
                         <div class="flex items-baseline gap-2 mb-4">
                             <span id="areaValue" class="text-4xl font-light text-white font-title font-bold">80</span>
-                            <span class="text-sm font-light text-neutral-500">м²</span>
+                            <span class="text-sm font-light text-neutral-505">м²</span>
                         </div>
                         <input type="range" id="areaSlider" min="30" max="250" value="80" class="w-full bg-neutral-800 appearance-none cursor-pointer">
                         <!-- NEW: Muted slow pulsing guidance text -->
                         <span class="text-[9px] text-amber-500/80 uppercase tracking-widest block mt-4 animate-pulse">← Двигайте ползунок медленно для расчета →</span>
                     </div>
                     <div class="pt-6 border-t border-neutral-800/60 mt-6">
-                        <span class="text-[10px] text-neutral-500 uppercase tracking-widest block mb-2">Ваш бонус:</span>
+                        <span class="text-[10px] text-neutral-505 uppercase tracking-widest block mb-2">Ваш бонус:</span>
                         <span id="bonusValue" class="text-3xl font-light text-amber-500 tracking-tight block transition-all duration-300">560 000 ₽</span>
                     </div>
                 </div>
@@ -216,7 +211,7 @@
                 <div class="flex flex-col justify-between lg:border-l lg:border-neutral-800/60 lg:pl-8 pt-6 lg:pt-0">
                     <div>
                         <h3 class="text-xs uppercase tracking-[0.2em] text-white font-semibold mb-4">Личный кабинет:</h3>
-                        <p class="text-xs text-neutral-500 font-light leading-relaxed mb-4">
+                        <p class="text-xs text-neutral-555 font-light leading-relaxed mb-4">
                             Вы онлайн отслеживаете статус ваших сделок, движение денежных средств и баланс бонуса в реальном времени.
                         </p>
                     </div>
