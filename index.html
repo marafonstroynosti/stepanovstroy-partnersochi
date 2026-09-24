@@ -98,18 +98,20 @@
         </div>
     </div>
 
-    <!-- HEADER (СДЕРЖАННЫЙ ПРЕМИАЛЬНЫЙ ЛОГОТИП + БУРГЕР) -->
+    <!-- HEADER (ПРЕМИАЛЬНЫЙ ЛОГОТИП С ИДЕАЛЬНОЙ ГЕОМЕТРИЕЙ ПО ШИРИНЕ + БУРГЕР) -->
     <header class="fixed top-0 left-0 w-full bg-[#080808]/95 backdrop-blur-md z-50 thin-border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-20 sm:h-24 flex items-center justify-between">
             
-            <!-- УТОНЧЕННЫЙ ЛОГОТИП (НЕ ЖИРНЫЙ, СТИЛЬ QUIET LUXURY) -->
-            <a href="#" class="flex flex-col justify-center group select-none">
-                <span class="text-xs sm:text-sm md:text-base font-light tracking-[0.28em] sm:tracking-[0.35em] text-white uppercase font-title leading-none group-hover:text-amber-400 transition duration-300">
-                    STEPANOV STROY
+            <!-- ЛОГОТИП (STEPANOV СВЕРХУ, STROY SOCHI СНИЗУ В РОВЕНЬ ПО ШИРИНЕ) -->
+            <a href="#" class="inline-flex flex-col justify-center group select-none">
+                <span class="text-sm sm:text-base md:text-lg font-light tracking-[0.24em] sm:tracking-[0.28em] text-white uppercase font-title leading-none group-hover:text-amber-400 transition duration-300">
+                    STEPANOV
                 </span>
-                <span class="text-[7.5px] sm:text-[9px] text-neutral-400 group-hover:text-neutral-300 tracking-[0.45em] sm:tracking-[0.55em] uppercase font-light mt-1 sm:mt-1.5 transition duration-300">
-                    SOCHI
-                </span>
+                <div class="flex justify-between w-full text-[7.5px] sm:text-[9px] text-neutral-400 group-hover:text-amber-400/90 uppercase font-light tracking-[0.15em] mt-1.5 transition duration-300">
+                    <span>STROY</span>
+                    <span class="text-neutral-600 select-none">•</span>
+                    <span>SOCHI</span>
+                </div>
             </a>
             
             <!-- БУРГЕР-КНОПКА -->
@@ -127,9 +129,13 @@
     <div id="sideMenu" class="fixed inset-0 bg-[#080808]/95 backdrop-blur-2xl z-[999] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-6 sm:p-12">
         <!-- Шапка меню -->
         <div class="flex items-center justify-between border-b border-neutral-800/80 pb-6 max-w-4xl w-full mx-auto">
-            <div class="flex flex-col">
-                <span class="text-sm sm:text-base font-light tracking-[0.25em] text-white uppercase font-title">STEPANOV STROY</span>
-                <span class="text-[8px] sm:text-[9px] text-neutral-400 tracking-[0.4em] uppercase font-light mt-0.5">SOCHI</span>
+            <div class="inline-flex flex-col">
+                <span class="text-base sm:text-lg font-light tracking-[0.24em] text-white uppercase font-title leading-none">STEPANOV</span>
+                <div class="flex justify-between w-full text-[8px] sm:text-[9px] text-neutral-400 uppercase font-light tracking-[0.15em] mt-1.5">
+                    <span>STROY</span>
+                    <span class="text-neutral-600">•</span>
+                    <span>SOCHI</span>
+                </div>
             </div>
             <button onclick="toggleMenu()" aria-label="Закрыть меню" class="w-11 h-11 flex items-center justify-center border border-neutral-800 text-neutral-400 hover:text-white hover:border-white transition duration-300 focus:outline-none text-xl">
                 ✕
@@ -590,7 +596,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                 <div class="lg:col-span-7">
-                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 block">EVENTS</span>
+                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">EVENTS</span>
                     <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-8">Приглашаем в сочинский офис на партнерские встречи</h2>
                     <div class="space-y-6 text-neutral-400 text-sm font-light leading-relaxed max-w-2xl">
                         <p>Мы не просто работаем по звонку — мы развиваем сильное сообщество профессионалов рынка недвижимости Сочи. </p>
