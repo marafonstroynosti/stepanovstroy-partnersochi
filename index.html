@@ -915,4 +915,30 @@
                         spanText.classList.remove('text-neutral-400');
                     }
                 } else {
-                    content.style.maxHeight = "0px"
+                    content.style.maxHeight = "0px";
+                    content.style.opacity = "0";
+                    icon.textContent = "↓";
+                    icon.classList.remove('text-amber-500');
+                    icon.classList.add('text-neutral-500');
+                    
+                    btn.classList.remove('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
+                    btn.classList.add('bg-transparent');
+                    
+                    if (spanNum) {
+                        spanNum.classList.remove('text-amber-500');
+                        spanNum.classList.add('text-neutral-500');
+                    }
+                    if (spanText) {
+                        spanText.classList.remove('text-white');
+                        spanText.classList.add('text-neutral-400');
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            switchAccordion(1);
+        });
+    </script>
+</body>
+</html>
