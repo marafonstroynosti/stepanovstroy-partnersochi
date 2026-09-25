@@ -284,7 +284,7 @@
         </div>
     </section>
 
-    <!-- МОДАЛЬНОЕ ОКНО ФОРМЫ ЗАХВАТА КОНТАКТА (ОТПРАВЛЯЕТ В @StepanovStroy_Bot) -->
+    <!-- МОДАЛЬНОЕ ОКНО ФОРМЫ ЗАХВАТА КОНТАКТА -->
     <div id="leadModal" class="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none">
         <div class="bg-[#0d0d0d] border border-amber-500/40 p-6 sm:p-10 max-w-md w-full relative shadow-[0_0_50px_rgba(0,0,0,0.9)] transform transition-transform duration-300 scale-95" id="leadModalCard">
             
@@ -305,7 +305,7 @@
                 </div>
             </div>
 
-            <!-- Форма отправки в бот -->
+            <!-- Форма -->
             <form id="modalLeadForm" onsubmit="handleModalFormSubmit(event)" class="space-y-4">
                 <div>
                     <label class="text-[10px] text-neutral-400 uppercase tracking-widest block mb-1">Ваше имя</label>
@@ -670,7 +670,7 @@
         // НАСТРОЙКА TELEGRAM БОТА ДЛЯ ЗАЯВОК
         // ==========================================
         const TELEGRAM_BOT_TOKEN = '8886167398:AAGfFNqnVCq_gwapNec3-cbNfx1KUwKiOyA';
-        const TELEGRAM_CHAT_ID = '7435043440'; // Укажите ваш ID (узнать в @userinfobot)
+        const TELEGRAM_CHAT_ID = 'ВСТАВЬТЕ_ВАШ_ID'; // Укажите ваш ID (узнать в @userinfobot)
 
         async function sendToTelegram(messageText) {
             if (!TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID === 'ВСТАВЬТЕ_ВАШ_ID') {
@@ -694,7 +694,7 @@
             }
         }
 
-        // УПРАВЛЕНИЕ МОДАЛЬНЫМ ОКНОМ (ОТКРЫТИЕ ПО КНОПКЕ "СВЯЗАТЬСЯ")
+        // УПРАВЛЕНИЕ МОДАЛЬНЫМ ОКНОМ
         function openLeadModal() {
             const modal = document.getElementById('leadModal');
             const modalCard = document.getElementById('leadModalCard');
@@ -722,14 +722,13 @@
             document.body.classList.remove('overflow-hidden');
         }
 
-        // Закрытие при клике по фону
         document.getElementById('leadModal')?.addEventListener('click', function(e) {
             if (e.target === this) {
                 closeLeadModal();
             }
         });
 
-        // ОТПРАВКА ИЗ МОДАЛЬНОЙ ФОРМЫ В БОТ
+        // ОТПРАВКА ИЗ МОДАЛЬНОЙ ФОРМЫ
         async function handleModalFormSubmit(event) {
             event.preventDefault();
             const nameInput = document.getElementById('modalName');
@@ -745,7 +744,7 @@
             if (!name || !phone) return;
 
             submitBtn.disabled = true;
-            submitBtn.textContent = 'ОТПРАВКА В БОТ...';
+            submitBtn.textContent = 'ОТПРАВКА...';
 
             const message = `🔥 <b>НОВАЯ ЗАЯВКА ИЗ КАЛЬКУЛЯТОРА!</b>\n\n` +
                             `👤 <b>Имя:</b> ${name}\n` +
@@ -756,7 +755,7 @@
 
             await sendToTelegram(message);
 
-            statusDiv.textContent = `Спасибо, ${name}! Заявка отправлена в бот. Куратор свяжется с вами в течение 15 минут.`;
+            statusDiv.textContent = `Спасибо, ${name}! Заявка принята. Куратор свяжется с вами в течение 15 минут.`;
             statusDiv.classList.remove('hidden');
 
             setTimeout(() => {
@@ -769,14 +768,14 @@
             }, 2500);
         }
 
-        // ОТПРАВКА ИЗ НИЖНЕЙ ФОРМЫ В БОТ
+        // ОТПРАВКА ИЗ НИЖНЕЙ ФОРМЫ
         async function handleBottomFormSubmit(event) {
             event.preventDefault();
             const phone = event.target.querySelector('input').value;
             if (phone) {
                 const message = `⚡️ <b>ЗАЯВКА С НИЖНЕЙ ФОРМЫ САЙТА!</b>\n\n📞 <b>Телефон:</b> ${phone}`;
                 await sendToTelegram(message);
-                alert('Спасибо. Заявка отправлена в Telegram бот. Куратор свяжется с вами в течение 15 минут.');
+                alert('Спасибо. Заявка принята. Куратор свяжется с вами в течение 15 минут.');
                 event.target.reset();
             }
         }
