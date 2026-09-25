@@ -160,12 +160,8 @@
                 <span>04 // Кейсы и выплаты</span>
                 <span class="text-xs text-neutral-600 group-hover:text-amber-500 group-hover:translate-x-1 transition-all">→</span>
             </a>
-            <a href="#standards" onclick="toggleMenu()" class="text-lg sm:text-3xl font-title uppercase tracking-wider text-neutral-300 hover:text-amber-500 transition duration-300 flex items-center justify-between border-b border-neutral-900 pb-3 group">
-                <span>05 // Стандарты качества</span>
-                <span class="text-xs text-neutral-600 group-hover:text-amber-500 group-hover:translate-x-1 transition-all">→</span>
-            </a>
             <a href="#callback" onclick="toggleMenu()" class="text-lg sm:text-3xl font-title uppercase tracking-wider text-amber-500 hover:text-white transition duration-300 flex items-center justify-between border-b border-neutral-900 pb-3 group">
-                <span>06 // Стать партнером</span>
+                <span>05 // Стать партнером</span>
                 <span class="text-xs text-amber-500 group-hover:text-white group-hover:translate-x-1 transition-all">→</span>
             </a>
         </nav>
@@ -180,7 +176,7 @@
         </div>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (ВСЕГДА ОТКРЫВАЕТСЯ ПЕРВЫМ) -->
     <section class="relative h-[100svh] min-h-[100svh] sm:h-screen w-full flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-24 sm:pt-28 pb-4 overflow-hidden bg-[#080808]">
         
         <div class="absolute inset-0 z-0 pointer-events-none">
@@ -275,7 +271,7 @@
         </div>
     </section>
 
-    <!-- МОДАЛЬНОЕ ОКНО ФОРМЫ ЗАХВАТА КОНТАКТА -->
+    <!-- МОДАЛЬНОЕ ОКНО ФОРМЫ ЗАХВАТА КОНТАКТА ИЗ КАЛЬКУЛЯТОРА -->
     <div id="leadModal" class="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none">
         <div class="bg-[#0d0d0d] border border-amber-500/40 p-6 sm:p-10 max-w-md w-full relative shadow-[0_0_50px_rgba(0,0,0,0.9)] transform transition-transform duration-300 scale-95" id="leadModalCard">
             
@@ -482,115 +478,6 @@
         </div>
     </section>
 
-    <!-- BLOCK 4: STANDARDS OF QUALITY -->
-    <section id="standards" class="py-24 lg:py-32 thin-border-t bg-[#080808] scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
-                <div class="lg:col-span-8 flex flex-col items-start">
-                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 block">OUR STANDARDS</span>
-                    <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight mb-8">
-                        Стандарты качества, <br class="hidden sm:block">которые мы задаем на рынке
-                    </h2>
-                    <p class="border-l-2 border-amber-500/50 pl-6 italic text-neutral-400 text-sm md:text-base leading-relaxed font-light max-w-3xl">
-                        «Качественный ремонт — это не случайность, а система. Мы полностью исключили человеческий фактор и создали четыре золотых стандарта реализации объектов любой сложности:»
-                    </p>
-                </div>
-                <div class="lg:col-span-4 hidden lg:block"></div>
-            </div>
-
-            <!-- INTERACTIVE ACCORDION -->
-            <div class="mt-12 thin-border-t divide-y divide-neutral-800/60">
-                
-                <!-- ACCORDION ITEM 1 -->
-                <div class="py-2">
-                    <button onclick="switchAccordion(1)" id="acc-btn-1" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
-                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-amber-500 tracking-wider font-semibold block transition duration-300">01 // ОБУЧЕНИЕ КАДРОВ</span>
-                            <span class="text-sm font-medium text-white tracking-wide uppercase transition duration-300">Собственная Академия Мастеров</span>
-                        </div>
-                        <span id="acc-icon-1" class="text-xs text-amber-500 transition-transform duration-300">↑</span>
-                    </button>
-                    <div id="acc-content-1" class="transition-all duration-500 ease-in-out overflow-hidden max-h-[1000px] opacity-100">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
-                            <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
-                                Мы не нанимаем рабочих по случайным объявлениям. Мы выращиваем свои кадры сами в собственной Академии. Наши бригады регулярно проходят курсы повышения квалификации, сертифицируются у технологов и работают по единым строгим стандартам. Это полностью исключает любые технологические ошибки на объекте.
-                            </div>
-                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
-                                <img src="academy.jpg" alt="Академия" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ACCORDION ITEM 2 -->
-                <div class="py-2">
-                    <button onclick="switchAccordion(2)" id="acc-btn-2" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
-                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">02 // ДИЗАЙН ПРОЕКТЫ ВНЕ ВРЕМЕНИ</span>
-                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Топ-100 дизайнеров России</span>
-                        </div>
-                        <span id="acc-icon-2" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
-                    </button>
-                    <div id="acc-content-2" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
-                            <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
-                                Ведущий дизайнер наших проектов — Сергей Эмих, входящий в список Топ-100 дизайнеров России. Мы находим и реализуем индивидуальные планировочные и инженерные решения для каждого объекта, добиваясь бескомпромиссного совпадения дизайн-проекта и готового ремонта. Вашим клиентам не придется искать компромиссы.
-                            </div>
-                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
-                                <img src="emikh.jpg" alt="Сергей Эмих" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ACCORDION ITEM 3 -->
-                <div class="py-2">
-                    <button onclick="switchAccordion(3)" id="acc-btn-3" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
-                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">03 // ЭКСКЛЮЗИВ</span>
-                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Революционные материалы OTTINGER</span>
-                        </div>
-                        <span id="acc-icon-3" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
-                    </button>
-                    <div id="acc-content-3" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
-                            <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
-                                В финишной отделке мы используем собственные инновационные материалы OTTINGER, которые стали технологической революцией на рынке Сочи. Это гарантирует вечный ресурс ремонта и на 100% исключает появление микротрещин или деформаций со временем.
-                            </div>
-                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
-                                <img src="ottinger.jpg" alt="Материалы" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ACCORDION ITEM 4 -->
-                <div class="py-2">
-                    <button onclick="switchAccordion(4)" id="acc-btn-4" class="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
-                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <span class="text-[10px] text-neutral-500 tracking-wider font-semibold block transition duration-300">04 // ТЕХНОЛОГИЧНОСТЬ</span>
-                            <span class="text-sm font-medium text-neutral-400 group-hover:text-white tracking-wide uppercase transition duration-300">Цифровой контроль 24/7</span>
-                        </div>
-                        <span id="acc-icon-4" class="text-xs text-neutral-500 transition-transform duration-300">↓</span>
-                    </button>
-                    <div id="acc-content-4" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8 items-start">
-                            <div class="lg:col-span-5 text-sm text-neutral-400 font-light leading-relaxed">
-                                Каждый этап ремонта у нас полностью оцифрован. Мы работаем в единой прозрачной системе управления проектами, где прораб, мастера и заказчик видят все процессы в реальном времени. На каждом объекте установлено круглосуточное видеонаблюдение, поэтому контролировать ход работ можно из любой точки мира в один клик.
-                            </div>
-                            <div class="lg:col-span-7 aspect-[4/3] bg-neutral-900 overflow-hidden border border-neutral-800 relative grayscale hover:grayscale-0 transition duration-700 hover:scale-102">
-                                <img src="control.jpg" alt="Контроль" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
     <!-- OFFICE EVENTS -->
     <section class="py-24 lg:py-32 thin-border-t">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col">
@@ -615,30 +502,42 @@
         </div>
     </section>
 
-    <!-- FORM SECTION -->
-    <section id="callback" class="py-24 lg:py-32 bg-[#050505] thin-border-t">
+    <!-- FORM SECTION: СТАТЬ ПАРТНЕРОМ (С ЛОГОТИПОМ, БЕЗ ФОТО И КУРАТОРА, С ПРЯМОЙ ОТПРАВКОЙ В БОТ) -->
+    <section id="callback" class="py-20 lg:py-28 bg-[#070707] thin-border-t">
         <div class="max-w-3xl mx-auto px-6 text-center">
-            <div class="flex flex-col items-center mb-12">
-                <div class="w-24 h-24 overflow-hidden rounded-none border border-neutral-800 mb-6 grayscale">
-                    <img src="kirill.jpg" alt="Кирилл Степанов" class="w-full h-full object-cover">
+            
+            <!-- Логотип вместо фото -->
+            <div class="flex flex-col items-center justify-center mb-10">
+                <div class="inline-block select-none mb-6">
+                    <svg class="w-36 sm:w-44 md:w-48 h-auto mx-auto" viewBox="0 0 200 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="18" font-family="'Syne', sans-serif" font-size="19" font-weight="400" fill="#FFFFFF" textLength="200" lengthAdjust="spacing">STEPANOV</text>
+                        <text x="0" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="300" fill="#9ca3af" textLength="200" lengthAdjust="spacing">STROY — SOCHI</text>
+                    </svg>
                 </div>
-                <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-500 block">ПЕРСОНАЛЬНЫЙ КУРАТОР</span>
-                <h4 class="text-lg font-light text-white mt-2">Кирилл Степанов</h4>
-                <p class="text-neutral-400 text-xs italic mt-3 max-w-md leading-relaxed font-light">«Я лично гарантирую, что ваши люди получат дизайн и ремонт высочайшего уровня, а вы — свой бонус точно в срок».</p>
-                <div class="flex gap-6 mt-6 text-[10px] tracking-widest uppercase font-light">
-                    <a href="https://wa.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">WhatsApp</a>
-                    <span class="text-neutral-800">|</span>
-                    <a href="https://t.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">Telegram</a>
-                </div>
+                <h3 class="text-2xl sm:text-3xl font-light text-white mb-3">Давайте заработаем на вашем следующем объекте</h3>
+                <p class="text-neutral-400 text-xs sm:text-sm font-light max-w-md mx-auto leading-relaxed">
+                    Оставьте свои контакты. Мы свяжемся с вами в течение 15 минут, ответим на вопросы и закрепим условия сотрудничества.
+                </p>
             </div>
-            <h3 class="text-2xl md:text-3xl font-light text-white mb-4">Давайте заработаем на вашем следующем объекте</h3>
-            <p class="text-neutral-500 text-xs font-light tracking-wide mb-10 max-w-sm mx-auto">Оставьте свой телефон. Мы перезвоним, ответим на вопросы и закрепим за вами условия.</p>
-            <form onsubmit="handleBottomFormSubmit(event)" class="max-w-md mx-auto space-y-6">
+
+            <!-- Форма захвата контакта: ИМЯ + ТЕЛЕФОН -->
+            <form onsubmit="handleBottomFormSubmit(event)" class="max-w-md mx-auto space-y-4">
                 <div>
-                    <input type="tel" required placeholder="Введите ваш телефон" class="w-full px-6 py-4 rounded-none bg-[#0a0a0a] border border-neutral-800 focus:border-white focus:outline-none text-white text-center text-xs tracking-[0.2em] uppercase transition duration-300">
+                    <input type="text" id="bottomName" required placeholder="Введите ваше имя" class="w-full px-5 py-4 rounded-none bg-[#0d0d0d] border border-neutral-800 focus:border-amber-500 focus:outline-none text-white text-xs tracking-wider uppercase transition duration-300 text-center sm:text-left">
                 </div>
-                <button type="submit" class="w-full bg-white text-black hover:bg-neutral-200 font-semibold py-5 uppercase tracking-[0.2em] text-xs transition-all duration-500">стать партнером</button>
+                <div>
+                    <input type="tel" id="bottomPhone" required placeholder="+7 (___) ___-__-__" class="w-full px-5 py-4 rounded-none bg-[#0d0d0d] border border-neutral-800 focus:border-amber-500 focus:outline-none text-white text-xs tracking-wider uppercase transition duration-300 text-center sm:text-left">
+                </div>
+                <div class="pt-2">
+                    <button type="submit" id="bottomSubmitBtn" class="w-full bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold uppercase tracking-[0.15em] text-xs sm:text-sm py-4 sm:py-5 px-6 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn cursor-pointer">
+                        стать партнером
+                    </button>
+                </div>
             </form>
+
+            <!-- Статус отправки нижней формы -->
+            <div id="bottomStatus" class="hidden max-w-md mx-auto mt-4 p-3 text-center text-xs tracking-wider uppercase border border-amber-500/40 bg-amber-500/10 text-amber-400"></div>
+
         </div>
     </section>
 
@@ -652,42 +551,90 @@
 
     <!-- Handler logic & Preloader + Calculator & Modal logic -->
     <script>
+        // Сброс скролла на самый верх при открытии/перезагрузке страницы
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         // =========================================================================
         // НАСТРОЙКА TELEGRAM БОТА:
-        // 1. Токен вашего бота уже прописан.
-        // 2. Вставьте ваш ID из @userinfobot в кавычки вместо ВСТАВЬТЕ_ВАШ_ID
         // =========================================================================
         const TELEGRAM_BOT_TOKEN = '8886167398:AAGfFNqnVCq_gwapNec3-cbNfx1KUwKiOyA';
-        const TELEGRAM_CHAT_ID = '7435043440'; // <--- ЗАМЕНИТЕ НА ВАШИ ЦИФРЫ (например: '512345678')
+        const TELEGRAM_CHAT_ID = '7435043440'; // Ваш подключенный ID
 
-        async function sendToTelegram(messageText) {
+        // Безопасное экранирование спецсимволов для Telegram HTML
+        function escapeHtml(text) {
+            if (!text) return '';
+            return text.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;");
+        }
+
+        // Надежная функция отправки в Telegram с автоматическим резервным методом
+        async function sendToTelegram(htmlMessage, plainTextMessage) {
             if (!TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID === 'ВСТАВЬТЕ_ВАШ_ID') {
-                alert('ВНИМАНИЕ: Вы еще не указали TELEGRAM_CHAT_ID в коде скрипта! Узнайте ваш ID в боте @userinfobot и вставьте в строку 591.');
+                alert('ВНИМАНИЕ: TELEGRAM_CHAT_ID не настроен!');
                 return false;
             }
+
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+
             try {
-                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                // Попытка 1: Отправка с красивым HTML
+                const response = await fetch(url, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         chat_id: TELEGRAM_CHAT_ID,
-                        text: messageText,
+                        text: htmlMessage,
                         parse_mode: 'HTML'
                     })
                 });
-                return response.ok;
+
+                const data = await response.json();
+
+                if (data.ok) {
+                    return true;
+                } else {
+                    console.warn('Telegram HTML parse warning, отправляем в обычном тексте:', data);
+                    // Попытка 2: Резервная отправка чистым текстом (100% гарантия доставки)
+                    const fallbackResponse = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            chat_id: TELEGRAM_CHAT_ID,
+                            text: plainTextMessage || htmlMessage.replace(/<[^>]*>/g, '')
+                        })
+                    });
+                    const fallbackData = await fallbackResponse.json();
+                    return fallbackData.ok;
+                }
             } catch (error) {
-                console.error('Ошибка отправки в Telegram:', error);
+                console.error('Сетевая ошибка отправки в Telegram:', error);
                 return false;
             }
         }
 
         // УПРАВЛЕНИЕ МОДАЛЬНЫМ ОКНОМ
+        let modalTimeout = null;
+
         function openLeadModal() {
             const modal = document.getElementById('leadModal');
             const modalCard = document.getElementById('leadModalCard');
             const area = document.getElementById('areaValue').textContent;
             const bonus = document.getElementById('bonusValue').textContent;
+            const submitBtn = document.getElementById('modalSubmitBtn');
+            const statusDiv = document.getElementById('modalStatus');
+            
+            // Очищаем предыдущие таймеры и состояния
+            if (modalTimeout) clearTimeout(modalTimeout);
+            if (statusDiv) statusDiv.classList.add('hidden');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'ОТПРАВИТЬ ЗАЯВКУ';
+            }
             
             document.getElementById('modalArea').textContent = area;
             document.getElementById('modalBonus').textContent = bonus;
@@ -697,6 +644,10 @@
             modalCard.classList.remove('scale-95');
             modalCard.classList.add('scale-100');
             document.body.classList.add('overflow-hidden');
+
+            setTimeout(() => {
+                document.getElementById('modalName')?.focus();
+            }, 100);
         }
 
         function closeLeadModal() {
@@ -716,7 +667,7 @@
             }
         });
 
-        // ОТПРАВКА ИЗ МОДАЛЬНОЙ ФОРМЫ
+        // ОТПРАВКА ИЗ МОДАЛЬНОЙ ФОРМЫ (КАЛЬКУЛЯТОР)
         async function handleModalFormSubmit(event) {
             event.preventDefault();
             const nameInput = document.getElementById('modalName');
@@ -734,44 +685,86 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'ОТПРАВКА...';
 
-            const message = `🔥 <b>НОВАЯ ЗАЯВКА ИЗ КАЛЬКУЛЯТОРА!</b>\n\n` +
-                            `👤 <b>Имя:</b> ${name}\n` +
-                            `📞 <b>Телефон:</b> ${phone}\n` +
-                            `📐 <b>Площадь:</b> ${area} м²\n` +
-                            `💰 <b>Расчетный бонус:</b> ${bonus}\n` +
+            const htmlMsg = `🔥 <b>НОВАЯ ЗАЯВКА ИЗ КАЛЬКУЛЯТОРА!</b>\n\n` +
+                            `👤 <b>Имя:</b> ${escapeHtml(name)}\n` +
+                            `📞 <b>Телефон:</b> ${escapeHtml(phone)}\n` +
+                            `📐 <b>Площадь:</b> ${escapeHtml(area)} м²\n` +
+                            `💰 <b>Расчетный бонус:</b> ${escapeHtml(bonus)}\n` +
                             `📍 <i>STEPANOV STROY — Сочи</i>`;
 
-            const success = await sendToTelegram(message);
+            const plainMsg = `🔥 НОВАЯ ЗАЯВКА ИЗ КАЛЬКУЛЯТОРА!\n\n` +
+                             `Имя: ${name}\n` +
+                             `Телефон: ${phone}\n` +
+                             `Площадь: ${area} м²\n` +
+                             `Расчетный бонус: ${bonus}\n` +
+                             `STEPANOV STROY — Сочи`;
+
+            const success = await sendToTelegram(htmlMsg, plainMsg);
 
             if (success) {
                 statusDiv.textContent = `Спасибо, ${name}! Заявка принята. Куратор свяжется с вами в течение 15 минут.`;
                 statusDiv.classList.remove('hidden');
 
-                setTimeout(() => {
+                modalTimeout = setTimeout(() => {
                     closeLeadModal();
                     statusDiv.classList.add('hidden');
                     nameInput.value = '';
                     phoneInput.value = '';
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'ОТПРАВИТЬ ЗАЯВКУ';
-                }, 2500);
+                }, 2000);
             } else {
+                statusDiv.textContent = `Не удалось отправить. Пожалуйста, попробуйте еще раз.`;
+                statusDiv.classList.remove('hidden');
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'ОТПРАВИТЬ ЗАЯВКУ';
             }
         }
 
-        // ОТПРАВКА ИЗ НИЖНЕЙ ФОРМЫ
+        // ОТПРАВКА ИЗ НИЖНЕЙ ФОРМЫ (СТАТЬ ПАРТНЕРОМ)
         async function handleBottomFormSubmit(event) {
             event.preventDefault();
-            const phone = event.target.querySelector('input').value;
-            if (phone) {
-                const message = `⚡️ <b>ЗАЯВКА С НИЖНЕЙ ФОРМЫ САЙТА!</b>\n\n📞 <b>Телефон:</b> ${phone}`;
-                const success = await sendToTelegram(message);
-                if (success) {
-                    alert('Спасибо. Заявка принята. Куратор свяжется с вами в течение 15 минут.');
-                    event.target.reset();
-                }
+            const nameInput = document.getElementById('bottomName');
+            const phoneInput = document.getElementById('bottomPhone');
+            const statusDiv = document.getElementById('bottomStatus');
+            const submitBtn = document.getElementById('bottomSubmitBtn');
+
+            const name = nameInput.value.trim();
+            const phone = phoneInput.value.trim();
+
+            if (!name || !phone) return;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'ОТПРАВКА...';
+
+            const htmlMsg = `⚡️ <b>НОВАЯ ЗАЯВКА «СТАТЬ ПАРТНЕРОМ»!</b>\n\n` +
+                            `👤 <b>Имя:</b> ${escapeHtml(name)}\n` +
+                            `📞 <b>Телефон:</b> ${escapeHtml(phone)}\n` +
+                            `📍 <i>STEPANOV STROY — Сочи</i>`;
+
+            const plainMsg = `⚡️ НОВАЯ ЗАЯВКА «СТАТЬ ПАРТНЕРОМ»!\n\n` +
+                             `Имя: ${name}\n` +
+                             `Телефон: ${phone}\n` +
+                             `STEPANOV STROY — Сочи`;
+
+            const success = await sendToTelegram(htmlMsg, plainMsg);
+
+            if (success) {
+                statusDiv.textContent = `Спасибо, ${name}! Заявка принята. Куратор свяжется с вами в течение 15 минут.`;
+                statusDiv.classList.remove('hidden');
+
+                setTimeout(() => {
+                    nameInput.value = '';
+                    phoneInput.value = '';
+                    statusDiv.classList.add('hidden');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'СТАТЬ ПАРТНЕРОМ';
+                }, 4000);
+            } else {
+                statusDiv.textContent = `Не удалось отправить. Пожалуйста, попробуйте еще раз.`;
+                statusDiv.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'СТАТЬ ПАРТНЕРОМ';
             }
         }
 
@@ -812,6 +805,7 @@
                 setTimeout(() => {
                     preloader.classList.add('-translate-y-full');
                     document.body.classList.remove('loading-lock');
+                    window.scrollTo(0, 0); // Фиксируем первый экран
                     setTimeout(() => {
                         preloader.style.display = 'none';
                         startCountUpAnimations();
@@ -993,61 +987,6 @@
 
             observer.observe(letterContainer);
         })();
-
-        // INTERACTIVE ACCORDION LOGIC
-        function switchAccordion(activeNum) {
-            for (let i = 1; i <= 4; i++) {
-                const btn = document.getElementById(`acc-btn-${i}`);
-                const content = document.getElementById(`acc-content-${i}`);
-                const icon = document.getElementById(`acc-icon-${i}`);
-                if (!btn || !content || !icon) continue;
-                
-                const spanNum = btn.querySelector('span:first-child');
-                const spanText = btn.querySelector('span:last-child');
-
-                if (i === activeNum) {
-                    content.style.maxHeight = "1200px";
-                    content.style.opacity = "1";
-                    icon.textContent = "↑";
-                    icon.classList.add('text-amber-500');
-                    icon.classList.remove('text-neutral-500');
-                    
-                    btn.classList.add('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
-                    btn.classList.remove('bg-transparent');
-                    
-                    if (spanNum) {
-                        spanNum.classList.add('text-amber-500');
-                        spanNum.classList.remove('text-neutral-500');
-                    }
-                    if (spanText) {
-                        spanText.classList.add('text-white');
-                        spanText.classList.remove('text-neutral-400');
-                    }
-                } else {
-                    content.style.maxHeight = "0px";
-                    content.style.opacity = "0";
-                    icon.textContent = "↓";
-                    icon.classList.remove('text-amber-500');
-                    icon.classList.add('text-neutral-500');
-                    
-                    btn.classList.remove('bg-stone-900/30', 'border-l-2', 'border-amber-500/80');
-                    btn.classList.add('bg-transparent');
-                    
-                    if (spanNum) {
-                        spanNum.classList.remove('text-amber-500');
-                        spanNum.classList.add('text-neutral-500');
-                    }
-                    if (spanText) {
-                        spanText.classList.remove('text-white');
-                        spanText.classList.add('text-neutral-400');
-                    }
-                }
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            switchAccordion(1);
-        });
     </script>
 </body>
 </html>
