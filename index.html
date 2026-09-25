@@ -234,14 +234,14 @@
 
     </section>
 
-    <!-- BLOCK 2: ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР + СБОР КОНТАКТОВ С ОТПРАВКОЙ В TELEGRAM БОТ -->
+    <!-- BLOCK 2: ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР С КНОПКОЙ ВЫЗОВА ФОРМЫ -->
     <section id="calculator" class="py-14 sm:py-20 lg:py-24 bg-[#0a0a0a] thin-border-t scroll-mt-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- Основная карточка калькулятора и захвата лида -->
-            <div class="bg-[#0f0f0f] p-6 sm:p-10 md:p-12 thin-border rounded-none shadow-2xl space-y-8 sm:space-y-10">
+            <!-- Карточка калькулятора -->
+            <div class="bg-[#0f0f0f] p-6 sm:p-10 md:p-12 thin-border rounded-none shadow-2xl space-y-8">
                 
-                <!-- 1. Ползунок расчета площади и бонуса -->
+                <!-- Ползунок расчета площади и бонуса -->
                 <div class="space-y-6">
                     <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
                         <h2 class="text-xs sm:text-sm uppercase tracking-[0.2em] text-white font-semibold">Калькулятор вашей комиссии:</h2>
@@ -263,41 +263,18 @@
                     <span class="text-[9px] sm:text-[10px] text-amber-500/80 uppercase tracking-widest block text-center animate-pulse">← Двигайте ползунок для изменения площади →</span>
                 </div>
 
-                <!-- 2. Форма сбора контактов с кнопкой "СВЯЗАТЬСЯ С НАМИ" -->
-                <div class="pt-6 border-t border-neutral-800/80">
-                    <div class="mb-6 text-center sm:text-left">
-                        <h3 class="text-sm sm:text-base font-medium text-white uppercase tracking-wider mb-1">Зафиксировать условия и получить выплату</h3>
-                        <p class="text-xs text-neutral-400 font-light">Введите имя и телефон — мы свяжемся с вами и закрепим ставку по объекту:</p>
-                    </div>
-
-                    <form id="calculatorLeadForm" onsubmit="handleCalculatorFormSubmit(event)" class="space-y-4 sm:space-y-5">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <!-- Имя -->
-                            <div>
-                                <input type="text" id="leadName" required placeholder="Ваше имя" class="w-full px-5 py-4 rounded-none bg-[#0a0a0a] border border-neutral-800 focus:border-amber-500 focus:outline-none text-white text-xs tracking-wider uppercase transition duration-300">
-                            </div>
-                            <!-- Телефон -->
-                            <div>
-                                <input type="tel" id="leadPhone" required placeholder="+7 (___) ___-__-__" class="w-full px-5 py-4 rounded-none bg-[#0a0a0a] border border-neutral-800 focus:border-amber-500 focus:outline-none text-white text-xs tracking-wider uppercase transition duration-300">
-                            </div>
-                        </div>
-
-                        <!-- Кнопка действия "СВЯЗАТЬСЯ С НАМИ" -->
-                        <div class="pt-2">
-                            <button type="submit" id="calcSubmitBtn" class="block w-full bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.15em] text-xs sm:text-sm py-4 sm:py-5 px-6 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn cursor-pointer">
-                                связаться с нами
-                            </button>
-                        </div>
-                    </form>
-
-                    <!-- Статус отправки -->
-                    <div id="calcFormStatus" class="hidden mt-4 p-4 text-center text-xs tracking-wider uppercase border border-amber-500/40 bg-amber-500/10 text-amber-400"></div>
+                <!-- Кнопка действия "СВЯЗАТЬСЯ С НАМИ" (открывает всплывающую форму) -->
+                <div class="pt-4 border-t border-neutral-800/80 text-center">
+                    <button onclick="openLeadModal()" type="button" class="block w-full bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.15em] text-xs sm:text-sm py-4 sm:py-5 px-6 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn cursor-pointer">
+                        связаться с нами
+                    </button>
+                    <span class="text-[9px] text-neutral-500 uppercase tracking-widest block mt-3">Нажмите, чтобы зафиксировать ставку и обсудить объект</span>
                 </div>
 
             </div>
 
             <!-- Кнопка перехода к следующему блоку -->
-            <div class="mt-10 sm:mt-12 flex justify-center max-w-4xl mx-auto">
+            <div class="mt-10 sm:mt-12 flex justify-center max-w-3xl mx-auto">
                 <a href="#founder" class="group flex items-center justify-between w-full px-6 py-4 sm:py-5 border border-neutral-800 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-amber-500 hover:text-white">
                     <span>Узнать, кто мы — философия и правила партнерства</span>
                     <span class="text-amber-500 group-hover:translate-y-1 transition-transform duration-300">↓</span>
@@ -306,6 +283,51 @@
 
         </div>
     </section>
+
+    <!-- МОДАЛЬНОЕ ОКНО ФОРМЫ ЗАХВАТА КОНТАКТА -->
+    <div id="leadModal" class="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none">
+        <div class="bg-[#0d0d0d] border border-amber-500/40 p-6 sm:p-10 max-w-md w-full relative shadow-[0_0_50px_rgba(0,0,0,0.9)] transform transition-transform duration-300 scale-95" id="leadModalCard">
+            
+            <!-- Кнопка закрытия -->
+            <button onclick="closeLeadModal()" aria-label="Закрыть" class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center border border-neutral-800 text-neutral-400 hover:text-white hover:border-white transition duration-300 text-lg focus:outline-none">
+                ✕
+            </button>
+
+            <!-- Заголовок модального окна -->
+            <div class="text-center mb-6 pt-2">
+                <span class="text-[9px] uppercase tracking-[0.3em] text-amber-500 block mb-1">ФИКСАЦИЯ ВЫПЛАТЫ</span>
+                <h3 class="text-lg sm:text-xl font-bold uppercase tracking-wider text-white">Связаться с нами</h3>
+                
+                <!-- Превью расчета -->
+                <div class="mt-4 p-3 bg-[#080808] border border-neutral-800 flex justify-between items-center text-xs">
+                    <span class="text-neutral-400 uppercase tracking-wider">Площадь: <span id="modalArea" class="text-white font-medium">80</span> м²</span>
+                    <span class="text-neutral-400 uppercase tracking-wider">Бонус: <span id="modalBonus" class="text-amber-500 font-bold">560 000 ₽</span></span>
+                </div>
+            </div>
+
+            <!-- Сама форма -->
+            <form id="modalLeadForm" onsubmit="handleModalFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="text-[10px] text-neutral-400 uppercase tracking-widest block mb-1">Ваше имя</label>
+                    <input type="text" id="modalName" required placeholder="Введите ваше имя" class="w-full px-4 py-3.5 rounded-none bg-[#080808] border border-neutral-800 focus:border-amber-500 focus:outline-none text-white text-xs tracking-wider uppercase transition duration-300">
+                </div>
+                <div>
+                    <label class="text-[10px] text-neutral-400 uppercase tracking-widest block mb-1">Номер телефона</label>
+                    <input type="tel" id="modalPhone" required placeholder="+7 (___) ___-__-__" class="w-full px-4 py-3.5 rounded-none bg-[#080808] border border-neutral-800 focus:border-amber-500 focus:outline-none text-white text-xs tracking-wider uppercase transition duration-300">
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" id="modalSubmitBtn" class="w-full bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold uppercase tracking-[0.15em] text-xs py-4 transition duration-300 shadow-xl cursor-pointer">
+                        отправить заявку
+                    </button>
+                </div>
+            </form>
+
+            <!-- Статус отправки -->
+            <div id="modalStatus" class="hidden mt-4 p-3 text-center text-xs tracking-wider uppercase border border-amber-500/40 bg-amber-500/10 text-amber-400"></div>
+
+        </div>
+    </div>
 
     <!-- BLOCK 3: FOUNDER MANIFESTO -->
     <section id="founder" class="py-24 lg:py-32 bg-[#080808] thin-border-t overflow-hidden scroll-mt-24">
@@ -588,7 +610,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                 <div class="lg:col-span-7">
-                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6 block">EVENTS</span>
+                    <span class="text-xs uppercase tracking-[0.3em] text-neutral-500 block">EVENTS</span>
                     <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-8">Приглашаем в сочинский офис на партнерские встречи</h2>
                     <div class="space-y-6 text-neutral-400 text-sm font-light leading-relaxed max-w-2xl">
                         <p>Мы не просто работаем по звонку — мы развиваем сильное сообщество профессионалов рынка недвижимости Сочи. </p>
@@ -620,7 +642,7 @@
                 <div class="flex gap-6 mt-6 text-[10px] tracking-widest uppercase font-light">
                     <a href="https://wa.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">WhatsApp</a>
                     <span class="text-neutral-800">|</span>
-                    <a href="https://t.me/+rtNbTmu0jmZjNTE6" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">Telegram</a>
+                    <a href="https://t.me/#" target="_blank" class="text-neutral-400 hover:text-white transition duration-300">Telegram</a>
                 </div>
             </div>
             <h3 class="text-2xl md:text-3xl font-light text-white mb-4">Давайте заработаем на вашем следующем объекте</h3>
@@ -642,20 +664,18 @@
         </div>
     </footer>
 
-    <!-- Handler logic & Preloader + Calculator & Telegram Bot logic -->
+    <!-- Handler logic & Preloader + Calculator & Modal logic -->
     <script>
         // ==========================================
         // НАСТРОЙКА TELEGRAM БОТА ДЛЯ ЗАЯВОК
-        // (Вставьте токен вашего бота и ID чата/группы)
         // ==========================================
-        const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE'; // Например: 123456789:ABCdefGhIJKlmNoPQRstuVWXyz
-        const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID_HERE';     // Например: 123456789 или -1001234567890
+        const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';
+        const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID_HERE';
 
-        // Функция отправки заявки в Telegram-бот
         async function sendToTelegram(messageText) {
             if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE') {
-                console.log('Telegram Bot Token не задан. Сообщение для отправки:', messageText);
-                return true; // Имитация успешной отправки для тестов
+                console.log('Telegram Bot Token не задан. Сообщение:', messageText);
+                return true;
             }
             try {
                 const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -674,26 +694,60 @@
             }
         }
 
-        // ОБРАБОТКА ФОРМЫ КАЛЬКУЛЯТОРА (БЛОК 2)
-        async function handleCalculatorFormSubmit(event) {
-            event.preventDefault();
-            const nameInput = document.getElementById('leadName');
-            const phoneInput = document.getElementById('leadPhone');
-            const statusDiv = document.getElementById('calcFormStatus');
-            const submitBtn = document.getElementById('calcSubmitBtn');
+        // УПРАВЛЕНИЕ МОДАЛЬНЫМ ОКНОМ
+        function openLeadModal() {
+            const modal = document.getElementById('leadModal');
+            const modalCard = document.getElementById('leadModalCard');
             const area = document.getElementById('areaValue').textContent;
             const bonus = document.getElementById('bonusValue').textContent;
+            
+            document.getElementById('modalArea').textContent = area;
+            document.getElementById('modalBonus').textContent = bonus;
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+            modalCard.classList.remove('scale-95');
+            modalCard.classList.add('scale-100');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeLeadModal() {
+            const modal = document.getElementById('leadModal');
+            const modalCard = document.getElementById('leadModalCard');
+            
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalCard.classList.remove('scale-100');
+            modalCard.classList.add('scale-95');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Закрытие модалки при клике на темный фон
+        document.getElementById('leadModal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLeadModal();
+            }
+        });
+
+        // ОБРАБОТКА ОТПРАВКИ ФОРМЫ ИЗ МОДАЛКИ
+        async function handleModalFormSubmit(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById('modalName');
+            const phoneInput = document.getElementById('modalPhone');
+            const statusDiv = document.getElementById('modalStatus');
+            const submitBtn = document.getElementById('modalSubmitBtn');
+            const area = document.getElementById('modalArea').textContent;
+            const bonus = document.getElementById('modalBonus').textContent;
 
             const name = nameInput.value.trim();
             const phone = phoneInput.value.trim();
 
             if (!name || !phone) return;
 
-            // Блокируем кнопку на время отправки
             submitBtn.disabled = true;
             submitBtn.textContent = 'ОТПРАВКА...';
 
-            const message = `🔥 <b>НОВАЯ ЗАЯВКА ИЗ КАЛЬКУЛЯТОРА!</b>\n\n` +
+            const message = `🔥 <b>ЗАЯВКА ИЗ КАЛЬКУЛЯТОРА (МОДАЛКА)!</b>\n\n` +
                             `👤 <b>Имя:</b> ${name}\n` +
                             `📞 <b>Телефон:</b> ${phone}\n` +
                             `📐 <b>Площадь:</b> ${area} м²\n` +
@@ -702,15 +756,17 @@
 
             await sendToTelegram(message);
 
-            // Показываем подтверждение
-            statusDiv.textContent = `Спасибо, ${name}! Заявка принята. Куратор свяжется с вами по номеру ${phone} в течение 15 минут.`;
+            statusDiv.textContent = `Спасибо, ${name}! Заявка принята. Куратор свяжется с вами в течение 15 минут.`;
             statusDiv.classList.remove('hidden');
 
-            // Сброс формы
-            nameInput.value = '';
-            phoneInput.value = '';
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'СВЯЗАТЬСЯ С НАМИ';
+            setTimeout(() => {
+                closeLeadModal();
+                statusDiv.classList.add('hidden');
+                nameInput.value = '';
+                phoneInput.value = '';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'ОТПРАВИТЬ ЗАЯВКУ';
+            }, 2500);
         }
 
         // TOGGLE SIDE MENU LOGIC
