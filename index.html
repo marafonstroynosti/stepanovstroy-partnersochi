@@ -183,23 +183,19 @@
     <!-- HERO SECTION -->
     <section class="relative h-[100svh] min-h-[100svh] sm:h-screen w-full flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-24 sm:pt-28 pb-4 overflow-hidden bg-[#080808]">
         
-        <!-- Background elements -->
         <div class="absolute inset-0 z-0 pointer-events-none">
             <img src="deal.jpg" alt="Сделка" class="w-full h-full object-cover grayscale opacity-75">
             <div class="absolute inset-0 bg-gradient-to-b from-black/85 via-black/65 to-black/90"></div>
         </div>
 
-        <!-- Центральный сплошной блок контента -->
         <div class="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center justify-center text-center space-y-6 sm:space-y-8 my-auto">
             
-            <!-- Крупный заголовок -->
             <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight uppercase leading-[1.1] max-w-4xl mx-auto drop-shadow-lg">
                 <span class="block">Платим партнерам <span class="text-amber-500">сразу</span></span>
                 <span class="block text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)]">от 250 000 руб</span>
                 <span class="block">за ремонт</span>
             </h1>
 
-            <!-- Цифры / Факты -->
             <div class="grid grid-cols-3 gap-2 sm:gap-6 lg:gap-10 w-full max-w-sm sm:max-w-3xl mx-auto pt-1">
                 <div class="flex flex-col items-center text-center space-y-1">
                     <span class="text-white text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black font-title leading-none drop-shadow-md">
@@ -223,7 +219,6 @@
                 </div>
             </div>
 
-            <!-- CTA Кнопка -->
             <div class="w-full max-w-xs sm:max-w-md mx-auto pt-2">
                 <a href="#calculator" class="block w-full bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.15em] text-xs sm:text-sm py-4 sm:py-5 px-6 sm:px-10 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn">
                     рассчитать мою комиссию
@@ -234,14 +229,12 @@
 
     </section>
 
-    <!-- BLOCK 2: ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР С КНОПКОЙ ВЫЗОВА ФОРМЫ -->
+    <!-- BLOCK 2: ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР -->
     <section id="calculator" class="py-14 sm:py-20 lg:py-24 bg-[#0a0a0a] thin-border-t scroll-mt-20">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- Карточка калькулятора -->
             <div class="bg-[#0f0f0f] p-6 sm:p-10 md:p-12 thin-border rounded-none shadow-2xl space-y-8">
                 
-                <!-- Ползунок расчета площади и бонуса -->
                 <div class="space-y-6">
                     <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
                         <h2 class="text-xs sm:text-sm uppercase tracking-[0.2em] text-white font-semibold">Калькулятор вашей комиссии:</h2>
@@ -263,7 +256,6 @@
                     <span class="text-[9px] sm:text-[10px] text-amber-500/80 uppercase tracking-widest block text-center animate-pulse">← Двигайте ползунок для изменения площади →</span>
                 </div>
 
-                <!-- Кнопка действия "СВЯЗАТЬСЯ С НАМИ" (открывает модалку) -->
                 <div class="pt-4 border-t border-neutral-800/80 text-center">
                     <button onclick="openLeadModal()" type="button" class="block w-full bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.15em] text-xs sm:text-sm py-4 sm:py-5 px-6 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn cursor-pointer">
                         связаться с нами
@@ -273,7 +265,6 @@
 
             </div>
 
-            <!-- Кнопка перехода к следующему блоку -->
             <div class="mt-10 sm:mt-12 flex justify-center max-w-3xl mx-auto">
                 <a href="#founder" class="group flex items-center justify-between w-full px-6 py-4 sm:py-5 border border-neutral-800 hover:border-white transition-all duration-500 rounded-none text-[10px] uppercase tracking-[0.25em] text-amber-500 hover:text-white">
                     <span>Узнать, кто мы — философия и правила партнерства</span>
@@ -288,24 +279,20 @@
     <div id="leadModal" class="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none">
         <div class="bg-[#0d0d0d] border border-amber-500/40 p-6 sm:p-10 max-w-md w-full relative shadow-[0_0_50px_rgba(0,0,0,0.9)] transform transition-transform duration-300 scale-95" id="leadModalCard">
             
-            <!-- Кнопка закрытия -->
             <button onclick="closeLeadModal()" aria-label="Закрыть" class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center border border-neutral-800 text-neutral-400 hover:text-white hover:border-white transition duration-300 text-lg focus:outline-none">
                 ✕
             </button>
 
-            <!-- Заголовок -->
             <div class="text-center mb-6 pt-2">
                 <span class="text-[9px] uppercase tracking-[0.3em] text-amber-500 block mb-1">ФИКСАЦИЯ ВЫПЛАТЫ</span>
                 <h3 class="text-lg sm:text-xl font-bold uppercase tracking-wider text-white">Связаться с нами</h3>
                 
-                <!-- Превью расчета -->
                 <div class="mt-4 p-3 bg-[#080808] border border-neutral-800 flex justify-between items-center text-xs">
                     <span class="text-neutral-400 uppercase tracking-wider">Площадь: <span id="modalArea" class="text-white font-medium">80</span> м²</span>
                     <span class="text-neutral-400 uppercase tracking-wider">Бонус: <span id="modalBonus" class="text-amber-500 font-bold">560 000 ₽</span></span>
                 </div>
             </div>
 
-            <!-- Форма -->
             <form id="modalLeadForm" onsubmit="handleModalFormSubmit(event)" class="space-y-4">
                 <div>
                     <label class="text-[10px] text-neutral-400 uppercase tracking-widest block mb-1">Ваше имя</label>
@@ -323,7 +310,6 @@
                 </div>
             </form>
 
-            <!-- Статус отправки -->
             <div id="modalStatus" class="hidden mt-4 p-3 text-center text-xs tracking-wider uppercase border border-amber-500/40 bg-amber-500/10 text-amber-400"></div>
 
         </div>
@@ -666,16 +652,18 @@
 
     <!-- Handler logic & Preloader + Calculator & Modal logic -->
     <script>
-        // ==========================================
-        // НАСТРОЙКА TELEGRAM БОТА ДЛЯ ЗАЯВОК
-        // ==========================================
+        // =========================================================================
+        // НАСТРОЙКА TELEGRAM БОТА:
+        // 1. Токен вашего бота уже прописан.
+        // 2. Вставьте ваш ID из @userinfobot в кавычки вместо ВСТАВЬТЕ_ВАШ_ID
+        // =========================================================================
         const TELEGRAM_BOT_TOKEN = '8886167398:AAGfFNqnVCq_gwapNec3-cbNfx1KUwKiOyA';
-        const TELEGRAM_CHAT_ID = 'ВСТАВЬТЕ_ВАШ_ID'; // Укажите ваш ID (узнать в @userinfobot)
+        const TELEGRAM_CHAT_ID = 'ВСТАВЬТЕ_ВАШ_ID'; // <--- ЗАМЕНИТЕ НА ВАШИ ЦИФРЫ (например: '512345678')
 
         async function sendToTelegram(messageText) {
             if (!TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID === 'ВСТАВЬТЕ_ВАШ_ID') {
-                console.log('TELEGRAM_CHAT_ID еще не указан. Сообщение:', messageText);
-                return true;
+                alert('ВНИМАНИЕ: Вы еще не указали TELEGRAM_CHAT_ID в коде скрипта! Узнайте ваш ID в боте @userinfobot и вставьте в строку 591.');
+                return false;
             }
             try {
                 const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -753,19 +741,24 @@
                             `💰 <b>Расчетный бонус:</b> ${bonus}\n` +
                             `📍 <i>STEPANOV STROY — Сочи</i>`;
 
-            await sendToTelegram(message);
+            const success = await sendToTelegram(message);
 
-            statusDiv.textContent = `Спасибо, ${name}! Заявка принята. Куратор свяжется с вами в течение 15 минут.`;
-            statusDiv.classList.remove('hidden');
+            if (success) {
+                statusDiv.textContent = `Спасибо, ${name}! Заявка принята. Куратор свяжется с вами в течение 15 минут.`;
+                statusDiv.classList.remove('hidden');
 
-            setTimeout(() => {
-                closeLeadModal();
-                statusDiv.classList.add('hidden');
-                nameInput.value = '';
-                phoneInput.value = '';
+                setTimeout(() => {
+                    closeLeadModal();
+                    statusDiv.classList.add('hidden');
+                    nameInput.value = '';
+                    phoneInput.value = '';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'ОТПРАВИТЬ ЗАЯВКУ';
+                }, 2500);
+            } else {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'ОТПРАВИТЬ ЗАЯВКУ';
-            }, 2500);
+            }
         }
 
         // ОТПРАВКА ИЗ НИЖНЕЙ ФОРМЫ
@@ -774,9 +767,11 @@
             const phone = event.target.querySelector('input').value;
             if (phone) {
                 const message = `⚡️ <b>ЗАЯВКА С НИЖНЕЙ ФОРМЫ САЙТА!</b>\n\n📞 <b>Телефон:</b> ${phone}`;
-                await sendToTelegram(message);
-                alert('Спасибо. Заявка принята. Куратор свяжется с вами в течение 15 минут.');
-                event.target.reset();
+                const success = await sendToTelegram(message);
+                if (success) {
+                    alert('Спасибо. Заявка принята. Куратор свяжется с вами в течение 15 минут.');
+                    event.target.reset();
+                }
             }
         }
 
